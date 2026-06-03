@@ -20,6 +20,15 @@ mockup project, so versions track design milestones rather than shipped software
 
 ---
 
+## [0.4.2] — 2026-06-03
+
+### Changed
+- Generalized `CLAUDE.md` Rule 1 to ban any `Co-Authored-By: Claude Opus …`
+  co-author trailer (previously named only the `4.7 (1M context)` variant).
+- Bumped the `index.html` version meta to `v0.4.2`.
+
+---
+
 ## [0.4.1] — 2026-06-03
 
 Repository restructure — flattened the project layout and added standard project
