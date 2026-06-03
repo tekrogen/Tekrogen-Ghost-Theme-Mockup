@@ -1,0 +1,1916 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tekrogen Ghost Theme — Wireframes</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Patrick+Hand&family=Caveat:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --paper:#f7f4ec;
+  --paper-rule:#e3dcc9;
+  --ink:#1a1c20;
+  --ink-2:#2f3338;
+  --ink-soft:#5a6068;
+  --ink-faint:#9aa0a8;
+  --accent:#1fd5da;         /* tekrogen cyan; overridden by wing tweak */
+  --accent-ink:#0e1116;
+  --hatch:rgba(26,28,32,0.10);
+  --ui-bg:#0e1116;
+  --ui-line:#2a2f36;
+  --ui-fg:#e6e8eb;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Patrick Hand', 'Comic Sans MS', system-ui, sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ============== APP CHROME (top toolbar) ============== */
+.app-bar{
+  position:sticky;top:0;z-index:30;
+  display:flex;align-items:center;gap:18px;
+  padding:10px 18px;
+  background:var(--ui-bg);
+  color:var(--ui-fg);
+  border-bottom:1px solid var(--ui-line);
+}
+.app-bar .brand{
+  display:flex;align-items:center;gap:10px;
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--ui-fg); opacity:.88;
+}
+.app-bar .brand .dot{
+  width:8px;height:8px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 12px rgba(31,213,218,.5);
+}
+.app-bar .scratch{
+  font-family:'Caveat', cursive; font-size:18px; color:var(--ink-faint);
+}
+.app-bar .spacer{flex:1}
+.tabs{display:flex; gap:6px}
+.tab{
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+  padding:7px 12px;
+  background:transparent;
+  color:var(--ui-fg);
+  border:1px solid var(--ui-line);
+  border-radius:6px;
+  cursor:pointer;
+}
+.tab[aria-selected="true"]{
+  background:var(--accent);
+  color:var(--accent-ink);
+  border-color:var(--accent);
+}
+.tab:hover{border-color:var(--accent)}
+
+/* ============== PAPER STAGE ============== */
+.stage{
+  padding:32px 28px 120px;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 32px,
+      var(--paper-rule) 32px 33px
+    ),
+    var(--paper);
+  min-height:calc(100vh - 50px);
+  /* Re-anchor base color on the stage so dark-mode --ink propagates
+     to descendants whose color is unspecified (h1/h3/etc). */
+  color:var(--ink);
+}
+.stage.is-dark{
+  --paper:#0e1116;
+  --paper-rule:#1a1f25;
+  --ink:#e6e8eb;
+  --ink-2:#c5c9cf;
+  --ink-soft:#8b929b;
+  --ink-faint:#5b6168;
+  --hatch:rgba(230,232,235,0.08);
+}
+.stage.is-dark .line{ opacity:.4 }
+.stage.is-dark input{ color:var(--ink) }
+.stage.is-dark input::placeholder{ color:var(--ink-faint) }
+.stage.density-dense .mock-card{ padding:10px 12px }
+.stage.density-dense .mock-card.lg{ padding:14px 16px }
+.stage.density-spacious .mock-card{ padding:22px 24px }
+.stage.density-spacious .mock-card.lg{ padding:32px 34px }
+
+.direction{display:none}
+.direction[aria-current="true"]{display:block}
+
+.dir-header{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  gap:24px; max-width:1320px; margin:0 auto 14px;
+  padding:6px 8px 14px;
+  border-bottom:1.5px dashed var(--ink-faint);
+}
+.dir-title{
+  font-family:'Caveat', cursive;
+  font-weight:700; font-size:42px; line-height:1; color:var(--ink);
+  margin:0;
+}
+.dir-mono{
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px; letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.dir-note{
+  font-family:'Caveat', cursive; font-size:20px;
+  color:var(--ink-soft); max-width:560px; text-align:right;
+  transform:rotate(-1deg);
+}
+
+/* ============== BROWSER FRAME ============== */
+.frame{
+  max-width:1320px; margin:0 auto;
+  background:var(--paper);
+  border:1.5px solid var(--ink);
+  border-radius:14px;
+  box-shadow: 8px 10px 0 rgba(26,28,32,0.08);
+  position:relative;
+  overflow:hidden;
+}
+.stage.is-dark .frame{
+  background:#13171c;
+  border-color:#3a4047;
+  box-shadow: 8px 10px 0 rgba(0,0,0,0.4);
+}
+.frame-bar{
+  display:flex; align-items:center; gap:10px;
+  padding:9px 14px;
+  border-bottom:1.5px solid var(--ink);
+  background:transparent;
+}
+.stage.is-dark .frame-bar{ border-bottom-color:#3a4047 }
+.frame-dots{display:flex; gap:6px}
+.frame-dots span{
+  width:11px;height:11px;border-radius:50%;
+  border:1.2px solid var(--ink);
+}
+.frame-url{
+  flex:1;
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px;
+  color:var(--ink-soft);
+  text-align:center;
+  letter-spacing:0.04em;
+}
+.frame-url .lock{ color:var(--ink-faint); margin-right:4px }
+
+/* ============== WIREFRAME PRIMITIVES ============== */
+.wf{ padding:0 }
+.wf-inner{ padding:28px 36px 36px }
+
+.site-head{
+  display:flex; align-items:center; gap:22px;
+  padding:18px 36px;
+  border-bottom:1.5px solid var(--ink);
+}
+.stage.is-dark .site-head{ border-bottom-color:#3a4047 }
+.site-mark{
+  display:flex; align-items:center; gap:10px;
+}
+.mark-glyph{
+  width:32px;height:32px;
+  border:1.5px solid var(--ink);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--accent);
+  transform:rotate(18deg);
+  font-family:'JetBrains Mono', monospace;
+  font-size:14px; font-weight:600; color:var(--accent-ink);
+}
+.stage.is-dark .mark-glyph{ border-color:transparent }
+.wordmark{
+  font-family:'Kalam', cursive;
+  font-weight:700; font-size:22px; letter-spacing:0.18em;
+  color:var(--ink);
+}
+.site-nav{
+  display:flex; gap:18px; flex:1;
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.site-nav span{ position:relative; cursor:default }
+.site-nav span.is-active{ color:var(--ink) }
+.site-nav span.is-active::after{
+  content:""; position:absolute; left:-2px; right:-2px; bottom:-6px;
+  height:2px; background:var(--accent);
+  border-radius:2px;
+}
+.site-cta{
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+  padding:8px 14px;
+  border:1.5px solid var(--ink);
+  border-radius:6px;
+  background:var(--accent);
+  color:var(--accent-ink);
+}
+
+/* ----- generic boxes ----- */
+.box{
+  border:1.5px solid var(--ink);
+  border-radius:10px;
+  background:var(--paper);
+}
+.stage.is-dark .box{ background:#171b21; border-color:#3a4047 }
+
+.mock-card{
+  border:1.5px solid var(--ink);
+  border-radius:10px;
+  background:var(--paper);
+  padding:16px 18px;
+  display:flex; flex-direction:column; gap:8px;
+  position:relative;
+}
+.stage.is-dark .mock-card{ background:#171b21; border-color:#3a4047 }
+
+.eyebrow{
+  font-family:'JetBrains Mono', monospace;
+  font-size:10px; letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.eyebrow .pill{
+  border:1.2px solid var(--ink-soft);
+  border-radius:999px;
+  padding:2px 8px;
+}
+.eyebrow .pill.accent{
+  color:var(--accent-ink);
+  background:var(--accent);
+  border-color:var(--accent);
+}
+.title-l{
+  font-family:'Kalam', cursive; font-weight:700;
+  font-size:28px; line-height:1.15; color:var(--ink);
+  margin:0;
+}
+.title-m{
+  font-family:'Kalam', cursive; font-weight:700;
+  font-size:20px; line-height:1.2; color:var(--ink);
+  margin:0;
+}
+.title-s{
+  font-family:'Kalam', cursive; font-weight:700;
+  font-size:15px; line-height:1.25; color:var(--ink);
+  margin:0;
+}
+
+/* placeholder text lines */
+.line{
+  height:8px; border-radius:4px;
+  background:var(--ink-faint); opacity:.55;
+}
+.line.thin{ height:6px }
+.line.w90{ width:90% }
+.line.w80{ width:80% }
+.line.w70{ width:70% }
+.line.w60{ width:60% }
+.line.w50{ width:50% }
+.line.w40{ width:40% }
+.lines{ display:flex; flex-direction:column; gap:7px }
+
+/* hatched image / preview placeholder */
+.hatch{
+  background-image:
+    repeating-linear-gradient(45deg,
+      var(--hatch) 0 1px, transparent 1px 8px);
+  border:1.5px solid var(--ink);
+  border-radius:8px;
+  position:relative;
+  min-height:120px;
+}
+.stage.is-dark .hatch{ border-color:#3a4047 }
+.hatch::after{
+  content:"image"; position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Caveat', cursive; font-size:18px;
+  color:var(--ink-faint);
+}
+.hatch.no-label::after{ content:"" }
+
+.meta-row{
+  display:flex; gap:10px; align-items:center;
+  font-family:'JetBrains Mono', monospace;
+  font-size:10px; letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--ink-soft);
+  flex-wrap:wrap;
+}
+.meta-row .dot{ width:3px;height:3px;border-radius:50%;background:var(--ink-faint) }
+
+.scribble{
+  font-family:'Caveat', cursive; font-size:18px;
+  color:var(--accent);
+  transform:rotate(-2deg);
+  display:inline-block;
+}
+.callout{
+  position:absolute;
+  font-family:'Caveat', cursive; font-size:17px;
+  color:var(--ink-soft);
+  display:flex; align-items:center; gap:8px;
+}
+.callout .arrow{ font-size:22px; color:var(--accent) }
+
+/* ============== DIRECTION A : INDEX-OF-SEVEN ============== */
+.A-hero{
+  padding:54px 36px 38px;
+  display:grid; grid-template-columns: 1.4fr 1fr; gap:48px;
+  align-items:end;
+  border-bottom:1.5px dashed var(--ink-faint);
+}
+.A-hero h1{
+  font-family:'Kalam', cursive; font-weight:700;
+  font-size:64px; line-height:1.02; margin:0 0 18px;
+  color:var(--ink);
+  letter-spacing:-0.01em;
+}
+.A-hero h1 em{
+  font-style:normal; color:var(--accent);
+  background:linear-gradient(transparent 70%, color-mix(in oklab, var(--accent) 35%, transparent) 70%);
+  padding:0 4px;
+}
+.A-hero .dek{
+  font-family:'Patrick Hand', sans-serif;
+  font-size:19px; line-height:1.5; color:var(--ink-2);
+  max-width:520px;
+}
+.A-hero .right{
+  display:flex; flex-direction:column; gap:14px;
+  align-items:flex-end;
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.A-hero .right .meta-block{ text-align:right }
+.A-hero .right .meta-block strong{
+  display:block; font-weight:400;
+  font-family:'Caveat', cursive; font-size:32px;
+  color:var(--ink); letter-spacing:0;
+  text-transform:none;
+}
+
+.grid7{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:14px;
+  margin:32px 0 20px;
+}
+.grid7 .cell{ grid-column: span 4 }
+.grid7 .cell.wide{ grid-column: span 6 }
+.grid7 .cell.full{ grid-column: span 12 }
+
+.type-card{
+  display:flex; flex-direction:column;
+  border:1.5px solid var(--ink);
+  border-radius:12px;
+  background:var(--paper);
+  overflow:hidden;
+  min-height:230px;
+  position:relative;
+  transition:border-color .15s ease;
+}
+.stage.is-dark .type-card:not(.feature){ background:#171b21; border-color:#3a4047 }
+.type-card:hover{ border-color:var(--accent) }
+.type-card .head{
+  display:flex; align-items:flex-start; justify-content:space-between;
+  padding:16px 18px;
+  border-bottom:1.5px dashed var(--ink-faint);
+}
+.type-card .head .num{
+  font-family:'JetBrains Mono', monospace;
+  font-size:10px; letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.type-card .head .glyph{
+  width:34px; height:34px;
+  border:1.5px solid var(--ink);
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono', monospace;
+  font-size:14px; font-weight:600;
+  color:var(--ink);
+}
+.stage.is-dark .type-card:not(.feature) .head .glyph{ border-color:#3a4047 }
+.type-card .body{
+  padding:16px 18px;
+  display:flex; flex-direction:column; gap:6px; flex:1;
+}
+.type-card .body h3{
+  font-family:'Kalam', cursive; font-weight:700;
+  font-size:22px; margin:0; color:var(--ink);
+}
+.type-card .body p{
+  font-family:'Patrick Hand', sans-serif;
+  font-size:14px; color:var(--ink-soft);
+  margin:0;
+}
+.type-card .recent{
+  padding:10px 18px 16px;
+  border-top:1.5px dashed var(--ink-faint);
+  display:flex; flex-direction:column; gap:6px;
+}
+.type-card .recent .item{
+  display:flex; gap:8px; align-items:baseline;
+  font-family:'Patrick Hand', sans-serif;
+  font-size:13px; color:var(--ink-2);
+}
+.type-card .recent .item .n{
+  font-family:'JetBrains Mono', monospace;
+  font-size:10px; color:var(--ink-faint);
+  letter-spacing:0.1em;
+}
+.type-card .recent .item .t{
+  flex:1; line-height:1.25;
+  border-bottom:1px solid transparent;
+}
+.type-card .recent .item .t:hover{ border-bottom-color:var(--accent) }
+.type-card .footer{
+  padding:10px 18px;
+  display:flex; align-items:center; justify-content:space-between;
+  border-top:1.5px solid var(--ink);
+}
+.stage.is-dark .type-card:not(.feature) .footer{ border-top-color:#3a4047 }
+.type-card .footer .count{
+  font-family:'JetBrains Mono', monospace;
+  font-size:10px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.type-card .footer .arrow{
+  font-family:'JetBrains Mono', monospace;
+  font-size:13px; color:var(--accent);
+}
+.type-card.feature{
+  background:var(--accent);
+  color:var(--accent-ink);
+  border-color:var(--accent);
+}
+.type-card.feature .head .glyph,
+.type-card.feature .head .num,
+.type-card.feature .body h3,
+.type-card.feature .body p,
+.type-card.feature .recent .item,
+.type-card.feature .recent .item .n,
+.type-card.feature .footer .count,
+.type-card.feature .footer .arrow{ color:var(--accent-ink) }
+.type-card.feature .head,
+.type-card.feature .recent,
+.type-card.feature .footer{ border-color:rgba(14,17,22,0.25) }
+
+/* recent strip below 7-grid */
+.A-recent{
+  display:grid; grid-template-columns: repeat(3,1fr); gap:14px;
+  margin-top:20px;
+}
+.A-recent .item h4{
+  font-family:'Kalam', cursive; font-weight:700;
+  margin:6px 0 6px; font-size:18px; color:var(--ink);
+}
+
+/* ============== DIRECTION B : EDITORIAL FEED ============== */
+.B-chips{
+  display:flex; gap:8px; flex-wrap:wrap;
+  padding:18px 36px 0;
+}
+.chip{
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+  padding:7px 12px;
+  border:1.5px solid var(--ink);
+  border-radius:999px;
+  color:var(--ink);
+  background:var(--paper);
+}
+.stage.is-dark .chip{ background:#171b21; border-color:#3a4047; color:var(--ink) }
+.chip.is-on{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent) }
+.chip .count{ color:var(--ink-faint); margin-left:6px }
+.chip.is-on .count{ color:rgba(14,17,22,.6) }
+
+.B-hero{
+  display:grid; grid-template-columns: 1.4fr 1fr; gap:28px;
+  padding:24px 36px 32px;
+  border-bottom:1.5px dashed var(--ink-faint);
+}
+.B-hero .feature{
+  border:1.5px solid var(--ink);
+  border-radius:12px;
+  background:var(--paper);
+  overflow:hidden;
+  display:flex; flex-direction:column;
+}
+.stage.is-dark .B-hero .feature{ background:#171b21; border-color:#3a4047 }
+.B-hero .feature .img{ min-height:280px }
+.B-hero .feature .meta{
+  padding:18px 22px 22px;
+  display:flex; flex-direction:column; gap:10px;
+}
+.B-hero .feature h2{
+  font-family:'Kalam', cursive; font-weight:700;
+  font-size:32px; margin:0; color:var(--ink); line-height:1.1;
+}
+.B-hero .feature .dek{
+  font-family:'Patrick Hand', sans-serif;
+  font-size:17px; color:var(--ink-2); line-height:1.5;
+}
+.B-hero aside{
+  display:flex; flex-direction:column; gap:14px;
+}
+.B-hero aside .small-card{
+  padding:14px 16px;
+  display:flex; flex-direction:column; gap:6px;
+}
+.B-hero aside h4{
+  font-family:'Kalam', cursive; font-weight:700;
+  margin:0; font-size:16px; line-height:1.2; color:var(--ink);
+}
+
+.B-feed{
+  display:grid; grid-template-columns: 1fr 280px; gap:36px;
+  padding:28px 36px 36px;
+}
+.B-list{ display:flex; flex-direction:column; gap:0 }
+.B-list .row{
+  display:grid; grid-template-columns: 90px 1fr 110px;
+  gap:18px; align-items:center;
+  padding:18px 0;
+  border-bottom:1.5px solid var(--ink);
+}
+.stage.is-dark .B-list .row{ border-bottom-color:#3a4047 }
+.B-list .row:last-child{ border-bottom:none }
+.B-list .row .num{
+  font-family:'JetBrains Mono', monospace;
+  font-size:10px; letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.B-list .row h3{
+  font-family:'Kalam', cursive; font-weight:700;
+  margin:0 0 6px; font-size:20px; line-height:1.2;
+}
+.B-list .row .type-pill{
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px; letter-spacing:0.16em; text-transform:uppercase;
+  padding:3px 8px;
+  border:1.2px solid var(--ink-soft);
+  border-radius:999px;
+  color:var(--ink-soft);
+  display:inline-block; margin-bottom:8px;
+}
+.B-aside .ad{
+  padding:16px 18px;
+  display:flex; flex-direction:column; gap:10px;
+}
+
+/* ============== DIRECTION C : LIBRARY HUB ============== */
+.C-hero{
+  display:grid; grid-template-columns: 1fr 320px; gap:24px;
+  padding:36px 36px 24px;
+  border-bottom:1.5px dashed var(--ink-faint);
+}
+.C-hero h1{
+  font-family:'Kalam', cursive; font-weight:700;
+  font-size:56px; line-height:1.02; margin:0 0 14px;
+  letter-spacing:-0.01em;
+}
+.C-hero h1 .accent{ color:var(--accent) }
+.C-hero p{
+  font-family:'Patrick Hand', sans-serif;
+  font-size:18px; color:var(--ink-2); line-height:1.5; max-width:560px;
+  margin:0 0 18px;
+}
+.C-hero .anchors{
+  display:flex; flex-wrap:wrap; gap:8px;
+}
+.C-hero .anchors .a{
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+  padding:6px 10px; border-radius:6px;
+  border:1.5px solid var(--ink); color:var(--ink); background:var(--paper);
+}
+.stage.is-dark .C-hero .anchors .a{ background:#171b21; border-color:#3a4047 }
+.C-hero aside{
+  border:1.5px solid var(--ink);
+  border-radius:12px;
+  background:var(--paper);
+  padding:16px 18px;
+  display:flex; flex-direction:column; gap:10px;
+}
+.stage.is-dark .C-hero aside{ background:#171b21; border-color:#3a4047 }
+.C-hero aside h4{
+  font-family:'Kalam', cursive; font-weight:700;
+  margin:0; font-size:16px;
+}
+.C-hero aside form{
+  display:flex; gap:6px;
+}
+.C-hero aside input{
+  flex:1;
+  font-family:'Patrick Hand', sans-serif;
+  font-size:14px;
+  padding:8px 10px;
+  border:1.5px solid var(--ink);
+  border-radius:6px;
+  background:transparent;
+  color:var(--ink);
+}
+.stage.is-dark .C-hero aside input{ border-color:#3a4047 }
+.C-hero aside button{
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+  padding:8px 12px;
+  border:1.5px solid var(--accent);
+  background:var(--accent); color:var(--accent-ink);
+  border-radius:6px; cursor:pointer;
+}
+
+.lane{
+  padding:24px 36px 8px;
+  border-bottom:1.5px dashed var(--ink-faint);
+}
+.lane:last-of-type{ border-bottom:none }
+.lane-head{
+  display:flex; align-items:baseline; justify-content:space-between; gap:18px;
+  margin-bottom:14px;
+}
+.lane-head .l{
+  display:flex; align-items:baseline; gap:14px;
+}
+.lane-head .num{
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px; letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.lane-head h2{
+  font-family:'Kalam', cursive; font-weight:700;
+  font-size:30px; margin:0; color:var(--ink);
+  letter-spacing:-0.01em;
+}
+.lane-head .blurb{
+  font-family:'Caveat', cursive; font-size:18px;
+  color:var(--ink-soft);
+  max-width:380px; text-align:right;
+}
+.lane-head .all{
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--accent);
+}
+
+.lane-row{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;
+  padding-bottom:14px;
+}
+.lane-row.four{ grid-template-columns: repeat(4, 1fr) }
+.lane-row.two{ grid-template-columns: 1.4fr 1fr 1fr }
+.lane-card{
+  border:1.5px solid var(--ink);
+  border-radius:10px;
+  background:var(--paper);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+}
+.stage.is-dark .lane-card{ background:#171b21; border-color:#3a4047 }
+.lane-card .img{
+  border:none; border-bottom:1.5px solid var(--ink);
+  border-radius:0; min-height:90px;
+}
+.stage.is-dark .lane-card .img{ border-bottom-color:#3a4047 }
+.lane-card .body{
+  padding:12px 14px;
+  display:flex; flex-direction:column; gap:6px; flex:1;
+}
+.lane-card .body h4{
+  font-family:'Kalam', cursive; font-weight:700;
+  margin:0; font-size:17px; line-height:1.2; color:var(--ink);
+}
+.lane-card .body p{
+  font-family:'Patrick Hand', sans-serif;
+  font-size:13px; color:var(--ink-soft);
+  margin:0; line-height:1.35;
+}
+.lane-card .stamp{
+  position:absolute; right:10px; top:10px;
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px; letter-spacing:0.16em; text-transform:uppercase;
+  padding:3px 6px; border-radius:4px;
+  background:var(--ink); color:var(--paper);
+}
+.stage.is-dark .lane-card .stamp{ background:var(--accent); color:var(--accent-ink) }
+.lane-card{ position:relative }
+
+/* tech rating bar */
+.rating{
+  display:grid; grid-template-columns: 1fr auto; align-items:center; gap:10px;
+  margin-top:auto; padding-top:8px;
+  border-top:1px dashed var(--ink-faint);
+}
+.rating .bar{
+  height:6px; border:1px solid var(--ink);
+  border-radius:3px; overflow:hidden;
+  position:relative;
+}
+.stage.is-dark .rating .bar{ border-color:#3a4047 }
+.rating .bar > i{
+  position:absolute; left:0; top:0; bottom:0;
+  background:var(--accent);
+}
+.rating .score{
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px; font-weight:600; color:var(--ink);
+}
+
+/* ============== FOOTER (shared sketchy) ============== */
+.site-foot{
+  padding:32px 36px;
+  border-top:1.5px solid var(--ink);
+  display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap:28px;
+}
+.stage.is-dark .site-foot{ border-top-color:#3a4047 }
+.site-foot h5{
+  font-family:'JetBrains Mono', monospace;
+  font-size:10px; letter-spacing:0.18em; text-transform:uppercase;
+  margin:0 0 12px; color:var(--ink-soft);
+}
+.site-foot ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px }
+.site-foot li{
+  font-family:'Patrick Hand', sans-serif;
+  font-size:14px; color:var(--ink-2);
+}
+.site-foot .wings{ display:flex; flex-direction:column; gap:6px }
+.site-foot .wing{
+  display:flex; align-items:center; gap:8px;
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px; color:var(--ink-2);
+}
+.site-foot .wing .sw{
+  width:10px; height:10px; border-radius:2px;
+  border:1px solid var(--ink-soft);
+}
+.site-foot .tag{
+  font-family:'Caveat', cursive; font-size:22px; color:var(--ink);
+  margin-top:8px;
+}
+.site-foot .mark{
+  display:flex; align-items:center; gap:10px;
+}
+
+/* ============== POST DETAIL MINI ============== */
+.detail-section{
+  max-width:1320px; margin:42px auto 0;
+}
+.detail-section .head{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  padding:0 8px 12px;
+  border-bottom:1.5px dashed var(--ink-faint);
+  margin-bottom:18px;
+}
+.detail-section .head h3{
+  font-family:'Caveat', cursive; font-weight:700;
+  font-size:30px; margin:0; color:var(--ink);
+}
+.detail-section .head .mono{
+  font-family:'JetBrains Mono', monospace;
+  font-size:10px; letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.detail-grid{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap:18px;
+}
+
+.detail-mock{
+  border:1.5px solid var(--ink);
+  border-radius:12px; overflow:hidden;
+  background:var(--paper);
+  display:flex; flex-direction:column;
+  min-height:380px;
+}
+.stage.is-dark .detail-mock{ background:#171b21; border-color:#3a4047 }
+.detail-mock .stamp{
+  padding:8px 12px;
+  border-bottom:1.5px solid var(--ink);
+  font-family:'JetBrains Mono', monospace;
+  font-size:10px; letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--ink-soft);
+  display:flex; justify-content:space-between;
+}
+.stage.is-dark .detail-mock .stamp{ border-bottom-color:#3a4047 }
+.detail-mock .content{
+  padding:16px 18px; display:flex; flex-direction:column; gap:10px; flex:1;
+}
+.detail-mock h4{
+  font-family:'Kalam', cursive; font-weight:700;
+  margin:0; font-size:20px; line-height:1.2; color:var(--ink);
+}
+.detail-mock .scorecard{
+  border:1.5px solid var(--ink); border-radius:8px;
+  padding:10px 12px;
+  display:grid; grid-template-columns: 1fr auto; gap:6px;
+  font-family:'JetBrains Mono', monospace; font-size:11px;
+  color:var(--ink-2);
+}
+.stage.is-dark .detail-mock .scorecard{ border-color:#3a4047 }
+.detail-mock .scorecard .big{
+  grid-column: span 2;
+  font-family:'Kalam', cursive; font-weight:700;
+  font-size:34px; color:var(--accent); text-align:center;
+  padding:6px 0;
+}
+.detail-mock .toc{
+  border:1.5px dashed var(--ink-faint); border-radius:8px;
+  padding:10px 12px;
+  display:flex; flex-direction:column; gap:6px;
+  font-family:'Patrick Hand', sans-serif;
+  font-size:13px; color:var(--ink-2);
+}
+.detail-mock .toc .h{
+  font-family:'JetBrains Mono', monospace; font-size:9px;
+  letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft);
+  margin-bottom:2px;
+}
+
+/* ============== TWEAKS PANEL ============== */
+.tweaks{
+  position:fixed; right:18px; bottom:18px; z-index:50;
+  width:280px;
+  background:#11161c;
+  color:#e6e8eb;
+  border:1px solid #2a2f36;
+  border-radius:12px;
+  padding:14px 14px 12px;
+  box-shadow:0 14px 40px rgba(0,0,0,0.5);
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  display:none;
+}
+.tweaks.is-open{ display:block }
+.tweaks h6{
+  margin:0 0 10px; font-size:10px; letter-spacing:0.18em;
+  text-transform:uppercase; color:#8b929b;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.tweaks h6 .close{
+  background:none; border:none; color:#8b929b; font-size:14px; cursor:pointer;
+}
+.tweaks .group{ margin-bottom:12px }
+.tweaks .label{
+  font-size:10px; letter-spacing:0.14em; text-transform:uppercase;
+  color:#8b929b; margin-bottom:6px;
+}
+.tweaks .swatches{ display:flex; gap:6px }
+.tweaks .sw{
+  width:32px; height:24px; border-radius:5px;
+  border:1px solid #2a2f36;
+  cursor:pointer;
+  display:flex; align-items:flex-end; justify-content:center;
+  font-size:9px; padding-bottom:2px; color:rgba(0,0,0,0.7);
+  letter-spacing:0.06em;
+}
+.tweaks .sw.is-on{ outline:2px solid #1fd5da; outline-offset:1px }
+.tweaks .seg{
+  display:flex; border:1px solid #2a2f36; border-radius:6px; overflow:hidden;
+}
+.tweaks .seg button{
+  flex:1; background:transparent; border:none;
+  color:#e6e8eb; padding:6px 8px;
+  font-family:inherit; font-size:10px;
+  letter-spacing:0.14em; text-transform:uppercase; cursor:pointer;
+}
+.tweaks .seg button.is-on{ background:#1fd5da; color:#0e1116 }
+.tweaks .reveal{
+  font-size:10px; letter-spacing:0.14em; text-transform:uppercase;
+  color:#8b929b; margin-top:8px; padding-top:8px;
+  border-top:1px solid #2a2f36;
+}
+
+/* small responsive */
+@media (max-width:960px){
+  .A-hero, .B-hero, .B-feed, .C-hero, .site-foot, .detail-grid{
+    grid-template-columns:1fr !important;
+  }
+  .grid7 .cell{ grid-column: span 12 !important }
+  .lane-row{ grid-template-columns:1fr !important }
+}
+</style>
+</head>
+<body>
+
+<!-- ============== APP BAR ============== -->
+<div class="app-bar">
+  <div class="brand"><span class="dot"></span>tekrogen · ghost theme · wireframes</div>
+  <span class="scratch">v0.1 — low-fi exploration</span>
+  <div class="spacer"></div>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-dir="A">A · Index of Seven</button>
+    <button class="tab" role="tab" aria-selected="false" data-dir="B">B · Editorial Feed</button>
+    <button class="tab" role="tab" aria-selected="false" data-dir="C">C · Library Hub</button>
+  </div>
+</div>
+
+<!-- ============== STAGE ============== -->
+<div class="stage" id="stage">
+
+<!-- ============== DIRECTION A : INDEX OF SEVEN ============== -->
+<section class="direction" data-dir="A" aria-current="true" data-screen-label="A — Index of Seven">
+
+  <div class="dir-header">
+    <div>
+      <div class="dir-mono">DIRECTION A · IA</div>
+      <h2 class="dir-title">Index of Seven.</h2>
+    </div>
+    <div class="dir-note">
+      Homepage = a typed table of the 7 featured areas. Each card is a doorway, with the latest two pieces underneath. Maple-Scholar crispness, Tekrogen restraint.
+    </div>
+  </div>
+
+  <div class="frame">
+    <div class="frame-bar">
+      <div class="frame-dots"><span></span><span></span><span></span></div>
+      <div class="frame-url"><span class="lock">⌁</span>tekrogen.org</div>
+      <div style="width:36px"></div>
+    </div>
+
+    <header class="site-head">
+      <div class="site-mark">
+        <span class="mark-glyph">T</span>
+        <span class="wordmark">TEKROGEN</span>
+      </div>
+      <nav class="site-nav">
+        <span class="is-active">Library</span>
+        <span>Field notes</span>
+        <span>About</span>
+        <span>Members</span>
+      </nav>
+      <button class="site-cta">Subscribe</button>
+    </header>
+
+    <section class="A-hero">
+      <div>
+        <h1>Real solutions.<br>Built, proven, <em>ready to use.</em></h1>
+        <p class="dek">Real solutions. Built, proven, ready to use. Four wings, one pursuit — across .org, .studio, .com, .net we build it, prove it, and publish what we learned.</p>
+      </div>
+      <div class="right">
+        <div class="meta-block"><strong>47</strong> field notes · since 2024</div>
+        <div class="meta-block"><strong>7</strong> kinds of work</div>
+        <div class="meta-block"><strong>1,820</strong> members</div>
+      </div>
+    </section>
+
+    <div class="wf-inner">
+
+      <!-- 7-card grid: 3-3-1 layout -->
+      <div class="grid7">
+        <div class="cell">
+          <article class="type-card feature">
+            <div class="head">
+              <div class="num">01 · FEATURED</div>
+              <div class="glyph" style="background:#0e1116;color:#1fd5da;border-color:#0e1116">★</div>
+            </div>
+            <div class="body">
+              <h3>Use Case Study</h3>
+              <p>Real engagements — what we shipped and what we learned doing it.</p>
+            </div>
+            <div class="recent">
+              <div class="item"><span class="n">04</span><span class="t">Migrating a 12-year archive off WordPress in a weekend</span></div>
+              <div class="item"><span class="n">03</span><span class="t">Single-mark publication system across four entities</span></div>
+            </div>
+            <div class="footer">
+              <span class="count">14 STUDIES</span>
+              <span class="arrow">→</span>
+            </div>
+          </article>
+        </div>
+        <div class="cell">
+          <article class="type-card">
+            <div class="head">
+              <div class="num">02</div>
+              <div class="glyph">⊞</div>
+            </div>
+            <div class="body">
+              <h3>SaaS Evaluation</h3>
+              <p>Side-by-side, head-to-head, what-it-actually-costs reviews.</p>
+            </div>
+            <div class="recent">
+              <div class="item"><span class="n">11</span><span class="t">Ghost vs. Substack vs. Beehiiv — for technical writing</span></div>
+              <div class="item"><span class="n">10</span><span class="t">Linear vs. Height — three months in</span></div>
+            </div>
+            <div class="footer">
+              <span class="count">9 EVALUATIONS</span>
+              <span class="arrow">→</span>
+            </div>
+          </article>
+        </div>
+        <div class="cell">
+          <article class="type-card">
+            <div class="head">
+              <div class="num">03</div>
+              <div class="glyph">▣</div>
+            </div>
+            <div class="body">
+              <h3>Tech Rating</h3>
+              <p>Scored against a fixed rubric. Versioned. Re-rated when it changes.</p>
+            </div>
+            <div class="recent">
+              <div class="item"><span class="n">22</span><span class="t">Cloudflare Workers · 8.4 / 10</span></div>
+              <div class="item"><span class="n">21</span><span class="t">Postgres 17 · 9.1 / 10</span></div>
+            </div>
+            <div class="footer">
+              <span class="count">31 RATINGS</span>
+              <span class="arrow">→</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="cell">
+          <article class="type-card">
+            <div class="head">
+              <div class="num">04</div>
+              <div class="glyph">◇</div>
+            </div>
+            <div class="body">
+              <h3>Product Page</h3>
+              <p>Things we built that you can buy or use today.</p>
+            </div>
+            <div class="recent">
+              <div class="item"><span class="n">06</span><span class="t">Spine — single-mark publishing engine</span></div>
+              <div class="item"><span class="n">05</span><span class="t">Facet — entity router for Ghost</span></div>
+            </div>
+            <div class="footer">
+              <span class="count">5 PRODUCTS</span>
+              <span class="arrow">→</span>
+            </div>
+          </article>
+        </div>
+        <div class="cell">
+          <article class="type-card">
+            <div class="head">
+              <div class="num">05</div>
+              <div class="glyph">◐</div>
+            </div>
+            <div class="body">
+              <h3>Demo / POC</h3>
+              <p>Working proofs. Open the demo. Read what it taught us.</p>
+            </div>
+            <div class="recent">
+              <div class="item"><span class="n">09</span><span class="t">Realtime cursor presence in a single-page Ghost theme</span></div>
+              <div class="item"><span class="n">08</span><span class="t">Auth-free comment thread, ten lines of JS</span></div>
+            </div>
+            <div class="footer">
+              <span class="count">12 DEMOS</span>
+              <span class="arrow">→</span>
+            </div>
+          </article>
+        </div>
+        <div class="cell">
+          <article class="type-card">
+            <div class="head">
+              <div class="num">06</div>
+              <div class="glyph">≣</div>
+            </div>
+            <div class="body">
+              <h3>Documentation</h3>
+              <p>How to install, configure, and operate every piece we publish.</p>
+            </div>
+            <div class="recent">
+              <div class="item"><span class="n">D7</span><span class="t">Spine · CLI reference</span></div>
+              <div class="item"><span class="n">D6</span><span class="t">Facet · entity routing rules</span></div>
+            </div>
+            <div class="footer">
+              <span class="count">28 PAGES</span>
+              <span class="arrow">→</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="cell full">
+          <article class="type-card" style="flex-direction:row; min-height:170px;">
+            <div style="flex:1; display:flex; flex-direction:column;">
+              <div class="head">
+                <div class="num">07 · LONGFORM</div>
+                <div class="glyph">¶</div>
+              </div>
+              <div class="body">
+                <h3>Research Article</h3>
+                <p>Citation-grade write-ups. Abstract, method, results, discussion, references — the long form of everything we publish.</p>
+              </div>
+            </div>
+            <div style="flex:1.2; border-left:1.5px dashed var(--ink-faint); padding:16px 18px; display:flex; flex-direction:column; gap:8px;">
+              <div class="eyebrow">RECENT</div>
+              <div class="item" style="display:flex;gap:10px;font-family:'Patrick Hand';font-size:15px;">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-faint);letter-spacing:.1em;">R12</span>
+                <span>Single-mark identity systems across federated entity portfolios — a four-wing case</span>
+              </div>
+              <div class="item" style="display:flex;gap:10px;font-family:'Patrick Hand';font-size:15px;">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-faint);letter-spacing:.1em;">R11</span>
+                <span>Failure modes in technical-publication theming — three years of Ghost migrations</span>
+              </div>
+              <div class="item" style="display:flex;gap:10px;font-family:'Patrick Hand';font-size:15px;">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-faint);letter-spacing:.1em;">R10</span>
+                <span>What "ready to use" means when the audience is one engineer</span>
+              </div>
+            </div>
+            <div style="width:170px;display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;padding:16px 18px;border-left:1.5px dashed var(--ink-faint);">
+              <span class="eyebrow"><span class="pill accent">PEER REVIEW</span></span>
+              <div style="text-align:right">
+                <div style="font-family:'Caveat',cursive;font-size:38px;line-height:1;color:var(--ink);">12</div>
+                <div class="eyebrow">ARTICLES</div>
+              </div>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);">→</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Most recent strip below grid -->
+      <div class="dir-mono" style="margin:24px 0 10px;">RECENT, ACROSS ALL SEVEN ↓</div>
+      <div class="A-recent">
+        <article class="mock-card">
+          <div class="meta-row"><span>TECH RATING</span><span class="dot"></span><span>MAY 14</span><span class="dot"></span><span>6 MIN</span></div>
+          <h4 class="title-m">Postgres 17, three months in — what changed and what didn't</h4>
+          <div class="lines"><div class="line w90"></div><div class="line w80"></div></div>
+        </article>
+        <article class="mock-card">
+          <div class="meta-row"><span>SaaS EVAL</span><span class="dot"></span><span>MAY 10</span><span class="dot"></span><span>11 MIN</span></div>
+          <h4 class="title-m">Ghost vs. Substack vs. Beehiiv — for technical writing in 2026</h4>
+          <div class="lines"><div class="line w90"></div><div class="line w70"></div></div>
+        </article>
+        <article class="mock-card">
+          <div class="meta-row"><span>CASE STUDY</span><span class="dot"></span><span>MAY 04</span><span class="dot"></span><span>9 MIN</span></div>
+          <h4 class="title-m">Migrating a 12-year archive off WordPress in a weekend</h4>
+          <div class="lines"><div class="line w90"></div><div class="line w80"></div></div>
+        </article>
+      </div>
+
+    </div><!-- /.wf-inner -->
+
+    <!-- Footer (shared) -->
+    <footer class="site-foot">
+      <div>
+        <div class="mark">
+          <span class="mark-glyph">T</span>
+          <span class="wordmark">TEKROGEN</span>
+        </div>
+        <div class="tag">Real solutions. Built, proven, ready to use.</div>
+        <p style="font-family:'Patrick Hand',sans-serif;font-size:14px;color:var(--ink-soft);max-width:300px;margin-top:8px;">A four-wing practice. One mark. Same pursuit.</p>
+      </div>
+      <div>
+        <h5>FOUR WINGS</h5>
+        <div class="wings">
+          <div class="wing"><span class="sw" style="background:#446e88"></span>tekrogen.org</div>
+          <div class="wing"><span class="sw" style="background:#6491ac"></span>tekrogen.studio</div>
+          <div class="wing"><span class="sw" style="background:#0db4b9"></span>tekrogen.com</div>
+          <div class="wing"><span class="sw" style="background:#7edba5"></span>tekrogen.net</div>
+        </div>
+      </div>
+      <div>
+        <h5>LIBRARY</h5>
+        <ul>
+          <li>Case studies</li>
+          <li>SaaS evaluations</li>
+          <li>Tech ratings</li>
+          <li>Products</li>
+          <li>Demos / POCs</li>
+          <li>Documentation</li>
+          <li>Research</li>
+        </ul>
+      </div>
+      <div>
+        <h5>STAY IN TOUCH</h5>
+        <ul>
+          <li>RSS</li>
+          <li>Newsletter</li>
+          <li>Members</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </footer>
+  </div><!-- /.frame -->
+
+  <!-- ===== Post detail mini ===== -->
+  <div class="detail-section">
+    <div class="head">
+      <h3>↳ What a Tech-Rating detail page looks like in direction A</h3>
+      <span class="mono">DETAIL · SAMPLE</span>
+    </div>
+    <div class="detail-grid">
+      <div class="detail-mock">
+        <div class="stamp"><span>TECH RATING · 22</span><span>MAY 14</span></div>
+        <div class="content">
+          <span class="eyebrow"><span class="pill">CLOUD INFRA</span></span>
+          <h4>Cloudflare Workers — three months in production</h4>
+          <div class="lines"><div class="line w90"></div><div class="line w80"></div><div class="line w70"></div></div>
+          <div class="scorecard">
+            <div class="big">8.4 / 10</div>
+            <div>Reliability</div><div>9 / 10</div>
+            <div>DX</div><div>8 / 10</div>
+            <div>Pricing</div><div>7 / 10</div>
+            <div>Docs</div><div>9 / 10</div>
+          </div>
+        </div>
+      </div>
+      <div class="detail-mock">
+        <div class="stamp"><span>SaaS EVAL · 11</span><span>MAY 10</span></div>
+        <div class="content">
+          <span class="eyebrow"><span class="pill">TOOLS</span></span>
+          <h4>Ghost vs. Substack vs. Beehiiv — for technical writing</h4>
+          <div class="lines"><div class="line w90"></div><div class="line w80"></div></div>
+          <div class="hatch no-label" style="min-height:90px"></div>
+          <div class="meta-row"><span>COMPARISON · 11 CRITERIA</span></div>
+        </div>
+      </div>
+      <div class="detail-mock">
+        <div class="stamp"><span>DOCUMENTATION · D7</span><span>UPDATED MAY 12</span></div>
+        <div class="content">
+          <h4>Spine · CLI reference</h4>
+          <div class="toc">
+            <div class="h">ON THIS PAGE</div>
+            <div>· Installation</div>
+            <div>· spine init</div>
+            <div>· spine deploy</div>
+            <div>· spine entity</div>
+            <div>· spine drift</div>
+          </div>
+          <div class="lines"><div class="line w90"></div><div class="line w70"></div><div class="line w80"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============== DIRECTION B : EDITORIAL FEED ============== -->
+<section class="direction" data-dir="B" data-screen-label="B — Editorial Feed">
+
+  <div class="dir-header">
+    <div>
+      <div class="dir-mono">DIRECTION B · IA</div>
+      <h2 class="dir-title">Editorial Feed.</h2>
+    </div>
+    <div class="dir-note">
+      One chronological river. The seven types are filters at the top of the feed, not the IA itself. A featured note leads; everything else falls below in a tight list.
+    </div>
+  </div>
+
+  <div class="frame">
+    <div class="frame-bar">
+      <div class="frame-dots"><span></span><span></span><span></span></div>
+      <div class="frame-url"><span class="lock">⌁</span>tekrogen.org</div>
+      <div style="width:36px"></div>
+    </div>
+
+    <header class="site-head">
+      <div class="site-mark">
+        <span class="mark-glyph">T</span>
+        <span class="wordmark">TEKROGEN</span>
+      </div>
+      <nav class="site-nav">
+        <span class="is-active">Notes</span>
+        <span>About</span>
+        <span>RSS</span>
+        <span>Members</span>
+      </nav>
+      <button class="site-cta">Subscribe</button>
+    </header>
+
+    <!-- type chips as filters -->
+    <div class="B-chips">
+      <span class="chip is-on">All <span class="count">47</span></span>
+      <span class="chip">Case study <span class="count">14</span></span>
+      <span class="chip">SaaS eval <span class="count">9</span></span>
+      <span class="chip">Tech rating <span class="count">31</span></span>
+      <span class="chip">Product <span class="count">5</span></span>
+      <span class="chip">Demo / POC <span class="count">12</span></span>
+      <span class="chip">Documentation <span class="count">28</span></span>
+      <span class="chip">Research <span class="count">12</span></span>
+    </div>
+
+    <section class="B-hero">
+      <article class="feature">
+        <div class="hatch img"></div>
+        <div class="meta">
+          <div class="meta-row">
+            <span style="color:var(--accent)">FEATURED · CASE STUDY</span>
+            <span class="dot"></span><span>FIELD NOTE 04</span>
+            <span class="dot"></span><span>MAY 14, 2026</span>
+            <span class="dot"></span><span>8 MIN</span>
+          </div>
+          <h2>Four wings, one pursuit: how one mark carries .org, .studio, .com, and .net</h2>
+          <p class="dek">Field notes on running a four-entity practice from a single mark — we build it, prove it, and publish what we learned, same pursuit across all four wings.</p>
+          <div class="meta-row">
+            <span>BY R. DOLCE</span>
+            <span class="dot"></span><span>3 RESPONSES</span>
+            <span class="dot"></span><span>READ →</span>
+          </div>
+        </div>
+      </article>
+
+      <aside>
+        <div class="mock-card small-card">
+          <div class="meta-row"><span style="color:var(--accent)">TECH RATING</span><span class="dot"></span><span>9.1 / 10</span></div>
+          <h4>Postgres 17 — what changed</h4>
+          <div class="lines"><div class="line w90"></div><div class="line w70"></div></div>
+        </div>
+        <div class="mock-card small-card">
+          <div class="meta-row"><span style="color:var(--accent)">DEMO / POC</span><span class="dot"></span><span>OPEN ↗</span></div>
+          <h4>Realtime cursor presence — 80 lines</h4>
+          <div class="lines"><div class="line w90"></div><div class="line w80"></div></div>
+        </div>
+        <div class="mock-card small-card">
+          <div class="meta-row"><span style="color:var(--accent)">PRODUCT</span><span class="dot"></span><span>v0.4</span></div>
+          <h4>Spine — single-mark publishing</h4>
+          <div class="lines"><div class="line w90"></div><div class="line w70"></div></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- feed grid -->
+    <section class="B-feed">
+      <div class="B-list">
+        <div class="row">
+          <div class="num">FN 03 · 05/10</div>
+          <div>
+            <span class="type-pill">SaaS Evaluation</span>
+            <h3>Ghost vs. Substack vs. Beehiiv — for technical writing in 2026</h3>
+            <div class="lines"><div class="line w90"></div><div class="line w70"></div></div>
+          </div>
+          <div class="meta-row" style="justify-content:flex-end"><span>11 MIN</span></div>
+        </div>
+        <div class="row">
+          <div class="num">FN 02 · 05/04</div>
+          <div>
+            <span class="type-pill">Case Study</span>
+            <h3>Migrating a 12-year archive off WordPress in a weekend</h3>
+            <div class="lines"><div class="line w90"></div><div class="line w80"></div></div>
+          </div>
+          <div class="meta-row" style="justify-content:flex-end"><span>9 MIN</span></div>
+        </div>
+        <div class="row">
+          <div class="num">FN 01 · 04/28</div>
+          <div>
+            <span class="type-pill">Research Article</span>
+            <h3>Single-mark identity systems across federated entity portfolios</h3>
+            <div class="lines"><div class="line w90"></div><div class="line w70"></div></div>
+          </div>
+          <div class="meta-row" style="justify-content:flex-end"><span>22 MIN</span></div>
+        </div>
+        <div class="row">
+          <div class="num">FN 00 · 04/22</div>
+          <div>
+            <span class="type-pill">Tech Rating</span>
+            <h3>Cloudflare Workers — three months in production · 8.4 / 10</h3>
+            <div class="lines"><div class="line w90"></div><div class="line w70"></div></div>
+          </div>
+          <div class="meta-row" style="justify-content:flex-end"><span>6 MIN</span></div>
+        </div>
+        <div class="row">
+          <div class="num">D7 · 04/18</div>
+          <div>
+            <span class="type-pill">Documentation</span>
+            <h3>Spine · CLI reference (v0.4)</h3>
+            <div class="lines"><div class="line w90"></div><div class="line w70"></div></div>
+          </div>
+          <div class="meta-row" style="justify-content:flex-end"><span>UPDATED</span></div>
+        </div>
+        <div class="row">
+          <div class="num">POC 09 · 04/12</div>
+          <div>
+            <span class="type-pill">Demo / POC</span>
+            <h3>Auth-free comment thread, ten lines of JS</h3>
+            <div class="lines"><div class="line w90"></div><div class="line w70"></div></div>
+          </div>
+          <div class="meta-row" style="justify-content:flex-end"><span>OPEN ↗</span></div>
+        </div>
+      </div>
+
+      <aside class="B-aside" style="display:flex;flex-direction:column;gap:14px">
+        <div class="mock-card ad">
+          <div class="meta-row"><span>MEMBERS</span></div>
+          <h4 class="title-s">Get every field note in your inbox.</h4>
+          <div class="lines"><div class="line w90"></div><div class="line w70"></div></div>
+          <button class="site-cta" style="align-self:flex-start;margin-top:8px">Subscribe</button>
+        </div>
+        <div class="mock-card ad">
+          <div class="meta-row"><span>ABOUT</span></div>
+          <h4 class="title-s">A four-wing practice.</h4>
+          <div class="lines"><div class="line w90"></div><div class="line w80"></div><div class="line w60"></div></div>
+        </div>
+        <div class="mock-card ad">
+          <div class="meta-row"><span>SERIES</span></div>
+          <h4 class="title-s">Currently writing</h4>
+          <div class="lines"><div class="line w70"></div></div>
+          <div style="font-family:'Caveat',cursive;font-size:18px;color:var(--accent);margin-top:4px">"How to publish from a single mark"</div>
+          <div class="meta-row"><span>3 / 7 PUBLISHED</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- footer -->
+    <footer class="site-foot">
+      <div>
+        <div class="mark"><span class="mark-glyph">T</span><span class="wordmark">TEKROGEN</span></div>
+        <div class="tag">Real solutions. Built, proven, ready to use.</div>
+      </div>
+      <div>
+        <h5>FILTER</h5>
+        <ul>
+          <li>All notes</li>
+          <li>By type</li>
+          <li>By series</li>
+          <li>By year</li>
+        </ul>
+      </div>
+      <div>
+        <h5>FOUR WINGS</h5>
+        <div class="wings">
+          <div class="wing"><span class="sw" style="background:#446e88"></span>.org</div>
+          <div class="wing"><span class="sw" style="background:#6491ac"></span>.studio</div>
+          <div class="wing"><span class="sw" style="background:#0db4b9"></span>.com</div>
+          <div class="wing"><span class="sw" style="background:#7edba5"></span>.net</div>
+        </div>
+      </div>
+      <div>
+        <h5>SUBSCRIBE</h5>
+        <ul>
+          <li>RSS</li>
+          <li>Newsletter</li>
+          <li>Members</li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Post-detail mini for direction B -->
+  <div class="detail-section">
+    <div class="head">
+      <h3>↳ Detail templates in direction B (editorial feel)</h3>
+      <span class="mono">DETAIL · SAMPLE</span>
+    </div>
+    <div class="detail-grid">
+      <div class="detail-mock">
+        <div class="stamp"><span>RESEARCH ARTICLE · R12</span><span>APR 28</span></div>
+        <div class="content">
+          <span class="eyebrow"><span class="pill">22 MIN · PEER REVIEW</span></span>
+          <h4>Single-mark identity systems across federated entity portfolios</h4>
+          <div style="font-family:'Patrick Hand';font-style:italic;color:var(--ink-soft);font-size:15px;line-height:1.5">"Field notes on running a four-entity practice from a single mark — same pursuit across all four wings."</div>
+          <div class="toc">
+            <div class="h">SECTIONS</div>
+            <div>· Abstract</div>
+            <div>· Method</div>
+            <div>· Results</div>
+            <div>· Discussion</div>
+            <div>· References (24)</div>
+          </div>
+        </div>
+      </div>
+      <div class="detail-mock">
+        <div class="stamp"><span>PRODUCT · 06</span><span>v0.4 · MAY 14</span></div>
+        <div class="content">
+          <h4>Spine — single-mark publishing engine</h4>
+          <div class="hatch no-label" style="min-height:80px"></div>
+          <div class="lines"><div class="line w90"></div><div class="line w80"></div></div>
+          <div style="display:flex;gap:8px;margin-top:auto">
+            <button class="site-cta">Try free</button>
+            <button class="site-cta" style="background:transparent;color:var(--ink)">Docs ↗</button>
+          </div>
+        </div>
+      </div>
+      <div class="detail-mock">
+        <div class="stamp"><span>DEMO / POC · 09</span><span>MAY 10</span></div>
+        <div class="content">
+          <h4>Realtime cursor presence in a single-page Ghost theme</h4>
+          <div class="hatch" style="min-height:130px"></div>
+          <div class="meta-row"><span>LIVE DEMO</span><span class="dot"></span><span>SOURCE ↗</span><span class="dot"></span><span>80 LINES</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============== DIRECTION C : LIBRARY HUB ============== -->
+<section class="direction" data-dir="C" data-screen-label="C — Library Hub">
+
+  <div class="dir-header">
+    <div>
+      <div class="dir-mono">DIRECTION C · IA</div>
+      <h2 class="dir-title">Library Hub.</h2>
+    </div>
+    <div class="dir-note">
+      Homepage is a curated lane per content type — the editor decides what each lane shows. Density per lane matches the kind of work. Most magazine-like of the three.
+    </div>
+  </div>
+
+  <div class="frame">
+    <div class="frame-bar">
+      <div class="frame-dots"><span></span><span></span><span></span></div>
+      <div class="frame-url"><span class="lock">⌁</span>tekrogen.org</div>
+      <div style="width:36px"></div>
+    </div>
+
+    <header class="site-head">
+      <div class="site-mark">
+        <span class="mark-glyph">T</span>
+        <span class="wordmark">TEKROGEN</span>
+      </div>
+      <nav class="site-nav">
+        <span class="is-active">Home</span>
+        <span>Library</span>
+        <span>Research</span>
+        <span>Products</span>
+        <span>About</span>
+      </nav>
+      <button class="site-cta">Subscribe</button>
+    </header>
+
+    <section class="C-hero">
+      <div>
+        <span class="eyebrow"><span class="pill accent">FIELD NOTES · 2026</span></span>
+        <h1 style="margin-top:14px">Real solutions.<br><span class="accent">Built, proven,</span><br>ready to use.</h1>
+        <p>A four-wing practice publishing field notes from research, instruction, and infrastructure. Below: the library, organized by kind of work.</p>
+        <div class="anchors">
+          <span class="a">↓ Case studies</span>
+          <span class="a">↓ SaaS evals</span>
+          <span class="a">↓ Tech ratings</span>
+          <span class="a">↓ Products</span>
+          <span class="a">↓ Demos</span>
+          <span class="a">↓ Docs</span>
+          <span class="a">↓ Research</span>
+        </div>
+      </div>
+      <aside>
+        <span class="eyebrow">MEMBERS</span>
+        <h4>Get the next note in your inbox.</h4>
+        <form onsubmit="event.preventDefault()">
+          <input placeholder="you@domain.com"/>
+          <button type="submit">→</button>
+        </form>
+        <div style="font-family:'Caveat',cursive;font-size:16px;color:var(--ink-soft)">No spam — typically one note a week.</div>
+      </aside>
+    </section>
+
+    <!-- Lane 1 : Case Studies (big editorial 1+2) -->
+    <section class="lane">
+      <div class="lane-head">
+        <div class="l"><span class="num">01</span><h2>Use Case Studies</h2></div>
+        <span class="blurb">Real engagements — what we shipped and what we learned doing it.</span>
+        <span class="all">See all 14 →</span>
+      </div>
+      <div class="lane-row two">
+        <article class="lane-card" style="grid-row: span 2">
+          <div class="hatch img" style="min-height:200px"></div>
+          <span class="stamp">CASE STUDY · 04</span>
+          <div class="body">
+            <h4>Migrating a 12-year WordPress archive off the platform in a weekend</h4>
+            <p>A small team, a big legacy database, and a deadline measured in coffee. Here's what the migration tooling looked like and what we'd do differently.</p>
+            <div class="meta-row" style="margin-top:auto"><span>MAY 04</span><span class="dot"></span><span>9 MIN</span></div>
+          </div>
+        </article>
+        <article class="lane-card">
+          <div class="body">
+            <span class="eyebrow">CASE 03</span>
+            <h4>Single-mark publication system across four entities</h4>
+            <div class="lines"><div class="line w90"></div><div class="line w70"></div></div>
+            <div class="meta-row" style="margin-top:auto"><span>APR 30</span><span class="dot"></span><span>14 MIN</span></div>
+          </div>
+        </article>
+        <article class="lane-card">
+          <div class="body">
+            <span class="eyebrow">CASE 02</span>
+            <h4>Replacing Mailchimp with a 200-line worker</h4>
+            <div class="lines"><div class="line w90"></div><div class="line w70"></div></div>
+            <div class="meta-row" style="margin-top:auto"><span>APR 22</span><span class="dot"></span><span>7 MIN</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Lane 2 : SaaS Evaluations + Tech Ratings (4-up dense) -->
+    <section class="lane">
+      <div class="lane-head">
+        <div class="l"><span class="num">02 · 03</span><h2>Evaluations & Ratings</h2></div>
+        <span class="blurb">Side-by-side comparisons + scored ratings against our fixed rubric.</span>
+        <span class="all">See all 40 →</span>
+      </div>
+      <div class="lane-row four">
+        <article class="lane-card">
+          <div class="body">
+            <span class="eyebrow">SaaS EVAL · 11</span>
+            <h4>Ghost vs. Substack vs. Beehiiv</h4>
+            <p>For technical writing in 2026.</p>
+            <div class="rating"><div class="bar"><i style="width:78%"></i></div><div class="score">7.8</div></div>
+          </div>
+        </article>
+        <article class="lane-card">
+          <div class="body">
+            <span class="eyebrow">TECH RATING · 22</span>
+            <h4>Cloudflare Workers</h4>
+            <p>Three months in production.</p>
+            <div class="rating"><div class="bar"><i style="width:84%"></i></div><div class="score">8.4</div></div>
+          </div>
+        </article>
+        <article class="lane-card">
+          <div class="body">
+            <span class="eyebrow">TECH RATING · 21</span>
+            <h4>Postgres 17</h4>
+            <p>What changed and what didn't.</p>
+            <div class="rating"><div class="bar"><i style="width:91%"></i></div><div class="score">9.1</div></div>
+          </div>
+        </article>
+        <article class="lane-card">
+          <div class="body">
+            <span class="eyebrow">SaaS EVAL · 10</span>
+            <h4>Linear vs. Height</h4>
+            <p>Three months in, here's what stuck.</p>
+            <div class="rating"><div class="bar"><i style="width:72%"></i></div><div class="score">7.2</div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Lane 3 : Products + Demos (mixed row) -->
+    <section class="lane">
+      <div class="lane-head">
+        <div class="l"><span class="num">04 · 05</span><h2>Products & Demos</h2></div>
+        <span class="blurb">Things we built that you can use today + working proofs.</span>
+        <span class="all">See all 17 →</span>
+      </div>
+      <div class="lane-row">
+        <article class="lane-card">
+          <div class="hatch img" style="min-height:120px"></div>
+          <span class="stamp">PRODUCT</span>
+          <div class="body">
+            <h4>Spine — single-mark publishing engine</h4>
+            <p>v0.4 · MIT license · free for non-commercial.</p>
+            <div class="meta-row" style="margin-top:auto"><span>TRY FREE</span><span class="dot"></span><span>DOCS ↗</span></div>
+          </div>
+        </article>
+        <article class="lane-card">
+          <div class="hatch img" style="min-height:120px"></div>
+          <span class="stamp">PRODUCT</span>
+          <div class="body">
+            <h4>Facet — entity router for Ghost</h4>
+            <p>Drop-in, four-domain capable.</p>
+            <div class="meta-row" style="margin-top:auto"><span>INSTALL</span><span class="dot"></span><span>SOURCE ↗</span></div>
+          </div>
+        </article>
+        <article class="lane-card">
+          <div class="hatch img" style="min-height:120px"></div>
+          <span class="stamp">DEMO</span>
+          <div class="body">
+            <h4>Realtime cursor presence — 80 lines</h4>
+            <p>Open the demo. Read what it taught us.</p>
+            <div class="meta-row" style="margin-top:auto"><span>OPEN ↗</span><span class="dot"></span><span>POC 09</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Lane 4 : Docs + Research (list + card combo) -->
+    <section class="lane">
+      <div class="lane-head">
+        <div class="l"><span class="num">06 · 07</span><h2>Documentation & Research</h2></div>
+        <span class="blurb">Operate it (docs) or read why we built it the way we did (research).</span>
+        <span class="all">See all 40 →</span>
+      </div>
+      <div class="lane-row two">
+        <article class="lane-card">
+          <div class="body" style="padding:18px 20px">
+            <span class="eyebrow">RESEARCH · R12</span>
+            <h4 style="font-size:22px">Single-mark identity systems across federated entity portfolios</h4>
+            <p style="font-family:'Patrick Hand',sans-serif;font-style:italic;font-size:15px;color:var(--ink-soft);">A four-wing case. 24 references.</p>
+            <div class="meta-row" style="margin-top:auto"><span>22 MIN</span><span class="dot"></span><span>PEER REVIEW</span><span class="dot"></span><span>DOI</span></div>
+          </div>
+        </article>
+        <article class="lane-card">
+          <div class="body" style="padding:14px 16px">
+            <span class="eyebrow">DOCUMENTATION</span>
+            <h4 style="font-size:17px">Spine · CLI reference</h4>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);display:flex;flex-direction:column;gap:4px;margin-top:6px">
+              <div>· spine init</div>
+              <div>· spine deploy</div>
+              <div>· spine entity add</div>
+              <div>· spine drift</div>
+            </div>
+            <div class="meta-row" style="margin-top:auto"><span>UPDATED MAY 12</span></div>
+          </div>
+        </article>
+        <article class="lane-card">
+          <div class="body" style="padding:14px 16px">
+            <span class="eyebrow">DOCUMENTATION</span>
+            <h4 style="font-size:17px">Facet · routing rules</h4>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);display:flex;flex-direction:column;gap:4px;margin-top:6px">
+              <div>· Entity discovery</div>
+              <div>· Wing color resolution</div>
+              <div>· OG card variants</div>
+              <div>· Fallback behavior</div>
+            </div>
+            <div class="meta-row" style="margin-top:auto"><span>UPDATED MAY 09</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="site-foot">
+      <div>
+        <div class="mark"><span class="mark-glyph">T</span><span class="wordmark">TEKROGEN</span></div>
+        <div class="tag">Real solutions. Built, proven, ready to use.</div>
+        <p style="font-family:'Patrick Hand',sans-serif;font-size:14px;color:var(--ink-soft);max-width:300px;margin-top:8px;">A four-wing practice. One mark. Same pursuit.</p>
+      </div>
+      <div>
+        <h5>FOUR WINGS</h5>
+        <div class="wings">
+          <div class="wing"><span class="sw" style="background:#446e88"></span>tekrogen.org</div>
+          <div class="wing"><span class="sw" style="background:#6491ac"></span>tekrogen.studio</div>
+          <div class="wing"><span class="sw" style="background:#0db4b9"></span>tekrogen.com</div>
+          <div class="wing"><span class="sw" style="background:#7edba5"></span>tekrogen.net</div>
+        </div>
+      </div>
+      <div>
+        <h5>BROWSE</h5>
+        <ul>
+          <li>Case studies</li>
+          <li>SaaS evaluations</li>
+          <li>Tech ratings</li>
+          <li>Products</li>
+          <li>Demos / POCs</li>
+          <li>Documentation</li>
+          <li>Research</li>
+        </ul>
+      </div>
+      <div>
+        <h5>STAY IN TOUCH</h5>
+        <ul>
+          <li>RSS</li>
+          <li>Newsletter</li>
+          <li>Members</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Post-detail mini for direction C -->
+  <div class="detail-section">
+    <div class="head">
+      <h3>↳ Detail templates in direction C (lane-style sidebar)</h3>
+      <span class="mono">DETAIL · SAMPLE</span>
+    </div>
+    <div class="detail-grid">
+      <div class="detail-mock">
+        <div class="stamp"><span>USE CASE STUDY · 04</span><span>MAY 04</span></div>
+        <div class="content">
+          <span class="eyebrow"><span class="pill">9 MIN · OUTCOMES</span></span>
+          <h4>Migrating a 12-year archive off WordPress</h4>
+          <div class="scorecard">
+            <div>Pages migrated</div><div>1,840</div>
+            <div>Downtime</div><div>0 min</div>
+            <div>Hours invested</div><div>27</div>
+            <div>Cost change</div><div>-71%</div>
+          </div>
+          <div class="lines"><div class="line w90"></div><div class="line w70"></div></div>
+        </div>
+      </div>
+      <div class="detail-mock">
+        <div class="stamp"><span>SaaS EVAL · 11</span><span>MAY 10</span></div>
+        <div class="content">
+          <h4>Ghost vs. Substack vs. Beehiiv</h4>
+          <div class="scorecard">
+            <div>Editorial control</div><div>G · S · B</div>
+            <div>Pricing tier</div><div>G · S · B</div>
+            <div>Custom theme</div><div>G · S · B</div>
+            <div>Code embeds</div><div>G · S · B</div>
+            <div>Newsletter UX</div><div>G · S · B</div>
+          </div>
+          <div class="meta-row"><span>11 CRITERIA · WEIGHTED</span></div>
+        </div>
+      </div>
+      <div class="detail-mock">
+        <div class="stamp"><span>DEMO · POC 09</span><span>OPEN ↗</span></div>
+        <div class="content">
+          <h4>Realtime cursor presence in a single-page Ghost theme</h4>
+          <div class="hatch" style="min-height:130px"></div>
+          <div class="meta-row"><span>LIVE</span><span class="dot"></span><span>SOURCE</span><span class="dot"></span><span>80 LINES</span></div>
+          <button class="site-cta" style="align-self:flex-start;margin-top:auto">Open demo ↗</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</div><!-- /.stage -->
+
+<!-- ============== TWEAKS PANEL ============== -->
+<aside class="tweaks" id="tweaks">
+  <h6>Tweaks <button class="close" id="tk-close" aria-label="close">×</button></h6>
+
+  <div class="group">
+    <div class="label">Wing accent</div>
+    <div class="swatches" id="tk-wings">
+      <div class="sw is-on" data-wing="cyan" data-color="#1fd5da" style="background:#1fd5da" title="House cyan">CY</div>
+      <div class="sw" data-wing="org" data-color="#446e88" style="background:#446e88;color:#fff" title=".org">OR</div>
+      <div class="sw" data-wing="studio" data-color="#6491ac" style="background:#6491ac;color:#fff" title=".studio">ST</div>
+      <div class="sw" data-wing="com" data-color="#0db4b9" style="background:#0db4b9" title=".com">CO</div>
+      <div class="sw" data-wing="net" data-color="#7edba5" style="background:#7edba5" title=".net">NE</div>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="label">Density</div>
+    <div class="seg" id="tk-density">
+      <button data-density="spacious">Spacious</button>
+      <button class="is-on" data-density="balanced">Balanced</button>
+      <button data-density="dense">Dense</button>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="label">Surface</div>
+    <div class="seg" id="tk-mode">
+      <button class="is-on" data-mode="paper">Paper (light)</button>
+      <button data-mode="ink">Ink (dark)</button>
+    </div>
+  </div>
+
+  <div class="reveal">Toggle tweaks from the toolbar above.</div>
+</aside>
+
+<script>
+(function(){
+  const stage = document.getElementById('stage');
+  const directions = document.querySelectorAll('.direction');
+  const tabs = document.querySelectorAll('.tab');
+
+  // Tabs
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const d = btn.dataset.dir;
+      tabs.forEach(t => t.setAttribute('aria-selected', t === btn ? 'true' : 'false'));
+      directions.forEach(dir => dir.setAttribute('aria-current', dir.dataset.dir === d ? 'true' : 'false'));
+      window.scrollTo({top:0, behavior:'instant'});
+    });
+  });
+
+  // Tweaks host protocol
+  const panel = document.getElementById('tweaks');
+  function openTweaks(){ panel.classList.add('is-open'); }
+  function closeTweaks(){
+    panel.classList.remove('is-open');
+    try { window.parent.postMessage({type:'__edit_mode_dismissed'}, '*'); } catch(e){}
+  }
+  window.addEventListener('message', (e) => {
+    const t = e.data && e.data.type;
+    if (t === '__activate_edit_mode') openTweaks();
+    if (t === '__deactivate_edit_mode') closeTweaks();
+  });
+  try { window.parent.postMessage({type:'__edit_mode_available'}, '*'); } catch(e){}
+  document.getElementById('tk-close').addEventListener('click', closeTweaks);
+
+  // wing swatches
+  const wings = document.querySelectorAll('#tk-wings .sw');
+  wings.forEach(sw => {
+    sw.addEventListener('click', () => {
+      wings.forEach(s => s.classList.toggle('is-on', s === sw));
+      const c = sw.dataset.color;
+      document.documentElement.style.setProperty('--accent', c);
+      // pick readable on-color
+      const dark = ['#446e88','#6491ac'].includes(c);
+      document.documentElement.style.setProperty('--accent-ink', dark ? '#fff' : '#0e1116');
+    });
+  });
+
+  // density
+  const dens = document.querySelectorAll('#tk-density button');
+  dens.forEach(b => {
+    b.addEventListener('click', () => {
+      dens.forEach(x => x.classList.toggle('is-on', x === b));
+      stage.classList.remove('density-spacious','density-balanced','density-dense');
+      stage.classList.add('density-' + b.dataset.density);
+    });
+  });
+  stage.classList.add('density-balanced');
+
+  // mode
+  const modes = document.querySelectorAll('#tk-mode button');
+  modes.forEach(b => {
+    b.addEventListener('click', () => {
+      modes.forEach(x => x.classList.toggle('is-on', x === b));
+      stage.classList.toggle('is-dark', b.dataset.mode === 'ink');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
