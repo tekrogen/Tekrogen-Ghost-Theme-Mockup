@@ -6,6 +6,12 @@ four-entity practice ("four wings, one pursuit") publishing under a single mark 
 types**: Use Case Study, SaaS Evaluation, Tech Rating, Product Page, Demo / POC,
 Documentation, and Research Article.
 
+**Author:** @tekrogen
+**Inputs:**
+- Github: `https://github.com/tekrogen/Tekrogen-Ghost-Theme-Mockup`
+- Claude Design Files: `https://claude.ai/design/p/833e0a82-84e5-46f8-b26f-a8a57f308a23`
+- Tekrogen Design System: `https://github.com/tekrogen/Tekrogen-Brand-Design-System`
+
 ## Purpose
 
 These files explore and lock the information architecture and visual design for the
@@ -13,16 +19,21 @@ theme's key templates *before* implementation. Each mockup presents several cand
 **directions** as tabs so they can be compared side by side, with one direction marked
 **LOCKED** as the chosen path.
 
-## Templates explored (the four directions)
+## Screens explored (the four directions)
 
-| Tab | Template | Route | Notes |
-|-----|----------|-------|-------|
-| **B** | Homepage — *Editorial Feed* | `/` | **LOCKED.** Chronological river: a featured note on top, the rest in a numbered list; the 7 types live in a *Topics* dropdown. |
-| **C** | Topic page — *Library Hub* | `/topics/:slug` | Landing page after picking a topic; featured note + curated lanes of related work. |
-| **A** | Library — *Index of Seven* | `/library` | Full library: a uniform grid of the 7 content types, each a doorway to its recent items. |
-| **D** | Post details — *Post templates* | `/:slug` | Per-type article templates (scored ratings, comparison tables, product CTAs, etc.). |
+The review harness presents four candidate directions as tabs, in this order. One is
+marked **LOCKED** as the chosen path. (Internally these still route via `data-dir`
+keys A–D; the user-facing labels carry no prefix.)
 
-A built-in **Paper / Ink** surface toggle previews each direction in light and dark modes.
+| Screen | Template | Route | Notes |
+|--------|----------|-------|-------|
+| **Home Page** | Editorial Feed | `/` | **LOCKED.** Chronological river: a featured note on top, the rest in a numbered list; the 7 types live in a *Topics* dropdown. |
+| **Topic Page** | Library Hub | `/topics/:slug` | Landing page after picking a topic; featured note + curated lanes of related work. |
+| **Library Page** | Index of Seven | `/library` | Full library: a uniform grid of the 7 content types, each a doorway to its recent items. |
+| **Post Details Page** | Post templates | `/:slug` | Per-type article templates (scored ratings, comparison tables, product CTAs, etc.). |
+
+A built-in **Ink / Paper** surface toggle previews each direction in dark and light
+modes; the mockup ships in **Ink** (the brand's primary surface) by default.
 
 ## Files
 
@@ -30,13 +41,17 @@ A built-in **Paper / Ink** surface toggle previews each direction in light and d
 - **`archive/Ghost Theme Mockup v02.html`** — prior version, kept for reference (pre-compliance pass).
 - **`Brand Compliance Checklist.md`** — audit of the mockup against the Tekrogen Brand System, with each item's status.
 - **`archive/Ghost Theme Wireframes.html`** — low-fidelity wireframes used to define the homepage layout. Archived; not an active deliverable.
-- **`tekrogen/`** — brand design tokens consumed by the mockup: `colors_and_type.css` (palette + type scale), fonts, favicon, and the Tekrogen mark/icon SVGs.
-- **`assets/`** — supporting assets.
+- **`colors_and_type.css`** — brand design tokens consumed by the mockup (palette + type scale).
+- **`fonts/`** — self-hosted brand web fonts (Poppins, Manrope, JetBrains Mono).
+- **`scripts/`** — runtime scripts (`palette.js`, `image-slot.js`).
+- **`assets/`** — brand marks, icon, and favicon SVGs plus other supporting assets.
 - **`uploads/`** — user-supplied source material.
+
+> Change history lives in [`CHANGELOG.md`](CHANGELOG.md).
 
 ## Design system
 
-Built on the Tekrogen tokens in `tekrogen/colors_and_type.css`:
+Built on the Tekrogen tokens in `colors_and_type.css`:
 
 - **Type:** Poppins (display/sans), Manrope (body), JetBrains Mono (meta/labels).
 - **Color:** cyan accent (`--tk-cyan`) over ink/paper neutrals, with per-pillar accent
