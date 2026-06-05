@@ -410,6 +410,16 @@ node_modules
 
 # Internal documents
 
-/admin/
+# Ignore everything under /admin/ EXCEPT the features/ directory.
+# (Must ignore the contents `/admin/*` rather than the dir `/admin/`, otherwise
+#  git can't re-include a subdirectory of an excluded parent.)
+/admin/*
+!/admin/features/
+
+# ...but keep raw analysis scratch notes internal (re-excluded after the
+# features/ negation above, so these specific files stay out of the repo).
+/admin/features/proposed/tekrogen-mockup-revamp/_planning-specs/claude-analysis.md
+/admin/features/proposed/tekrogen-mockup-revamp/_planning-specs/ultrathink-analysis.md
+
 /uploads/
 /archive/
