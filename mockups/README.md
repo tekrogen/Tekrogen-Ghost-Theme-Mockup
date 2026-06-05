@@ -10,6 +10,15 @@ The mockup's primary responsibility is helping visitors understand where they ar
 
 This is NOT a generic blog.
 
+
+Additional inputs and resources:
+Tekrogen Ghost Theme Mockups: https://claude.ai/design/p/833e0a82-84e5-46f8-b26f-a8a57f308a23
+Tekrogen Design System: https://claude.ai/design/p/019e1ce2-d0e9-7542-b649-e21f0ca4512e
+Tekrogen Mockup Repo: https://github.com/tekrogen/Tekrogen-Ghost-Theme-Mockup
+Tekrogen Design System Repo: https://github.com/tekrogen/Tekrogen-Brand-Design-System
+Tekrogen New Mockup Build Path: [Create new mockups in this directory](/mockups/README.md)
+Tekrogen Workflow Publishing System: `/Users/martiniquehdolce/dev/tekrogen/Tekrogen-Ghost-theme-mockup/admin/features/proposed/tekrogen-mockup-revamp/_planning-specs`
+
 The theme must visually represent the Tekrogen Business Flywheel:
 
 Use Case Study (.org)
@@ -449,10 +458,3 @@ For the mockup itself, I would organize the entire UI around the four-pillar col
 | .studio | Demos / POCs                 | Light Blue   |
 | .com    | Products / Commerce          | Teal Accent  |
 | .net    | Documentation / Distribution | Mint         |
-
-Additional inputs and resources:
-Tekrogen Ghost Theme Mockups: https://claude.ai/design/p/833e0a82-84e5-46f8-b26f-a8a57f308a23
-Tekrogen Design System: https://claude.ai/design/p/019e1ce2-d0e9-7542-b649-e21f0ca4512e
-Tekrogen Mockup Repo: https://github.com/tekrogen/Tekrogen-Ghost-Theme-Mockup
-Tekrogen Design System Repo: https://github.com/tekrogen/Tekrogen-Brand-Design-System
-Tekrogen New Mockup Build Path: [Create new mockups in this directory](/mockups/README.md)
