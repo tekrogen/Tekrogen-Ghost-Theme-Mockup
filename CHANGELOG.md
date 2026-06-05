@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the **Tekrogen Ghost Theme Mockup (v04)** project are recorded
+All notable changes to the **Tekrogen Ghost Theme Mockup** project are recorded
 here. Format follows [Keep a Changelog](https://keepachangelog.com/); this is a design
 mockup project, so versions track design milestones rather than shipped software.
 

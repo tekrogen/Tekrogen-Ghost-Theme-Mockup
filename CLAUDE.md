@@ -20,10 +20,17 @@ runnable application and has no build, test, or lint tooling.
   / `__deactivate_edit_mode`) from the parent frame; image-slot drops persist via a sidecar
   the host bridge only allows at the project root. Opening `index.html` from disk shows the
   default state with these features dormant — that is expected, not a bug.
-- **Version marker:** `index.html` carries `<meta name="version" content="vX.Y.Z"/>` that
-  must match the latest released entry in `CHANGELOG.md`, using the `vX.Y.Z` tag format.
-  Bump both together. Changes are logged in `CHANGELOG.md` (Keep a Changelog format; versions
-  track design milestones, not shipped software).
+- **Versioning — bump every marker together.** The project version uses the `vX.Y.Z` tag
+  format (matching GitHub tags/releases) and is duplicated in several places. When releasing,
+  update **all** of these in one commit so they never drift:
+  1. `index.html` `<meta name="version" content="vX.Y.Z"/>` (line ~7) — canonical marker.
+  2. `index.html` harness badge — `.shell-bar .ver` (`vX.Y.Z · HI-FI`).
+  3. `README.md` H1 title — `(vX.Y.Z)`.
+  4. `Brand Compliance Checklist.md` H1 title — `vX.Y.Z`.
+  5. New `CHANGELOG.md` entry (Keep a Changelog format), then `git tag vX.Y.Z` + GitHub release.
+  Do **not** touch the fictional in-content product versions (e.g. "Spine v0.4", the roadmap
+  card) — those are deliberate mock data, not the project version. Leave `archive/*` frozen.
+  Versions track design milestones, not shipped software.
 
 ## Architecture
 

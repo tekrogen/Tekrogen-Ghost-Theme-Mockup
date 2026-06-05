@@ -1,4 +1,4 @@
-# Brand Compliance Checklist — Ghost Theme Mockup v04
+# Brand Compliance Checklist — Ghost Theme Mockup v0.5.0
 
 Audit of the mockup files against the **Tekrogen Brand Design System**
 (`README.md`, `CLAUDE.md`, ADR-0001–0006, `colors_and_type.css`).
