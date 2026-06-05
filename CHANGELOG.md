@@ -20,6 +20,35 @@ mockup project, so versions track design milestones rather than shipped software
 
 ---
 
+## [0.5.0] — 2026-06-05
+
+Content-model overhaul: collapsed the seven content **types** into five top-level
+**categories**, introduced **Recon**, and removed scored **Tech Rating**. Rationale and
+per-screen plan in `admin/features/recon-content-model.md`.
+
+### Added
+- **Recon** — a new category that unifies the former Research Article + SaaS Evaluation work
+  into one qualitative, multi-source "justify the stack" category. Includes a unified Post
+  Details reader template (research framing → candidate comparison → sources → chosen stack,
+  no scores) and a Recon lane on the Topic page.
+- `admin/features/recon-content-model.md` — decision record for the move to Recon.
+
+### Changed
+- **Seven types → five categories** across every screen: Use Case Study · Recon · Product ·
+  Demo / POC · Documentation. Reworked the Home feed, Topics dropdown, Topic page, Library
+  (now "Index of Five"), and Post Details accordingly.
+- Library grid rebalanced to a clean 6-cell 3×2 layout (5 category cards + 1 merged CTA).
+
+### Removed
+- **Tech Rating** and all numeric scoring (six-axis rubric, `x.x/10` scores, score bars) —
+  Tekrogen does not rate evaluated resources; the stack decision belongs to stakeholders.
+- Standalone **Research Article** and **SaaS Evaluation** types — folded into Recon.
+
+### Notes
+- `.score-mini` / `.score-panel` CSS is now unused; retained for a later cleanup pass.
+
+---
+
 ## [0.4.2] — 2026-06-03
 
 ### Changed

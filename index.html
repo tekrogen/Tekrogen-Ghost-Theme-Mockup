@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Tekrogen — Ghost theme</title>
-<meta name="version" content="v0.4.2"/>
+<meta name="version" content="v0.5.0"/>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
 
 <!-- Tekrogen design tokens (palette + type) -->
@@ -411,7 +411,7 @@ body{
 }
 
 /* ===========================================================
-   DIRECTION A — INDEX OF SEVEN  (hero + 7 type cards + recent)
+   DIRECTION A — LIBRARY  (hero + 7 type cards + recent)
    =========================================================== */
 .A-hero{
   display:grid; grid-template-columns: 1.15fr 1fr;
@@ -1761,17 +1761,17 @@ body{
 <div class="stage" id="stage">
 
 <!-- ============================================================
-     DIRECTION A — INDEX OF SEVEN
+     DIRECTION A — LIBRARY
      ============================================================ -->
 <section class="direction" data-dir="A" data-screen-label="Library Page">
 
   <div class="dir-head">
     <div class="lhs">
       <div class="kicker">Library — /library</div>
-      <h2>Index of Seven.</h2>
+      <h2>Index of Five.</h2>
     </div>
     <div class="rhs">
-      The full library page, reachable from the <em>Library</em> link in the nav. A uniform grid of the 7 content types — each card a doorway with its most-recent items. The drill-down from the homepage's Topics menu.
+      The full library page, reachable from the <em>Library</em> link in the nav. A uniform grid of the 5 top-level categories — each card a doorway with its most-recent items. The drill-down from the homepage's Topics menu.
     </div>
   </div>
 
@@ -1823,7 +1823,7 @@ body{
       <div class="lhs">
         <div class="eyebrow">Field notes · 2026</div>
         <h1>Real solutions. <span class="accent">Built, proven,</span> ready to use.</h1>
-        <p class="dek">A four-wing engineering practice publishing field notes from research, instruction, and infrastructure. Seven kinds of artifact, indexed below by what they are.</p>
+        <p class="dek">A four-wing engineering practice publishing field notes from research, instruction, and infrastructure. Five categories of work, indexed below by what they are.</p>
       </div>
       <div class="card-img var-com hero-img">
         <div class="hero-img-tags">
@@ -1837,7 +1837,7 @@ body{
     <!-- STATS BAR -->
     <div class="A-stats">
       <div class="stat"><div class="num">47</div><div class="lbl">Field notes</div></div>
-      <div class="stat"><div class="num">07</div><div class="lbl">Kinds of work</div></div>
+      <div class="stat"><div class="num">05</div><div class="lbl">Categories</div></div>
       <div class="stat"><div class="num">1,820</div><div class="lbl">Members</div></div>
       <div class="stat"><div class="num">04</div><div class="lbl">Entities</div></div>
     </div>
@@ -1846,12 +1846,12 @@ body{
     <div class="section-head">
       <div>
         <div class="eyebrow">§ 01 · Library</div>
-        <h2>Index by content type</h2>
+        <h2>Index by category</h2>
       </div>
-      <div class="ix">7 types · 47 entries · updated may 14</div>
+      <div class="ix">5 categories · 47 entries · updated may 14</div>
     </div>
 
-    <!-- 9-CELL UNIFORM GRID: 7 types + 2 CTAs -->
+    <!-- 6-CELL UNIFORM GRID: 5 categories + 1 CTA -->
     <div class="A-grid">
 
       <!-- 01 USE CASE STUDY -->
@@ -1877,7 +1877,7 @@ body{
         </article>
       </div>
 
-      <!-- 02 SAAS EVALUATION -->
+      <!-- 02 RECON -->
       <div class="cell">
         <article class="type-card">
           <div class="card-img var-org">
@@ -1886,44 +1886,21 @@ body{
           <div class="pad">
             <div class="row1">
               <span class="num-badge">02</span>
-              <span class="kicker">SaaS Evaluation</span>
-              <span class="count">9</span>
+              <span class="kicker">Recon</span>
+              <span class="count">52</span>
             </div>
-            <h3>Side-by-side teardowns of the tools we use every day.</h3>
-            <p class="desc">Pricing reality, hidden costs, lock-in surface area, and the criteria that mattered.</p>
+            <h3>Reconning the field — tools, frameworks, and methods — to justify the stack.</h3>
+            <p class="desc">Multi-source research and side-by-side comparison before the build. No scores; stakeholders pick the stack.</p>
             <ul class="recent-list">
               <li><span class="n">11</span><span>Ghost vs. Substack vs. Beehiiv</span><span class="d">May 10</span></li>
-              <li><span class="n">10</span><span>Linear vs. Height — 3 months in</span><span class="d">Apr 28</span></li>
+              <li><span class="n">R12</span><span>Single-mark identity systems across entities</span><span class="d">May 06</span></li>
             </ul>
-            <span class="arrow">All evaluations →</span>
+            <span class="arrow">All recon →</span>
           </div>
         </article>
       </div>
 
-      <!-- 03 TECH RATING -->
-      <div class="cell">
-        <article class="type-card">
-          <div class="card-img var-studio">
-            <span class="byline-tag"><span class="dot" style="background:#6491ac"></span>M. Dolce, 2026</span>
-          </div>
-          <div class="pad">
-            <div class="row1">
-              <span class="num-badge">03</span>
-              <span class="kicker">Tech Rating</span>
-              <span class="count">31</span>
-            </div>
-            <h3>Scored against a fixed six-axis rubric.</h3>
-            <p class="desc">Versioned. Re-rated when it changes.</p>
-            <ul class="recent-list">
-              <li><span class="n">22</span><span>Cloudflare Workers · 8.4</span><span class="d">May 14</span></li>
-              <li><span class="n">21</span><span>Postgres 17 · 9.1</span><span class="d">May 02</span></li>
-            </ul>
-            <span class="arrow">All ratings →</span>
-          </div>
-        </article>
-      </div>
-
-      <!-- 04 PRODUCT PAGE -->
+      <!-- 03 PRODUCT PAGE -->
       <div class="cell">
         <article class="type-card">
           <div class="card-img var-com">
@@ -1931,7 +1908,7 @@ body{
           </div>
           <div class="pad">
             <div class="row1">
-              <span class="num-badge">04</span>
+              <span class="num-badge">03</span>
               <span class="kicker">Product Page</span>
               <span class="count">5</span>
             </div>
@@ -1946,7 +1923,7 @@ body{
         </article>
       </div>
 
-      <!-- 05 DEMO/POC -->
+      <!-- 04 DEMO/POC -->
       <div class="cell">
         <article class="type-card">
           <div class="card-img var-studio">
@@ -1954,7 +1931,7 @@ body{
           </div>
           <div class="pad">
             <div class="row1">
-              <span class="num-badge">05</span>
+              <span class="num-badge">04</span>
               <span class="kicker">Demo / POC</span>
               <span class="count">12</span>
             </div>
@@ -1969,7 +1946,7 @@ body{
         </article>
       </div>
 
-      <!-- 06 DOCUMENTATION -->
+      <!-- 05 DOCUMENTATION -->
       <div class="cell">
         <article class="type-card">
           <div class="card-img var-net">
@@ -1977,7 +1954,7 @@ body{
           </div>
           <div class="pad">
             <div class="row1">
-              <span class="num-badge">06</span>
+              <span class="num-badge">05</span>
               <span class="kicker">Documentation</span>
               <span class="count">28</span>
             </div>
@@ -1992,51 +1969,17 @@ body{
         </article>
       </div>
 
-      <!-- 07 RESEARCH ARTICLE — now uniform size -->
-      <div class="cell">
-        <article class="type-card">
-          <div class="card-img var-org">
-            <span class="byline-tag"><span class="dot" style="background:#446e88"></span>M. Dolce, 2026</span>
-            <span class="spotlight-tag">Peer review</span>
-          </div>
-          <div class="pad">
-            <div class="row1">
-              <span class="num-badge">07</span>
-              <span class="kicker">Research Article</span>
-              <span class="count">12</span>
-            </div>
-            <h3>Long-form, citation-grade. Abstract on top, references on the bottom.</h3>
-            <p class="desc">Peer-reviewed where it makes sense, opinionated where it doesn't.</p>
-            <ul class="recent-list">
-              <li><span class="n">R12</span><span>Single-mark identity systems across federated entity portfolios</span><span class="d">May 06</span></li>
-              <li><span class="n">R11</span><span>Failure modes in technical-publication theming</span><span class="d">Apr 18</span></li>
-            </ul>
-            <span class="arrow">All research →</span>
-          </div>
-        </article>
-      </div>
-
-      <!-- 08 SUBSCRIBE CTA (fills 8th slot uniformly) -->
+      <!-- 06 SUBSCRIBE + BROWSE CTA (fills the 6th slot, completes the 3×2 grid) -->
       <div class="cell">
         <article class="cta-card accent">
-          <div class="label">§08 · Stay close</div>
+          <div class="label">§ 06 · Stay close</div>
           <h3>Field notes in your inbox.</h3>
-          <p>One short note a week. No tracking, no upsells. Unsubscribe with one click.</p>
+          <p>One short note a week — no tracking, no upsells. Or browse all 47 notes by tag, entity, or year.</p>
           <div class="input-row">
             <input type="email" placeholder="you@domain.com"/>
             <button type="button">→</button>
           </div>
-          <div class="footer-row"><span>1,820 MEMBERS</span><span>SUBSCRIBE →</span></div>
-        </article>
-      </div>
-
-      <!-- 09 BROWSE ALL CTA (fills 9th slot uniformly) -->
-      <div class="cell">
-        <article class="cta-card">
-          <div class="label">§09 · The whole library</div>
-          <h3>Browse all 47 field notes.</h3>
-          <p>Or search by tag, entity, or year. Everything we've ever published, in one place.</p>
-          <div class="footer-row" style="margin-top:auto"><span>47 NOTES · 7 TYPES</span><span>OPEN LIBRARY →</span></div>
+          <div class="footer-row"><span>1,820 MEMBERS · 47 NOTES</span><span>OPEN LIBRARY →</span></div>
         </article>
       </div>
     </div>
@@ -2045,9 +1988,9 @@ body{
     <div class="section-head">
       <div>
         <div class="eyebrow">§ 02 · Latest</div>
-        <h2>Recent across all types</h2>
+        <h2>Recent across all categories</h2>
       </div>
-      <div class="ix">across all 7 kinds · weekly cadence</div>
+      <div class="ix">across all 5 categories · weekly cadence</div>
     </div>
 
     <div class="A-recent">
@@ -2059,12 +2002,12 @@ body{
           </div>
           <div class="pad">
             <div class="row">
-              <span class="num">22</span>
-              <div class="meta">Tech rating · 8.4/10</div>
+              <span class="num">09</span>
+              <div class="meta">Recon</div>
             </div>
-            <h4>Cloudflare Workers — three months in production, what changed and what didn't</h4>
-            <p class="dek">A six-axis re-rating after extended use. The thing we hit a wall on, and the thing that just kept working.</p>
-            <div class="meta"><span>MAY 14</span><span class="sep">·</span><span>7 MIN</span><span class="sep">·</span><span style="color:var(--tk-com)">.com</span></div>
+            <h4>Edge runtime for the demo — Workers vs. Deno Deploy vs. Lambda@Edge</h4>
+            <p class="dek">Reconning where to run the demo's API: cold starts, limits, and what the team already knows. No scores — the fit decides it.</p>
+            <div class="meta"><span>MAY 14</span><span class="sep">·</span><span>7 MIN</span><span class="sep">·</span><span style="color:var(--tk-org)">.org</span></div>
           </div>
         </article>
         <article class="note-card">
@@ -2074,10 +2017,10 @@ body{
           <div class="pad">
             <div class="row">
               <span class="num">11</span>
-              <div class="meta">SaaS evaluation</div>
+              <div class="meta">Recon</div>
             </div>
-            <h4>Ghost vs. Substack vs. Beehiiv — for technical writing in 2026</h4>
-            <p class="dek">Eleven criteria, weighted, with a recommended pick by use-case. We tested all three live for 90 days.</p>
+            <h4>Ghost vs. Substack vs. Beehiiv — picking the publishing stack</h4>
+            <p class="dek">Reconned across a variety of sources before the build — what each does well, what it costs in lock-in, and the stack we picked for the demo. No scores.</p>
             <div class="meta"><span>MAY 10</span><span class="sep">·</span><span>11 MIN</span><span class="sep">·</span><span style="color:var(--tk-org)">.org</span></div>
           </div>
         </article>
@@ -2175,12 +2118,10 @@ body{
           <div class="topics-menu" role="menu">
             <div class="heading">Browse by topic</div>
             <a href="#" role="menuitem" data-go="C">Case studies <span class="ct">14</span></a>
-            <a href="#" role="menuitem" data-go="C">SaaS evaluations <span class="ct">9</span></a>
-            <a href="#" role="menuitem" data-go="C">Tech ratings <span class="ct">31</span></a>
+            <a href="#" role="menuitem" data-go="C">Recon <span class="ct">52</span></a>
             <a href="#" role="menuitem" data-go="C">Products <span class="ct">5</span></a>
             <a href="#" role="menuitem" data-go="C">Demos / POCs <span class="ct">12</span></a>
             <a href="#" role="menuitem" data-go="C">Documentation <span class="ct">28</span></a>
-            <a href="#" role="menuitem" data-go="C">Research <span class="ct">12</span></a>
             <div class="sep"></div>
             <a href="#" role="menuitem" class="all" data-go="A">View all 47 notes →</a>
           </div>
@@ -2225,9 +2166,9 @@ body{
         <div class="feed-row">
           <div class="col-n"><span class="n">03</span><span class="d">May 10</span></div>
           <div class="col-main">
-            <div class="kicker">SaaS Evaluation</div>
-            <h3>Ghost vs. Substack vs. Beehiiv — for technical writing in 2026</h3>
-            <p class="dek">Eleven criteria, weighted, with a recommended pick by use-case. We tested all three live for 90 days.</p>
+            <div class="kicker">Recon</div>
+            <h3>Ghost vs. Substack vs. Beehiiv — picking the publishing stack</h3>
+            <p class="dek">Reconned across a variety of sources before the build — what each does well, what it costs in lock-in, and the stack we picked for the demo. No scores.</p>
           </div>
           <div class="col-meta">
             <span>11 MIN READ</span>
@@ -2249,25 +2190,25 @@ body{
         <div class="feed-row">
           <div class="col-n"><span class="n">01</span><span class="d">Apr 28</span></div>
           <div class="col-main">
-            <div class="kicker">Research Article</div>
+            <div class="kicker">Recon</div>
             <h3>Single-mark identity systems across federated entity portfolios</h3>
-            <p class="dek">A four-wing case study with 24 references. Method, results, discussion, and the practical implications for a single-engineer publication.</p>
+            <p class="dek">Long-form recon pulled from 24 sources. Method, findings, discussion, and the practical implications for a single-engineer publication.</p>
           </div>
           <div class="col-meta">
             <span>22 MIN READ</span>
-            <span class="pill-mono cyan">Peer review</span>
+            <span class="pill-mono cyan">24 sources</span>
           </div>
         </div>
         <div class="feed-row">
           <div class="col-n"><span class="n">00</span><span class="d">Apr 22</span></div>
           <div class="col-main">
-            <div class="kicker">Tech Rating · 22</div>
-            <h3>Cloudflare Workers — three months in production · 8.4/10</h3>
-            <p class="dek">A six-axis re-rating after extended use. Where we hit the wall and where it just kept working.</p>
+            <div class="kicker">Recon</div>
+            <h3>Edge runtime for the demo — Workers vs. Deno Deploy vs. Lambda@Edge</h3>
+            <p class="dek">Reconning where to run the demo's API: cold starts, limits, and what the team already knows. No scores — the fit decides it.</p>
           </div>
           <div class="col-meta">
             <span>7 MIN READ</span>
-            <span><span class="pillar-dot" style="background:#0db4b9"></span>.com</span>
+            <span><span class="pillar-dot" style="background:#446e88"></span>.org</span>
           </div>
         </div>
         <div class="feed-row">
@@ -2472,49 +2413,63 @@ body{
       </div>
     </section>
 
-    <!-- LANE 2: EVALUATIONS + RATINGS (4-up) -->
-    <section class="lane" id="lane-eval">
+    <!-- LANE 2: RECON — research + evaluations + ratings (the stack justification) -->
+    <section class="lane" id="lane-recon">
       <div class="lane-head">
         <div class="lhs">
-          <div class="eyebrow">§ 02 · 03 · Evaluations + Ratings</div>
-          <h2>Side-by-side teardowns and scored rubrics.</h2>
+          <div class="eyebrow">§ 02 · 03 · 07 · Recon</div>
+          <h2>Justify the stack — research, side-by-side teardowns, and scored rubrics.</h2>
         </div>
-        <div class="rhs"><span>40 entries</span><span class="all">See all →</span></div>
+        <div class="rhs"><span>52 entries</span><span class="all">See all →</span></div>
       </div>
-      <div class="lane-row four">
+      <!-- featured research (citation-grade) leads the Recon lane -->
+      <div class="lane-row" style="grid-template-columns: 1fr; gap:0">
+        <article class="lane-card" id="lane-research" style="--pillar:#446e88; flex-direction:row; min-height:260px">
+          <div class="card-img var-org" style="width:320px; min-height:260px; border-bottom:none; border-right:1px solid var(--tk-ink-2); flex:none">
+            <span class="byline-tag"><span class="dot" style="background:#446e88"></span>M. Dolce, 2026</span>
+            <span class="spotlight-tag">Featured</span>
+          </div>
+          <div class="body" style="padding:24px 28px">
+            <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap">
+              <span class="pill-mono cyan">Peer review · 24 refs</span>
+              <div class="kicker" style="color: var(--tk-fg-3)">Recon · R12</div>
+            </div>
+            <h4 style="font-size:24px; max-width:680px">Single-mark identity systems across federated entity portfolios</h4>
+            <p class="dek" style="font-style:italic; max-width:600px">A four-wing case study. Method, results, discussion, references. The long-form companion to Case Study 03.</p>
+            <div class="foot"><span>22 MIN · MAY 06</span><span>DOI · PEER REVIEWED</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="lane-row four" style="margin-top:24px">
         <article class="lane-card" style="--pillar:#0db4b9">
           <div class="body">
-            <div class="kicker">SaaS eval · 11</div>
+            <div class="kicker">Recon · 11</div>
             <h4>Ghost vs. Substack vs. Beehiiv</h4>
-            <p class="dek">For technical writing in 2026.</p>
-            <div class="score-mini"><div class="bar"><i style="width:78%"></i></div><span class="v">7.8</span></div>
+            <p class="dek">Picking the publishing stack — lock-in, theming, API.</p>
             <div class="foot"><span>MAY 10</span><span>11 MIN</span></div>
           </div>
         </article>
         <article class="lane-card" id="lane-rate" style="--pillar:#0db4b9">
           <div class="body">
-            <div class="kicker">Tech rating · 22</div>
-            <h4>Cloudflare Workers</h4>
-            <p class="dek">Three months in production.</p>
-            <div class="score-mini"><div class="bar"><i style="width:84%"></i></div><span class="v">8.4</span></div>
+            <div class="kicker">Recon · 09</div>
+            <h4>Edge runtime for the demo</h4>
+            <p class="dek">Workers vs. Deno Deploy vs. Lambda@Edge.</p>
             <div class="foot"><span>MAY 14</span><span>7 MIN</span></div>
           </div>
         </article>
         <article class="lane-card" style="--pillar:#7edba5">
           <div class="body">
-            <div class="kicker">Tech rating · 21</div>
-            <h4>Postgres 17</h4>
-            <p class="dek">What changed and what didn't.</p>
-            <div class="score-mini"><div class="bar"><i style="width:91%"></i></div><span class="v">9.1</span></div>
+            <div class="kicker">Recon · 08</div>
+            <h4>Postgres vs. SQLite</h4>
+            <p class="dek">Where the demo's data should live.</p>
             <div class="foot"><span>MAY 02</span><span>6 MIN</span></div>
           </div>
         </article>
         <article class="lane-card" style="--pillar:#446e88">
           <div class="body">
-            <div class="kicker">SaaS eval · 10</div>
+            <div class="kicker">Recon · 10</div>
             <h4>Linear vs. Height</h4>
-            <p class="dek">Three months in, what stuck.</p>
-            <div class="score-mini"><div class="bar"><i style="width:72%"></i></div><span class="v">7.2</span></div>
+            <p class="dek">Picking the tracker — three months in, what stuck.</p>
             <div class="foot"><span>APR 28</span><span>8 MIN</span></div>
           </div>
         </article>
@@ -2569,33 +2524,16 @@ body{
       </div>
     </section>
 
-    <!-- LANE 4: DOCS + RESEARCH -->
+    <!-- LANE 4: DOCUMENTATION -->
     <section class="lane" id="lane-docs">
       <div class="lane-head">
         <div class="lhs">
-          <div class="eyebrow">§ 06 · 07 · Documentation + Research</div>
-          <h2>Operate it (docs) or read why we built it (research).</h2>
+          <div class="eyebrow">§ 06 · Documentation</div>
+          <h2>How to install, configure, and operate every piece we publish.</h2>
         </div>
-        <div class="rhs"><span>40 entries</span><span class="all">See all →</span></div>
+        <div class="rhs"><span>28 entries</span><span class="all">See all →</span></div>
       </div>
-      <div class="lane-row" style="grid-template-columns: 1fr; gap:0">
-        <article class="lane-card" id="lane-research" style="--pillar:#446e88; flex-direction:row; min-height:260px">
-          <div class="card-img var-org" style="width:320px; min-height:260px; border-bottom:none; border-right:1px solid var(--tk-ink-2); flex:none">
-            <span class="byline-tag"><span class="dot" style="background:#446e88"></span>M. Dolce, 2026</span>
-            <span class="spotlight-tag">Featured</span>
-          </div>
-          <div class="body" style="padding:24px 28px">
-            <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap">
-              <span class="pill-mono cyan">Peer review · 24 refs</span>
-              <div class="kicker" style="color: var(--tk-fg-3)">Research · R12</div>
-            </div>
-            <h4 style="font-size:24px; max-width:680px">Single-mark identity systems across federated entity portfolios</h4>
-            <p class="dek" style="font-style:italic; max-width:600px">A four-wing case study. Method, results, discussion, references. The long-form companion to Case Study 03.</p>
-            <div class="foot"><span>22 MIN · MAY 06</span><span>DOI · PEER REVIEWED</span></div>
-          </div>
-        </article>
-      </div>
-      <div class="lane-row split" style="margin-top:24px">
+      <div class="lane-row split">
         <article class="lane-card" style="--pillar:#7edba5">
           <div class="card-img var-net" style="min-height:120px">
             <span class="byline-tag"><span class="dot" style="background:#7edba5"></span>M. Dolce, 2026</span>
@@ -2655,7 +2593,7 @@ body{
 
 
 <!-- ============================================================
-     DIRECTION D — POST DETAIL TEMPLATES (all 7 types)
+     DIRECTION D — POST DETAIL TEMPLATES (five categories)
      ============================================================ -->
 <section class="direction" data-dir="D" data-screen-label="Post Details Page">
 
@@ -2665,17 +2603,17 @@ body{
       <h2>Post templates.</h2>
     </div>
     <div class="rhs">
-      One reader-facing template per content type. Each type gets the components its work demands — a scorecard for ratings, a comparison table for evaluations, a buy block for products, embed + actions for demos, sidebar TOC for docs, abstract block for research, outcome metrics for case studies.
+      One reader-facing template per category. Each gets the components its work demands — outcome metrics for case studies, a side-by-side candidate comparison for recon, a buy block for products, embed + actions for demos, and a sidebar TOC for docs.
     </div>
   </div>
 
   <div class="D-intro">
     <div>
       <div class="eyebrow">Reader templates</div>
-      <h3>Seven content types, seven detail layouts.</h3>
+      <h3>Five categories, five detail layouts.</h3>
     </div>
     <div class="stats">
-      <div class="stat"><div class="num">7</div><div class="lbl">Templates</div></div>
+      <div class="stat"><div class="num">5</div><div class="lbl">Templates</div></div>
       <div class="stat"><div class="num">04</div><div class="lbl">Entities</div></div>
       <div class="stat"><div class="num">01</div><div class="lbl">System</div></div>
     </div>
@@ -2745,123 +2683,83 @@ body{
       </div>
     </article>
 
-    <!-- 02 SAAS EVALUATION — comparison table + verdict -->
+    <!-- 02 RECON — multi-source research + side-by-side candidate comparison (no scores) -->
     <article class="post-mock">
       <div class="post-head">
-        <div class="lhs"><span class="num">02</span><span>SaaS Evaluation · /evaluations/:slug</span></div>
-        <span>11 MIN READ · MAY 10 · 2026</span>
+        <div class="lhs"><span class="num">02</span><span>Recon · /recon/:slug</span></div>
+        <span>RECON · MAY 10 · 2026</span>
       </div>
       <div class="post-body">
         <div>
-          <div class="lead">SaaS Evaluation · No. 11</div>
-          <h2 class="title">Ghost vs. Substack vs. Beehiiv — for technical writing in 2026.</h2>
-          <p class="post-dek">Eleven criteria, weighted, with a recommended pick by use-case. We tested all three live for 90 days.</p>
+          <div class="lead">Recon · No. 11</div>
+          <h2 class="title">Embedding video in a PDF or presentation — what actually works in 2026.</h2>
+          <p class="post-dek">Reconning the field before the build: the candidate methods, pulled from a variety of sources, and the stack we picked for the demo. No scores — fit for the use case and the team's skills decides it.</p>
           <div class="meta-strip">
             <div class="av">MD</div>
             <span style="color:var(--tk-fg-2)">M. Dolce</span>
             <span class="sep">·</span><span>MAY 10, 2026</span>
+            <span class="sep">·</span><span class="pill-mono cyan">14 sources</span>
             <span class="sep">·</span><span style="color:var(--tk-org)">.org</span>
           </div>
           <div class="card-img var-org post-hero-img" style="min-height:240px">
             <span class="byline-tag"><span class="dot" style="background:#446e88"></span>M. Dolce, 2026</span>
-            <span class="spotlight-tag">Evaluation</span>
-          </div>
-          <div class="h4-mock" style="font-family:var(--tk-font-sans); font-weight:600; font-size:18px; color:var(--tk-fg-1); margin:24px 0 12px; letter-spacing:-0.005em">Head-to-head</div>
-          <div class="compare">
-            <div class="row head">
-              <div>Criterion</div><div>Ghost</div><div>Substack</div><div>Beehiiv</div>
-            </div>
-            <div class="row"><div class="label">Editorial control</div><div><span class="win">✓ ✓ ✓</span></div><div>✓ ✓</div><div>✓ ✓</div></div>
-            <div class="row"><div class="label">Custom theme</div><div><span class="win">YES</span></div><div>NO</div><div>LIMITED</div></div>
-            <div class="row"><div class="label">Code embeds</div><div><span class="win">FIRST-CLASS</span></div><div>LIMITED</div><div>YES</div></div>
-            <div class="row"><div class="label">Newsletter UX</div><div>✓ ✓</div><div><span class="win">✓ ✓ ✓</span></div><div>✓ ✓ ✓</div></div>
-            <div class="row"><div class="label">Pricing (1k subs)</div><div>$31</div><div>$10 + 10%</div><div><span class="win">$0</span></div></div>
-            <div class="row"><div class="label">RSS first-class</div><div><span class="win">YES</span></div><div>YES</div><div>YES</div></div>
-            <div class="row"><div class="label">API access</div><div><span class="win">FULL</span></div><div>NONE</div><div>LIMITED</div></div>
+            <span class="spotlight-tag">Recon</span>
           </div>
           <div class="prose">
-            <div class="h4-mock">Verdict</div>
+            <div class="h4-mock">The use case</div>
             <span class="line l"></span><span class="line m"></span><span class="line l"></span><span class="line s"></span>
+          </div>
+          <div class="h4-mock" style="font-family:var(--tk-font-sans); font-weight:600; font-size:18px; color:var(--tk-fg-1); margin:24px 0 12px; letter-spacing:-0.005em">Candidates considered</div>
+          <div class="compare">
+            <div class="row head">
+              <div>Consideration</div><div>Embedded H.264</div><div>GIF fallback</div><div>Player + link</div>
+            </div>
+            <div class="row"><div class="label">Plays inline in PDF</div><div>ACROBAT ONLY</div><div><span class="win">EVERYWHERE</span></div><div>NO</div></div>
+            <div class="row"><div class="label">Presentation support</div><div><span class="win">KEYNOTE · PPT</span></div><div>✓ ✓</div><div>LINK OUT</div></div>
+            <div class="row"><div class="label">Fidelity</div><div><span class="win">FULL</span></div><div>LOSSY</div><div>FULL</div></div>
+            <div class="row"><div class="label">File weight</div><div>HEAVY</div><div>MEDIUM</div><div><span class="win">NONE</span></div></div>
+            <div class="row"><div class="label">Build effort</div><div>MEDIUM</div><div><span class="win">LOW</span></div><div>LOW</div></div>
+            <div class="row"><div class="label">Team can ship it</div><div>✓ ✓</div><div><span class="win">✓ ✓ ✓</span></div><div>✓ ✓ ✓</div></div>
+          </div>
+          <div class="prose">
+            <div class="h4-mock">Sources</div>
+            <span class="line l"></span><span class="line m"></span><span class="line l"></span><span class="line s"></span>
+            <div class="h4-mock">Decision → the stack</div>
+            <span class="line l"></span><span class="line m"></span><span class="line s"></span>
           </div>
         </div>
         <aside class="sidebar">
           <div class="side-card" style="border-color:var(--wing-accent)">
-            <div class="h">Our pick</div>
-            <div class="title-mini" style="font-size:22px; color:var(--wing-accent)">Ghost</div>
-            <div style="font-family:var(--tk-font-sans); font-style:italic; font-size:13.5px; color:var(--tk-fg-3); line-height:1.55; margin-top:6px">For technical writers who want full theming control and a real API.</div>
+            <div class="h">Chosen for the demo</div>
+            <div class="title-mini" style="font-size:20px; color:var(--wing-accent)">GIF fallback + player</div>
+            <div style="font-family:var(--tk-font-sans); font-style:italic; font-size:13.5px; color:var(--tk-fg-3); line-height:1.55; margin-top:6px">Plays everywhere, low build effort, the team can ship it today. Inline H.264 if the client standardizes on Acrobat.</div>
           </div>
           <div class="side-card">
-            <div class="h">Tested for</div>
+            <div class="h">Reconned</div>
             <div style="font-family:var(--tk-font-mono); font-size:11.5px; color:var(--tk-fg-2); line-height:1.7">
-              90 days · live<br>4 authors<br>180 posts<br>12 newsletters
+              3 approaches<br>14 sources<br>2 days<br><span style="color:var(--tk-fg-4)">no scores assigned</span>
             </div>
           </div>
           <div class="side-card">
-            <div class="h">Methodology</div>
+            <div class="h">Final call depends on</div>
             <div style="font-family:var(--tk-font-sans); font-size:13.5px; color:var(--tk-fg-3); line-height:1.5">
-              Eleven weighted criteria. Read the full rubric, scoring sheet, and raw notes.
+              The team's existing skills and the client's constraints — recon narrows the field, stakeholders pick the stack.
             </div>
-            <div style="font-family:var(--tk-font-mono); font-size:10.5px; letter-spacing:.14em; color:var(--wing-accent); margin-top:8px">OPEN RUBRIC →</div>
-          </div>
-        </aside>
-      </div>
-    </article>
-
-    <!-- 03 TECH RATING — score panel -->
-    <article class="post-mock">
-      <div class="post-head">
-        <div class="lhs"><span class="num">03</span><span>Tech Rating · /ratings/:slug</span></div>
-        <span>7 MIN READ · MAY 14 · 2026</span>
-      </div>
-      <div class="post-body">
-        <div>
-          <div class="lead">Tech Rating · No. 22</div>
-          <h2 class="title">Cloudflare Workers — three months in production.</h2>
-          <p class="post-dek">A six-axis re-rating after extended use. Where we hit the wall, and where it just kept working.</p>
-          <div class="meta-strip">
-            <div class="av">MD</div>
-            <span style="color:var(--tk-fg-2)">M. Dolce</span>
-            <span class="sep">·</span><span>MAY 14, 2026</span>
-            <span class="sep">·</span><span style="color:var(--tk-com)">.com</span>
-          </div>
-          <div class="card-img var-com post-hero-img" style="min-height:240px">
-            <span class="byline-tag"><span class="dot" style="background:#0db4b9"></span>M. Dolce, 2026</span>
-            <span class="spotlight-tag">Rating</span>
-          </div>
-          <div class="prose">
-            <div class="h4-mock">Where it shines</div>
-            <span class="line l"></span><span class="line m"></span><span class="line l"></span><span class="line s"></span>
-            <div class="h4-mock">Where it hurts</div>
-            <span class="line l"></span><span class="line m"></span><span class="line s"></span>
-            <div class="h4-mock">Re-rate triggers</div>
-            <span class="line m"></span><span class="line s"></span>
-          </div>
-        </div>
-        <aside class="sidebar">
-          <div class="score-panel">
-            <div class="h" style="font-family:var(--tk-font-mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--tk-fg-4); margin-bottom:10px">Tekrogen Rubric · v2</div>
-            <div class="big"><span class="n">8.4</span><span class="of">/ 10</span></div>
-            <div class="axis"><span>FIT</span><span class="bar"><i style="width:90%"></i></span><span class="v">9.0</span></div>
-            <div class="axis"><span>MAT</span><span class="bar"><i style="width:80%"></i></span><span class="v">8.0</span></div>
-            <div class="axis"><span>SUP</span><span class="bar"><i style="width:85%"></i></span><span class="v">8.5</span></div>
-            <div class="axis"><span>PRC</span><span class="bar"><i style="width:70%"></i></span><span class="v">7.0</span></div>
-            <div class="axis"><span>RSK</span><span class="bar"><i style="width:90%"></i></span><span class="v">9.0</span></div>
-            <div class="axis"><span>CLG</span><span class="bar"><i style="width:80%"></i></span><span class="v">8.0</span></div>
           </div>
           <div class="side-card">
-            <div class="h">Versioning</div>
-            <div style="font-family:var(--tk-font-mono); font-size:11.5px; color:var(--tk-fg-2); line-height:1.7">
-              v1 · 7.2 · Feb 2026<br>v2 · 8.4 · May 2026 ←<br><span style="color:var(--tk-fg-4)">re-rated when stack changes</span>
-            </div>
+            <div class="h">Feeds</div>
+            <div class="title-mini">Demo · POC 09</div>
+            <div style="font-family:var(--tk-font-sans); font-style:italic; font-size:13px; color:var(--tk-fg-3); line-height:1.5; margin-top:4px">The proof this recon justified.</div>
+            <div style="font-family:var(--tk-font-mono); font-size:10.5px; letter-spacing:.14em; color:var(--wing-accent); margin-top:8px">OPEN DEMO →</div>
           </div>
         </aside>
       </div>
     </article>
 
-    <!-- 04 PRODUCT PAGE — buy block -->
+    <!-- 03 PRODUCT PAGE — buy block -->
     <article class="post-mock">
       <div class="post-head">
-        <div class="lhs"><span class="num">04</span><span>Product · /products/:slug</span></div>
+        <div class="lhs"><span class="num">03</span><span>Product · /products/:slug</span></div>
         <span>v0.4 · UPDATED MAY 14</span>
       </div>
       <div class="post-body">
@@ -2915,10 +2813,10 @@ body{
       </div>
     </article>
 
-    <!-- 05 DEMO / POC — embed + actions -->
+    <!-- 04 DEMO / POC — embed + actions -->
     <article class="post-mock">
       <div class="post-head">
-        <div class="lhs"><span class="num">05</span><span>Demo / POC · /demos/:slug</span></div>
+        <div class="lhs"><span class="num">04</span><span>Demo / POC · /demos/:slug</span></div>
         <span>POC 09 · APR 12 · 2026</span>
       </div>
       <div class="post-body full">
@@ -2956,10 +2854,10 @@ body{
       </div>
     </article>
 
-    <!-- 06 DOCUMENTATION — sidebar TOC + body -->
+    <!-- 05 DOCUMENTATION — sidebar TOC + body -->
     <article class="post-mock">
       <div class="post-head">
-        <div class="lhs"><span class="num">06</span><span>Documentation · /docs/:slug</span></div>
+        <div class="lhs"><span class="num">05</span><span>Documentation · /docs/:slug</span></div>
         <span>v0.4 · UPDATED MAY 12 · 2026</span>
       </div>
       <div class="post-body" style="grid-template-columns: 240px 1fr; gap:48px">
@@ -2999,65 +2897,6 @@ body{
             <span class="line l"></span><span class="line m"></span><span class="line s"></span>
           </div>
         </div>
-      </div>
-    </article>
-
-    <!-- 07 RESEARCH ARTICLE — abstract + citations -->
-    <article class="post-mock">
-      <div class="post-head">
-        <div class="lhs"><span class="num">07</span><span>Research Article · /research/:slug</span></div>
-        <span>22 MIN READ · MAY 06 · 2026</span>
-      </div>
-      <div class="post-body">
-        <div>
-          <div class="lead">Research Article · R12</div>
-          <h2 class="title">Single-mark identity systems across federated entity portfolios.</h2>
-          <p class="post-dek">A four-wing case study with 24 references. Method, results, discussion, and the practical implications for a single-engineer publication.</p>
-          <div class="meta-strip">
-            <div class="av">MD</div>
-            <span style="color:var(--tk-fg-2)">M. Dolce</span>
-            <span class="sep">·</span><span>MAY 06, 2026</span>
-            <span class="sep">·</span><span class="pill-mono cyan">Peer review · 24 refs</span>
-            <span class="sep">·</span><span style="color:var(--tk-org)">.org</span>
-          </div>
-          <div class="abstract">
-            <div class="h">Abstract</div>
-            Federated publication portfolios pose three identity tradeoffs: visual coherence vs. entity differentiation, single sign-on vs. per-entity trust, and shared infrastructure vs. independent failure domains. We present a four-wing single-mark system that resolves the first by adopting a locked wordmark with per-entity wing color, the second by routing trust through a shared CRM, and the third by deploying entity-isolated infrastructure on shared underpinnings.
-          </div>
-          <div class="prose">
-            <div class="h4-mock">1 · Method</div>
-            <span class="line l"></span><span class="line m"></span><span class="line l"></span><span class="line s"></span>
-            <div class="h4-mock">2 · Results</div>
-            <span class="line l"></span><span class="line l"></span><span class="line m"></span>
-            <div class="h4-mock">3 · Discussion</div>
-            <span class="line l"></span><span class="line m"></span><span class="line s"></span>
-            <div class="h4-mock">References</div>
-            <span class="line l"></span><span class="line m"></span><span class="line l"></span><span class="line s"></span>
-          </div>
-        </div>
-        <aside class="sidebar">
-          <div class="side-card" style="border-color:var(--wing-accent)">
-            <div class="h">Cite this article</div>
-            <div style="font-family:var(--tk-font-mono); font-size:11.5px; color:var(--tk-fg-2); line-height:1.7">
-              Dolce, M. (2026).<br>Single-mark identity systems<br>across federated entity portfolios.<br>Tekrogen, R12.<br><span style="color:var(--wing-accent)">DOI: 10.tekrogen/r12</span>
-            </div>
-          </div>
-          <div class="side-card">
-            <div class="h">Companion</div>
-            <div class="title-mini">Case study · 03</div>
-            <div style="font-family:var(--tk-font-sans); font-style:italic; font-size:13px; color:var(--tk-fg-3); line-height:1.5; margin-top:4px">
-              Single-mark publication system across four entities.
-            </div>
-          </div>
-          <div class="side-card">
-            <div class="h">Downloads</div>
-            <div style="font-family:var(--tk-font-mono); font-size:11.5px; letter-spacing:.04em; color:var(--tk-fg-2); display:flex; flex-direction:column; gap:6px">
-              <span>· PDF · 1.2 MB</span>
-              <span>· BibTeX</span>
-              <span>· Raw data (CSV)</span>
-            </div>
-          </div>
-        </aside>
       </div>
     </article>
 
