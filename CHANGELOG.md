@@ -24,14 +24,14 @@ mockup project, so versions track design milestones rather than shipped software
 
 Content-model overhaul: collapsed the seven content **types** into five top-level
 **categories**, introduced **Recon**, and removed scored **Tech Rating**. Rationale and
-per-screen plan in `admin/features/recon-content-model.md`.
+per-screen plan in `recon-content-model.md`.
 
 ### Added
 - **Recon** — a new category that unifies the former Research Article + SaaS Evaluation work
   into one qualitative, multi-source "justify the stack" category. Includes a unified Post
   Details reader template (research framing → candidate comparison → sources → chosen stack,
   no scores) and a Recon lane on the Topic page.
-- `admin/features/recon-content-model.md` — decision record for the move to Recon.
+- `recon-content-model.md` — decision record for the move to Recon.
 
 ### Changed
 - **Seven types → five categories** across every screen: Use Case Study · Recon · Product ·

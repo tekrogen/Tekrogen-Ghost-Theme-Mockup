@@ -410,5 +410,6 @@ node_modules
 
 # Internal documents
 
-/admin/internal/
+/admin/
 /uploads/
+/archive/
