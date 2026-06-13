@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="version" content="v0.9.0"/>
+<meta name="version" content="v0.10.0"/>
 <title>Tekrogen · Publishing System Theme — Claude-DT mockup</title>
 <link rel="icon" href="../../assets/favicon.svg"/>
 <link rel="stylesheet" href="../../colors_and_type.css"><!-- self-hosted fonts via @font-face (ADR-0008) -->
@@ -329,7 +329,7 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
 <!-- APP CHROME — harness (NOT theme) -->
 <div class="shell-bar">
   <div class="brand"><img src="../../assets/tekrogen-mark.svg" alt=""/> Tekrogen</div>
-  <span class="ver">Claude-DT · v0.9.0 · HI-FI</span>
+  <span class="ver">Claude-DT · v0.10.0 · HI-FI</span>
   <div class="shell-tabs" role="tablist">
     <button class="shell-tab" role="tab" aria-selected="true"  data-screen="s1">Home</button>
     <button class="shell-tab" role="tab" aria-selected="false" data-screen="s2">Case Studies</button>
@@ -544,22 +544,22 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
     <div class="demo-cta"><a class="tk-button" data-style="cta" data-pillar="studio" href="#">Launch full demo <span data-tk-slot="hint">↗ studio.tekrogen / banking-panel</span></a><a class="tk-button" data-style="cta" data-variant="secondary" href="#">Read the Case Study</a></div>
   </div>
   <!-- partial: demo-metadata -->
-  <div class="demo-meta"><div><div class="k">Status</div><div class="val">● Live · stable</div></div><div><div class="k">Version</div><div class="val mono">v0.3.1 · 2026-05-22</div></div><div><div class="k">Default license</div><div class="val">MIT (demo source)</div></div><div><div class="k">Time to try</div><div class="val">~3 minutes</div></div></div>
-  <div class="preview"><span class="meta">live preview · &lt;iframe&gt; embed</span></div>
-  <div class="shots"><div class="shot">screenshot 01</div><div class="shot">screenshot 02</div><div class="shot">screenshot 03</div></div>
+  <div class="tk-demo-meta"><div><div data-tk-slot="key">Status</div><div data-tk-slot="val">● Live · stable</div></div><div><div data-tk-slot="key">Version</div><div data-tk-slot="val" data-mono>v0.3.1 · 2026-05-22</div></div><div><div data-tk-slot="key">Default license</div><div data-tk-slot="val">MIT (demo source)</div></div><div><div data-tk-slot="key">Time to try</div><div data-tk-slot="val">~3 minutes</div></div></div>
+  <div class="tk-demo-preview"><span class="meta">live preview · &lt;iframe&gt; embed</span></div>
+  <div class="tk-demo-shots"><div class="tk-demo-shot">screenshot 01</div><div class="tk-demo-shot">screenshot 02</div><div class="tk-demo-shot">screenshot 03</div></div>
   <section class="wrap" style="padding-bottom:0"><h2>Stack</h2><div class="stack"><span class="tk-label" data-variant="tag">next.js · 15</span><span class="tk-label" data-variant="tag">server actions</span><span class="tk-label" data-variant="tag">plaid</span><span class="tk-label" data-variant="tag">typescript</span><span class="tk-label" data-variant="tag">prisma</span><span class="tk-label" data-variant="tag">vitest</span></div></section>
   <section class="wrap" style="padding-bottom:0"><h2>Technical notes</h2><p style="max-width:72ch">The exchange runs entirely in a Server Action; the browser only ever holds a public link token. Revocation arrives by webhook and invalidates the encrypted session handle. Everything here is the demo-grade path — the hardened build ships in the template.</p></section>
   <!-- partial: artifact-downloads + membership-gate (full-width) -->
   <section class="wrap" style="padding-bottom:0"><h2>Artifact downloads</h2></section>
-  <div class="artifacts">
-    <div class="ah">
+  <div class="tk-artifact-list" data-pillar="studio">
+    <div data-tk-slot="gate">
       <div class="al"><span class="lock">⊘ Registration required · free tier</span><h3>Download the free starter (MIT).</h3><p class="desc" style="margin:0;max-width:54ch">Anonymous visitors can read and run the demo. A free Tekrogen account unlocks the source bundle, the sample dataset, and the architecture diagram.</p></div>
-      <div class="acta"><a class="tk-button" data-style="cta" data-pillar="studio" href="#">Create free account</a><a class="tk-button" data-style="cta" data-variant="secondary" href="#">Sign in</a></div>
+      <div class="actions"><a class="tk-button" data-style="cta" data-pillar="studio" href="#">Create free account</a><a class="tk-button" data-style="cta" data-variant="secondary" href="#">Sign in</a></div>
     </div>
-    <div class="arow"><span class="nm">banking-panel-source.zip</span><span class="sz">3.8 MB</span><a class="dl" href="#">Sign in to download</a></div>
-    <div class="arow"><span class="nm">sample-transactions.csv</span><span class="sz">12 MB</span><a class="dl" href="#">Sign in to download</a></div>
-    <div class="arow"><span class="nm">architecture-diagram.pdf</span><span class="sz">220 KB</span><a class="dl" href="#">Sign in to download</a></div>
-    <div class="arow"><span class="nm">walkthrough-recording.mp4</span><span class="sz">68 MB</span><a class="dl" href="#">Sign in to download</a></div>
+    <div data-tk-slot="row"><span class="name">banking-panel-source.zip</span><span class="size">3.8 MB</span><a class="dl" href="#">Sign in to download</a></div>
+    <div data-tk-slot="row"><span class="name">sample-transactions.csv</span><span class="size">12 MB</span><a class="dl" href="#">Sign in to download</a></div>
+    <div data-tk-slot="row"><span class="name">architecture-diagram.pdf</span><span class="size">220 KB</span><a class="dl" href="#">Sign in to download</a></div>
+    <div data-tk-slot="row"><span class="name">walkthrough-recording.mp4</span><span class="size">68 MB</span><a class="dl" href="#">Sign in to download</a></div>
   </div>
   <section class="wrap"><div class="tk-cta-block" data-pillar="studio"><p class="eyebrow">next step</p><h3 style="margin:0">This demo came from a study — and becomes a product.</h3>
     <p class="italic-dek">Read the reasoning, or get the production template.</p>
@@ -585,21 +585,21 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
     <div data-tk-slot="step" data-pillar="net"><span data-tk-slot="num">07 · net</span><span data-tk-slot="name">Download</span></div>
     <div data-tk-slot="step" data-pillar="net"><span data-tk-slot="num">08 · net</span><span data-tk-slot="name">Docs / version</span></div>
   </nav>
-  <section class="prod-hero2">
-    <div>
+  <section class="tk-product-hero">
+    <div data-tk-slot="body">
       <span class="tk-badge" data-pillar="com">.com · product</span>
       <h1 style="margin-top:14px">Spine — fleet replay engine.</h1>
       <p class="lead">A production-grade route-replay engine for telemetry. Drop-in React component, headless engine for any framework, deterministic CSV/Parquet export, and a small Go API service if you want it self-hosted.</p>
-      <div class="price-block"><div class="amt"><span class="from">from</span>$129</div><div class="term">one-time · per developer</div><div class="lic">Standard · Extended · Team</div></div>
+      <div data-tk-slot="price"><div class="amt"><span class="from">from</span>$129</div><div class="term">one-time · per developer</div><div class="lic">Standard · Extended · Team</div></div>
       <div class="demo-cta"><a class="tk-button" data-style="cta" data-pillar="com" href="#">Pick a license →</a><a class="tk-button" data-style="cta" data-variant="secondary" href="#">Try the demo first</a></div>
-      <div class="summary-list">
-        <div class="it">React component, headless engine, and Go API — pick what you need.</div>
-        <div class="it">Deterministic export — same input data, identical output bytes.</div>
-        <div class="it">Six-month update window included; commercial deployment from $129.</div>
-        <div class="it">Built from a working case study and a public demo, not a slide deck.</div>
+      <div data-tk-slot="summary">
+        <div>React component, headless engine, and Go API — pick what you need.</div>
+        <div>Deterministic export — same input data, identical output bytes.</div>
+        <div>Six-month update window included; commercial deployment from $129.</div>
+        <div>Built from a working case study and a public demo, not a slide deck.</div>
       </div>
     </div>
-    <div class="prod-visual var-com">
+    <div data-tk-slot="visual">
       <div><span class="tk-badge" data-pillar="com">.com · v0.4.2</span></div>
       <div class="v-foot"><span>Latest release</span><span class="d">2026-05-28</span></div>
     </div>
@@ -607,32 +607,32 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
   <!-- license matrix — the centerpiece -->
   <section class="lic-section">
     <div class="tk-section-head"><div><p data-tk-slot="eyebrow" style="color:var(--tk-com)">License tiers</p><h2 data-tk-slot="title">Pick the tier that matches the deployment.</h2></div><p class="desc" style="max-width:38ch;margin:0">All paid tiers include source, six months of updates, and email support. The MIT tier is the demo source — free, no support.</p></div>
-    <div class="license-grid">
-      <article class="tier"><div class="t-name">MIT · free</div><div class="t-price">$0</div><p class="desc">The demo source, MIT-licensed. For evaluation, study, and non-commercial use.</p>
-        <ul><li>Demo source code</li><li>Sample dataset</li><li>Architecture diagram</li><li class="no">Production support</li><li class="no">Commercial deployment</li></ul>
-        <a class="pick" href="#">Get the demo source</a></article>
-      <article class="tier featured"><span class="ribbon">Recommended</span><div class="t-name">Standard</div><div class="t-price">$129<span class="term">/ dev</span></div><p class="desc">One developer, one production deployment. The default tier for indie shops.</p>
-        <ul><li>Full source · React + headless engine</li><li>One internal production deployment</li><li>Six months of updates</li><li>Email support</li><li class="no">Sub-license to clients</li></ul>
-        <a class="pick buy" href="#">Buy Standard →</a></article>
-      <article class="tier"><div class="t-name">Extended</div><div class="t-price">$429<span class="term">/ dev</span></div><p class="desc">Sub-license rights for client work. The default tier for consultancies.</p>
-        <ul><li>Everything in Standard</li><li>Sub-license to one end-customer</li><li>Twelve months of updates</li><li>Priority email support</li><li class="no">Multi-team deployment</li></ul>
-        <a class="pick" href="#">Buy Extended →</a></article>
-      <article class="tier"><div class="t-name">Team</div><div class="t-price">$1,490</div><p class="desc">Up to ten developers, unlimited internal deployments, twelve months of updates.</p>
-        <ul><li>Everything in Extended</li><li>Up to 10 developers</li><li>Unlimited internal deployments</li><li>Twelve months of updates</li><li>Quarterly office hours</li></ul>
-        <a class="pick" href="#">Buy Team →</a></article>
+    <div class="tk-license-grid">
+      <article class="tk-license-tier"><div data-tk-slot="name">MIT · free</div><div data-tk-slot="price">$0</div><p data-tk-slot="desc">The demo source, MIT-licensed. For evaluation, study, and non-commercial use.</p>
+        <ul data-tk-slot="features"><li>Demo source code</li><li>Sample dataset</li><li>Architecture diagram</li><li data-state="excluded">Production support</li><li data-state="excluded">Commercial deployment</li></ul>
+        <a data-tk-slot="cta" href="#">Get the demo source</a></article>
+      <article class="tk-license-tier" data-variant="featured"><span data-tk-slot="ribbon">Recommended</span><div data-tk-slot="name">Standard</div><div data-tk-slot="price">$129<span class="term">/ dev</span></div><p data-tk-slot="desc">One developer, one production deployment. The default tier for indie shops.</p>
+        <ul data-tk-slot="features"><li>Full source · React + headless engine</li><li>One internal production deployment</li><li>Six months of updates</li><li>Email support</li><li data-state="excluded">Sub-license to clients</li></ul>
+        <a data-tk-slot="cta" data-variant="buy" href="#">Buy Standard →</a></article>
+      <article class="tk-license-tier"><div data-tk-slot="name">Extended</div><div data-tk-slot="price">$429<span class="term">/ dev</span></div><p data-tk-slot="desc">Sub-license rights for client work. The default tier for consultancies.</p>
+        <ul data-tk-slot="features"><li>Everything in Standard</li><li>Sub-license to one end-customer</li><li>Twelve months of updates</li><li>Priority email support</li><li data-state="excluded">Multi-team deployment</li></ul>
+        <a data-tk-slot="cta" href="#">Buy Extended →</a></article>
+      <article class="tk-license-tier"><div data-tk-slot="name">Team</div><div data-tk-slot="price">$1,490</div><p data-tk-slot="desc">Up to ten developers, unlimited internal deployments, twelve months of updates.</p>
+        <ul data-tk-slot="features"><li>Everything in Extended</li><li>Up to 10 developers</li><li>Unlimited internal deployments</li><li>Twelve months of updates</li><li>Quarterly office hours</li></ul>
+        <a data-tk-slot="cta" href="#">Buy Team →</a></article>
     </div>
   </section>
   <!-- features + tech/checkout aside -->
   <section class="prod-features">
     <div>
       <div class="tk-section-head" style="margin-bottom:var(--tk-space-6)"><div><p data-tk-slot="eyebrow" style="color:var(--tk-com)">What you get</p><h2 data-tk-slot="title">Built for drop-in.</h2></div></div>
-      <div class="feat-grid">
-        <div class="feat"><div class="nm">Headless engine</div><div class="desc">A small TypeScript core with no UI dependency. Wire it into any framework, or run it server-side.</div></div>
-        <div class="feat"><div class="nm">React component</div><div class="desc">A polished &lt;ReplayViewer/&gt; with a slot system for custom overlays.</div></div>
-        <div class="feat"><div class="nm">Deterministic export</div><div class="desc">CSV and Parquet output is byte-for-byte reproducible from identical input.</div></div>
-        <div class="feat"><div class="nm">Self-hostable API</div><div class="desc">A small Go service for hourly batch ingest. Ships as a container image.</div></div>
-        <div class="feat"><div class="nm">Map-vendor agnostic</div><div class="desc">Adapters for MapLibre, Mapbox GL, and a no-map canvas fallback.</div></div>
-        <div class="feat"><div class="nm">Audit-grade replay file</div><div class="desc">One Parquet file per shift, documented schema, stable URL-state model.</div></div>
+      <div class="tk-feature-grid">
+        <div class="tk-feature"><div data-tk-slot="name">Headless engine</div><div data-tk-slot="desc">A small TypeScript core with no UI dependency. Wire it into any framework, or run it server-side.</div></div>
+        <div class="tk-feature"><div data-tk-slot="name">React component</div><div data-tk-slot="desc">A polished &lt;ReplayViewer/&gt; with a slot system for custom overlays.</div></div>
+        <div class="tk-feature"><div data-tk-slot="name">Deterministic export</div><div data-tk-slot="desc">CSV and Parquet output is byte-for-byte reproducible from identical input.</div></div>
+        <div class="tk-feature"><div data-tk-slot="name">Self-hostable API</div><div data-tk-slot="desc">A small Go service for hourly batch ingest. Ships as a container image.</div></div>
+        <div class="tk-feature"><div data-tk-slot="name">Map-vendor agnostic</div><div data-tk-slot="desc">Adapters for MapLibre, Mapbox GL, and a no-map canvas fallback.</div></div>
+        <div class="tk-feature"><div data-tk-slot="name">Audit-grade replay file</div><div data-tk-slot="desc">One Parquet file per shift, documented schema, stable URL-state model.</div></div>
       </div>
     </div>
     <aside>

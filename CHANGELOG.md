@@ -20,6 +20,24 @@ mockup project, so versions track design milestones rather than shipped software
 
 ---
 
+## [0.12.0] — 2026-06-13
+
+C5 commerce migration: the `Claude-DT` mockup's product + demo surfaces now consume the **C5 composites** (registry PR #40).
+
+### Changed
+- **Product hero (s6) → `tk-product-hero`** (price-block amt/from/term/lic + ✓ summary + striped visual;
+  com-keyed). **License matrix (s6) → `tk-license-tier`** (4 tiers in `tk-license-grid`; featured Standard
+  → `data-variant="featured"` ribbon + com ring; `.no` items → `data-state="excluded"` ✗; `<ul>` →
+  `data-tk-slot="features"`; slots name/price/desc/cta). **Feature grid (s6) → `tk-feature-grid`** (6 cards).
+- **Demo (s5): meta strip → `tk-demo-meta`** (k/val → key/val slots, mono via data-mono), **preview →
+  `tk-demo-preview`**, **shots → `tk-demo-shots`/`tk-demo-shot`**, **artifact downloads → `tk-artifact-list`**
+  (gate header + name/size/dl rows; studio-keyed lock; ADR-0006 trust-state partial).
+- Scoped slot renames so shared classes elsewhere are untouched — verified: s9 membership badge
+  (`<div class="tier">`, C7), section-head `.desc`, and non-C5 `.nm`/`.k` all preserved.
+
+### Deferred
+- Now-inert bespoke commerce CSS (`.prod-hero2`/`.tier`/`.feat-grid`/`.artifacts`/…) left this pass → shared dead-CSS cleanup.
+
 ## [0.11.0] — 2026-06-13
 
 C4 flywheel migration: the `Claude-DT` mockup's signature flywheel + position steppers now consume the **C4 composites** (registry PR #38).
