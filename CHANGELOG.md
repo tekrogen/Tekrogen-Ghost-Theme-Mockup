@@ -20,6 +20,22 @@ mockup project, so versions track design milestones rather than shipped software
 
 ---
 
+## [0.9.0] — 2026-06-13
+
+C2 data & forms migration: the `Claude-DT` mockup consumes the **C2 composites** (registry PR #34).
+
+### Changed
+- **Tables → `tk-table`** (bespoke `.tk-table` core removed; registry applies; `.tk-table .chosen`
+  kept as a recon helper). **Forms → `tk-form`/`tk-field`/`tk-field-row`** (10 fields, 3 forms).
+  **Callouts → `tk-callout`** (2, `data-pillar` where keyed). **CTA blocks → `tk-cta-block`** (2,
+  `.row` → `data-tk-slot="actions"`). **Stats → `tk-stat`/`tk-stats`** (4; value now `--tk-fs-h2`
+  ≈ 28px vs the old 34px — a minor scale normalization). Verified on-brand (recon table + callout,
+  computed-style checks).
+
+### Deferred
+- Now-inert bespoke C2 CSS (`.form`/`.field`/`.callout`/`.cta-block`/`.stat`) left this pass —
+  folded into the same dead-CSS cleanup as C1.
+
 ## [0.8.0] — 2026-06-13
 
 C1 structural migration: the `Claude-DT` mockup's header, footer, section heads, and mono labels
