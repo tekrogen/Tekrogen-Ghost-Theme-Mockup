@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="version" content="v0.8.0"/>
+<meta name="version" content="v0.9.0"/>
 <title>Tekrogen · Publishing System Theme — Claude-DT mockup</title>
 <link rel="icon" href="../../assets/favicon.svg"/>
 <link rel="stylesheet" href="../../colors_and_type.css"><!-- self-hosted fonts via @font-face (ADR-0008) -->
@@ -329,7 +329,7 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
 <!-- APP CHROME — harness (NOT theme) -->
 <div class="shell-bar">
   <div class="brand"><img src="../../assets/tekrogen-mark.svg" alt=""/> Tekrogen</div>
-  <span class="ver">Claude-DT · v0.8.0 · HI-FI</span>
+  <span class="ver">Claude-DT · v0.9.0 · HI-FI</span>
   <div class="shell-tabs" role="tablist">
     <button class="shell-tab" role="tab" aria-selected="true"  data-screen="s1">Home</button>
     <button class="shell-tab" role="tab" aria-selected="false" data-screen="s2">Case Studies</button>
@@ -379,31 +379,22 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
       <div class="hero-cta"><a class="tk-button" data-style="cta" href="#">Explore Case Studies</a><a class="tk-button" data-style="cta" data-variant="secondary" href="#">View Demos</a></div>
       <div class="tk-stats"><div class="tk-stat"><div data-tk-slot="value">24</div><div data-tk-slot="label">Case studies</div></div><div class="tk-stat"><div data-tk-slot="value">52</div><div data-tk-slot="label">Recon entries</div></div><div class="tk-stat"><div data-tk-slot="value">11</div><div data-tk-slot="label">Live demos</div></div><div class="tk-stat"><div data-tk-slot="value">06</div><div data-tk-slot="label">Products</div></div></div>
     </div>
-    <div class="flywheel" role="img" aria-label="The Tekrogen flywheel">
-      <svg class="fw-svg" viewBox="0 0 460 460" aria-hidden="true">
-        <circle cx="230" cy="230" r="160" fill="none" stroke="var(--tk-border)" stroke-width="1"/>
-        <path d="M230 70 A160 160 0 0 1 343.1 116.9" fill="none" stroke="var(--tk-org)" stroke-width="3" stroke-linecap="round"/>
-        <path d="M390 230 A160 160 0 0 1 343.1 343.1" fill="none" stroke="var(--tk-studio)" stroke-width="3" stroke-linecap="round"/>
-        <path d="M230 390 A160 160 0 0 1 116.9 343.1" fill="none" stroke="var(--tk-com)" stroke-width="3" stroke-linecap="round"/>
-        <path d="M70 230 A160 160 0 0 1 116.9 116.9" fill="none" stroke="var(--tk-net)" stroke-width="3" stroke-linecap="round"/>
-        <circle class="fw-node" cx="230" cy="70" r="9" fill="var(--tk-ink-soft)" stroke="var(--tk-org)"/>
-        <circle class="fw-node" cx="343.1" cy="116.9" r="7" fill="var(--tk-ink-soft)" stroke="var(--tk-org)"/>
-        <circle class="fw-node" cx="390" cy="230" r="7" fill="var(--tk-ink-soft)" stroke="var(--tk-studio)"/>
-        <circle class="fw-node" cx="343.1" cy="343.1" r="7" fill="var(--tk-ink-soft)" stroke="var(--tk-studio)"/>
-        <circle class="fw-node" cx="230" cy="390" r="9" fill="var(--tk-ink-soft)" stroke="var(--tk-com)"/>
-        <circle class="fw-node" cx="116.9" cy="343.1" r="7" fill="var(--tk-ink-soft)" stroke="var(--tk-com)"/>
-        <circle class="fw-node" cx="70" cy="230" r="7" fill="var(--tk-ink-soft)" stroke="var(--tk-net)"/>
-        <circle class="fw-node" cx="116.9" cy="116.9" r="7" fill="var(--tk-ink-soft)" stroke="var(--tk-net)"/>
-        <text x="230" y="58" text-anchor="middle">01 · use case</text>
-        <text x="360" y="120" text-anchor="start">02 · recon</text>
-        <text x="406" y="234" text-anchor="start">03 · demo</text>
-        <text x="360" y="360" text-anchor="start">04 · register</text>
-        <text x="230" y="410" text-anchor="middle">05 · product</text>
-        <text x="100" y="360" text-anchor="end">06 · license</text>
-        <text x="54" y="234" text-anchor="end">07 · download</text>
-        <text x="100" y="120" text-anchor="end">08 · docs</text>
-        <text class="fw-core" x="230" y="226" text-anchor="middle">build → prove</text>
-        <text class="fw-core" x="230" y="244" text-anchor="middle">→ package</text>
+    <div class="tk-flywheel" role="img" aria-label="The Tekrogen flywheel">
+      <svg viewBox="0 0 460 460" aria-hidden="true">
+        <circle data-track cx="230" cy="230" r="160" fill="none" stroke-width="1"/>
+        <path data-arc="org" d="M230 70 A160 160 0 0 1 343.1 116.9" fill="none" stroke-width="3" stroke-linecap="round"/>
+        <path data-arc="studio" d="M390 230 A160 160 0 0 1 343.1 343.1" fill="none" stroke-width="3" stroke-linecap="round"/>
+        <path data-arc="com" d="M230 390 A160 160 0 0 1 116.9 343.1" fill="none" stroke-width="3" stroke-linecap="round"/>
+        <path data-arc="net" d="M70 230 A160 160 0 0 1 116.9 116.9" fill="none" stroke-width="3" stroke-linecap="round"/>
+        <circle data-node data-pillar="org" cx="230" cy="70" r="9"/><circle data-node data-pillar="org" cx="343.1" cy="116.9" r="7"/>
+        <circle data-node data-pillar="studio" cx="390" cy="230" r="7"/><circle data-node data-pillar="studio" cx="343.1" cy="343.1" r="7"/>
+        <circle data-node data-pillar="com" cx="230" cy="390" r="9"/><circle data-node data-pillar="com" cx="116.9" cy="343.1" r="7"/>
+        <circle data-node data-pillar="net" cx="70" cy="230" r="7"/><circle data-node data-pillar="net" cx="116.9" cy="116.9" r="7"/>
+        <text x="230" y="58" text-anchor="middle">01 · use case</text><text x="360" y="120" text-anchor="start">02 · recon</text>
+        <text x="406" y="234" text-anchor="start">03 · demo</text><text x="360" y="360" text-anchor="start">04 · register</text>
+        <text x="230" y="410" text-anchor="middle">05 · product</text><text x="100" y="360" text-anchor="end">06 · license</text>
+        <text x="54" y="234" text-anchor="end">07 · download</text><text x="100" y="120" text-anchor="end">08 · docs</text>
+        <text data-tk-slot="core" x="230" y="226" text-anchor="middle">build → prove</text><text data-tk-slot="core" x="230" y="244" text-anchor="middle">→ package</text>
       </svg>
     </div>
   </section>
@@ -584,15 +575,15 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
   <div class="frame-bar"><div class="frame-dots"><span></span><span></span><span></span></div><span class="frame-url">tekrogen.<b>com</b> / products / spine /</span></div>
   <header class="tk-site-header" data-style="framed"><div data-tk-slot="inner"><div data-tk-slot="brand"><img src="../../assets/tekrogen-mark.svg" alt="" width="28" height="28"/><span data-tk-slot="wordmark">Tekrogen</span></div><nav data-tk-slot="nav"><a href="#">Home</a><a href="#">Case Studies</a><a href="#">Recon</a><a href="#">Demos</a><a href="#" aria-current="page">Products</a><a href="#">Documentation</a><a href="#">About</a></nav><div data-tk-slot="util"><span class="tk-label">Search</span><a class="tk-button" data-style="cta" data-variant="secondary" href="#">Account</a><a class="tk-button" data-style="cta" data-pillar="com" href="#">Cart · 0</a></div></div></header>
   <!-- flywheel stepper -->
-  <nav class="fw-stepper" aria-label="Flywheel position">
-    <div class="fw-step var-org done"><span class="n">01 · org</span><span class="nm">Use case</span></div>
-    <div class="fw-step var-org done"><span class="n">02 · org</span><span class="nm">Recon</span></div>
-    <div class="fw-step var-studio done"><span class="n">03 · studio</span><span class="nm">Demo / POC</span></div>
-    <div class="fw-step var-studio done"><span class="n">04 · studio</span><span class="nm">Registration</span></div>
-    <div class="fw-step var-com here"><span class="n">05 · com</span><span class="nm">Product</span></div>
-    <div class="fw-step var-com here"><span class="n">06 · com</span><span class="nm">License</span></div>
-    <div class="fw-step var-net"><span class="n">07 · net</span><span class="nm">Download</span></div>
-    <div class="fw-step var-net"><span class="n">08 · net</span><span class="nm">Docs / version</span></div>
+  <nav class="tk-flywheel-stepper" aria-label="Flywheel position">
+    <div data-tk-slot="step" data-pillar="org" data-state="done"><span data-tk-slot="num">01 · org</span><span data-tk-slot="name">Use case</span></div>
+    <div data-tk-slot="step" data-pillar="org" data-state="done"><span data-tk-slot="num">02 · org</span><span data-tk-slot="name">Recon</span></div>
+    <div data-tk-slot="step" data-pillar="studio" data-state="done"><span data-tk-slot="num">03 · studio</span><span data-tk-slot="name">Demo / POC</span></div>
+    <div data-tk-slot="step" data-pillar="studio" data-state="done"><span data-tk-slot="num">04 · studio</span><span data-tk-slot="name">Registration</span></div>
+    <div data-tk-slot="step" data-pillar="com" data-state="here"><span data-tk-slot="num">05 · com</span><span data-tk-slot="name">Product</span></div>
+    <div data-tk-slot="step" data-pillar="com" data-state="here"><span data-tk-slot="num">06 · com</span><span data-tk-slot="name">License</span></div>
+    <div data-tk-slot="step" data-pillar="net"><span data-tk-slot="num">07 · net</span><span data-tk-slot="name">Download</span></div>
+    <div data-tk-slot="step" data-pillar="net"><span data-tk-slot="num">08 · net</span><span data-tk-slot="name">Docs / version</span></div>
   </nav>
   <section class="prod-hero2">
     <div>
@@ -672,15 +663,15 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
  <div class="frame">
   <div class="frame-bar"><div class="frame-dots"><span></span><span></span><span></span></div><span class="frame-url">tekrogen.<b>net</b> / docs / spine /</span></div>
   <header class="tk-site-header" data-style="framed"><div data-tk-slot="inner"><div data-tk-slot="brand"><img src="../../assets/tekrogen-mark.svg" alt="" width="28" height="28"/><span data-tk-slot="wordmark">Tekrogen</span></div><nav data-tk-slot="nav"><a href="#">Home</a><a href="#">Case Studies</a><a href="#">Recon</a><a href="#">Demos</a><a href="#">Products</a><a href="#" aria-current="page">Documentation</a><a href="#">About</a></nav><div data-tk-slot="util"><span class="tk-label">Search docs</span><a class="tk-button" data-style="cta" data-pillar="net" href="#">Customer portal</a></div></div></header>
-  <nav class="fw-stepper" aria-label="Flywheel position">
-    <div class="fw-step var-org done"><span class="n">01 · org</span><span class="nm">Use case</span></div>
-    <div class="fw-step var-org done"><span class="n">02 · org</span><span class="nm">Recon</span></div>
-    <div class="fw-step var-studio done"><span class="n">03 · studio</span><span class="nm">Demo / POC</span></div>
-    <div class="fw-step var-studio done"><span class="n">04 · studio</span><span class="nm">Registration</span></div>
-    <div class="fw-step var-com done"><span class="n">05 · com</span><span class="nm">Product</span></div>
-    <div class="fw-step var-com done"><span class="n">06 · com</span><span class="nm">License</span></div>
-    <div class="fw-step var-net here"><span class="n">07 · net</span><span class="nm">Download</span></div>
-    <div class="fw-step var-net here"><span class="n">08 · net</span><span class="nm">Docs / version</span></div>
+  <nav class="tk-flywheel-stepper" aria-label="Flywheel position">
+    <div data-tk-slot="step" data-pillar="org" data-state="done"><span data-tk-slot="num">01 · org</span><span data-tk-slot="name">Use case</span></div>
+    <div data-tk-slot="step" data-pillar="org" data-state="done"><span data-tk-slot="num">02 · org</span><span data-tk-slot="name">Recon</span></div>
+    <div data-tk-slot="step" data-pillar="studio" data-state="done"><span data-tk-slot="num">03 · studio</span><span data-tk-slot="name">Demo / POC</span></div>
+    <div data-tk-slot="step" data-pillar="studio" data-state="done"><span data-tk-slot="num">04 · studio</span><span data-tk-slot="name">Registration</span></div>
+    <div data-tk-slot="step" data-pillar="com" data-state="done"><span data-tk-slot="num">05 · com</span><span data-tk-slot="name">Product</span></div>
+    <div data-tk-slot="step" data-pillar="com" data-state="done"><span data-tk-slot="num">06 · com</span><span data-tk-slot="name">License</span></div>
+    <div data-tk-slot="step" data-pillar="net" data-state="here"><span data-tk-slot="num">07 · net</span><span data-tk-slot="name">Download</span></div>
+    <div data-tk-slot="step" data-pillar="net" data-state="here"><span data-tk-slot="num">08 · net</span><span data-tk-slot="name">Docs / version</span></div>
   </nav>
   <section class="docs-hero">
     <div>
