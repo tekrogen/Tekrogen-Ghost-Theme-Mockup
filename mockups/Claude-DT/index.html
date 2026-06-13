@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="version" content="v0.11.0"/>
+<meta name="version" content="v0.12.0"/>
 <title>Tekrogen · Publishing System Theme — Claude-DT mockup</title>
 <link rel="icon" href="../../assets/favicon.svg"/>
 <link rel="stylesheet" href="../../colors_and_type.css"><!-- self-hosted fonts via @font-face (ADR-0008) -->
@@ -329,7 +329,7 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
 <!-- APP CHROME — harness (NOT theme) -->
 <div class="shell-bar">
   <div class="brand"><img src="../../assets/tekrogen-mark.svg" alt=""/> Tekrogen</div>
-  <span class="ver">Claude-DT · v0.11.0 · HI-FI</span>
+  <span class="ver">Claude-DT · v0.12.0 · HI-FI</span>
   <div class="shell-tabs" role="tablist">
     <button class="shell-tab" role="tab" aria-selected="true"  data-screen="s1">Home</button>
     <button class="shell-tab" role="tab" aria-selected="false" data-screen="s2">Case Studies</button>
@@ -765,20 +765,20 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
     <p class="eyebrow">membership · /account · /portal · /forms</p>
     <h1>Three states, one surface.</h1>
     <p class="lead">Anonymous readers see everything but download nothing. A free account unlocks the MIT demo source. A paid subscription unlocks products, license keys, and the customer portal.</p>
-    <div class="member-ladder">
-      <div class="mstep var-studio"><span class="st">● anonymous · guest</span><h4>Read everything</h4>
-        <ul><li>Articles, recon &amp; demos</li><li>Product pages &amp; pricing</li><li class="no">Demo source downloads</li><li class="no">Product downloads</li></ul></div>
-      <div class="mstep var-net"><span class="st">● free member</span><h4>Demo source &amp; saves</h4>
-        <ul><li>MIT demo-source bundles</li><li>Sample datasets</li><li>Save favorites</li><li>Submit a use-case request</li><li class="no">Paid product downloads</li></ul></div>
-      <div class="mstep var-com"><span class="st">● paid member · subscription</span><h4>Products &amp; portal</h4>
-        <ul><li>Product downloads + source</li><li>License keys</li><li>Customer portal</li><li>Versioned updates in window</li></ul></div>
+    <div class="tk-member-ladder">
+      <div data-tk-slot="step" data-pillar="studio"><span data-tk-slot="state">● anonymous · guest</span><h4>Read everything</h4>
+        <ul data-tk-slot="features"><li>Articles, recon &amp; demos</li><li>Product pages &amp; pricing</li><li data-state="excluded">Demo source downloads</li><li data-state="excluded">Product downloads</li></ul></div>
+      <div data-tk-slot="step" data-pillar="net"><span data-tk-slot="state">● free member</span><h4>Demo source &amp; saves</h4>
+        <ul data-tk-slot="features"><li>MIT demo-source bundles</li><li>Sample datasets</li><li>Save favorites</li><li>Submit a use-case request</li><li data-state="excluded">Paid product downloads</li></ul></div>
+      <div data-tk-slot="step" data-pillar="com"><span data-tk-slot="state">● paid member · subscription</span><h4>Products &amp; portal</h4>
+        <ul data-tk-slot="features"><li>Product downloads + source</li><li>License keys</li><li>Customer portal</li><li>Versioned updates in window</li></ul></div>
     </div>
   </section>
 
   <!-- sub-screens 1 + 2 · sign in / register -->
   <section class="acct-grid">
-    <article class="auth-card">
-      <div class="sub-head"><span class="lab">Sub-screen · sign in</span><span class="state-pill">anonymous</span></div>
+    <article class="tk-auth-card">
+      <div data-tk-slot="head"><span class="lab">Sub-screen · sign in</span><span class="state-pill">anonymous</span></div>
       <h3>Sign in to Tekrogen.</h3>
       <p class="sub">A free account unlocks demo-source downloads. Paid members get product downloads, license keys, and the customer portal.</p>
       <div class="tk-form">
@@ -789,8 +789,8 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
       </div>
       <p class="ghost-note">ghost portal · members</p>
     </article>
-    <article class="auth-card">
-      <div class="sub-head"><span class="lab">Sub-screen · register</span><span class="state-pill" style="color:var(--tk-net);border-color:color-mix(in srgb,var(--tk-net) 45%,transparent)">free tier</span></div>
+    <article class="tk-auth-card">
+      <div data-tk-slot="head"><span class="lab">Sub-screen · register</span><span class="state-pill" style="color:var(--tk-net);border-color:color-mix(in srgb,var(--tk-net) 45%,transparent)">free tier</span></div>
       <h3>Create a free member account.</h3>
       <p class="sub">Unlocks MIT demo-source bundles, sample datasets, saved favorites, and the ability to submit a use-case request. No credit card required.</p>
       <div class="tk-form">
@@ -806,10 +806,10 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
 
   <!-- sub-screen 3 · paid member dashboard -->
   <section class="wrap" style="padding-bottom:0"><div class="sub-head"><span class="lab">Sub-screen · member dashboard</span><span class="state-pill" style="color:var(--tk-net);border-color:color-mix(in srgb,var(--tk-net) 45%,transparent)">paid member</span></div><h2>Order history &amp; downloads.</h2></section>
-  <div class="dash">
-    <div class="dash-head"><div class="av">MD</div><div class="who"><h3>Martinique Dolce</h3><div class="tier">● paid member · team license</div></div><span class="tk-label">2 active licenses</span><a class="tk-button" data-style="cta" data-variant="secondary" href="#">Account settings</a></div>
-    <div class="dash-body">
-      <nav class="dash-side">
+  <div class="tk-dashboard">
+    <div data-tk-slot="head"><span class="tk-avatar" data-style="mono" style="width:42px;height:42px;font-size:13px">MD</span><div class="who"><h3>Martinique Dolce</h3><div class="role">● paid member · team license</div></div><span class="tk-label">2 active licenses</span><a class="tk-button" data-style="cta" data-variant="secondary" href="#">Account settings</a></div>
+    <div data-tk-slot="body">
+      <nav data-tk-slot="nav">
         <a class="on" href="#">Overview</a>
         <a href="#">Orders <span class="ct">04</span></a>
         <a href="#">Downloads <span class="ct">11</span></a>
@@ -819,9 +819,9 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
         <a href="#">Update windows <span class="ct">02</span></a>
         <a href="#">Billing</a>
       </nav>
-      <div class="dash-main">
+      <div data-tk-slot="main">
         <div class="mh"><h3>Recent orders.</h3><a href="#">View all orders →</a></div>
-        <table class="orders"><thead><tr><th>Order</th><th>Product</th><th>License</th><th>Total</th><th>Action</th></tr></thead><tbody>
+        <table class="tk-table"><thead><tr><th>Order</th><th>Product</th><th>License</th><th>Total</th><th>Action</th></tr></thead><tbody>
           <tr><td class="ord">TK-2026-0089</td><td>Spine — fleet replay engine · v0.4.2</td><td class="lic">Team</td><td>$1,490</td><td><a class="dl" href="#">Download ↗</a></td></tr>
           <tr><td class="ord">TK-2026-0064</td><td>Margin — deterministic PDF kit · v0.2.1</td><td class="lic">Extended</td><td>$429</td><td><a class="dl" href="#">Download ↗</a></td></tr>
           <tr><td class="ord">TK-2026-0033</td><td>Facet — classroom kit · v0.1.0</td><td class="lic">Standard</td><td>$129</td><td><a class="dl" href="#">Download ↗</a></td></tr>
@@ -834,7 +834,7 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
 
   <!-- sub-screen 4 · purchase confirmation -->
   <section class="wrap" style="padding-bottom:0"><div class="sub-head"><span class="lab">Sub-screen · purchase confirmation</span><span class="state-pill">post-checkout · stripe</span></div></section>
-  <div class="confirm">
+  <div class="tk-confirm" data-pillar="com">
     <span class="ok">● payment complete</span>
     <h3 style="margin:10px 0 0">Spine — Standard license.</h3>
     <div class="conf-grid"><div><div class="k">Order</div><div class="v">TK-2026-0090</div></div><div><div class="k">Tier · total</div><div class="v">Standard · $129</div></div><div><div class="k">Update window</div><div class="v">6 months</div></div></div>
