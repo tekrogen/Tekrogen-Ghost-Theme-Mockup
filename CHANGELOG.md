@@ -20,6 +20,27 @@ mockup project, so versions track design milestones rather than shipped software
 
 ---
 
+## [0.7.0] — 2026-06-13
+
+Component migration: the `Claude-DT` mockup now **consumes the design-system component
+registry** (`components/`) instead of bespoke CSS — the first surface to do so, validating
+the mockup→theme bridge (ADR-0012).
+
+### Changed
+- **`mockups/Claude-DT/index.html` migrated to `.tk-*` registry classes** (v0.5.0): all
+  buttons → `tk-button` with the **editorial `data-style="cta"`** variant (sans, mixed-case —
+  look preserved) composing `data-pillar` / `data-variant="secondary"` / `data-tk-slot="hint"`;
+  badges → `tk-badge[data-pillar]` (tinted pill + dot); inputs → `tk-input`. Default CTAs keep
+  following the harness `--wing-accent` knob and form inputs stay full-width via small local
+  consumer overrides. Verified visually equivalent to v0.6.0 (only intended deltas: CTA padding
+  snapped to `--tk-space-*` ≤2px; inputs adopt the registry's a11y-correct 16px + `--tk-bg-3`).
+- **Re-vendored `components/`** from the design system (pillar-aware primitives + button
+  `data-style="cta"` / `hint` slot).
+
+### Removed
+- The mockup's bespoke `.btn` / `.badge` / `.inp` / `.btn-block` CSS blocks (now provided by the
+  registry). `.av` avatars **deferred** to the composites batch (mono-vs-sans initials).
+
 ## [0.6.0] — 2026-06-13
 
 Foundation sync to **Tekrogen Brand Design System** parity, brand-integrity fixes, and the
