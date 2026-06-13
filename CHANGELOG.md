@@ -20,6 +20,21 @@ mockup project, so versions track design milestones rather than shipped software
 
 ---
 
+## [0.11.0] — 2026-06-13
+
+C4 flywheel migration: the `Claude-DT` mockup's signature flywheel + position steppers now consume the **C4 composites** (registry PR #38).
+
+### Changed
+- **Home flywheel → `tk-flywheel`** (s1). The 8-node SVG drops bespoke inline `stroke="var(--tk-*)"`
+  for `data-arc`/`data-node` + `data-pillar`; arc/node colors and the `data-tk-slot="core"` center
+  label resolve from `flywheel.css` (token chain CI-clean). **Position steppers → `tk-flywheel-stepper`**
+  (s6 Products, s7 Documentation): `.fw-step var-X done|here` → `[data-tk-slot="step"]` + `data-pillar`
+  + `data-state`; `.n`/`.nm` → `num`/`name` slots. Verified on-brand (s1 pillar arcs `#446e88`/`#6491ac`,
+  core fill fg-1; stepper done-state pillar borders).
+
+### Deferred
+- Now-inert bespoke `.flywheel`/`.fw-svg`/`.fw-stepper`/`.fw-step` CSS left this pass → shared dead-CSS cleanup.
+
 ## [0.10.0] — 2026-06-13
 
 C3 cards migration: the `Claude-DT` mockup's cards now consume the **C3 composites** (registry PR #36).
