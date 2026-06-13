@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="version" content="v0.7.0"/>
+<meta name="version" content="v0.8.0"/>
 <title>Tekrogen · Publishing System Theme — Claude-DT mockup</title>
 <link rel="icon" href="../../assets/favicon.svg"/>
 <link rel="stylesheet" href="../../colors_and_type.css"><!-- self-hosted fonts via @font-face (ADR-0008) -->
@@ -329,7 +329,7 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
 <!-- APP CHROME — harness (NOT theme) -->
 <div class="shell-bar">
   <div class="brand"><img src="../../assets/tekrogen-mark.svg" alt=""/> Tekrogen</div>
-  <span class="ver">Claude-DT · v0.7.0 · HI-FI</span>
+  <span class="ver">Claude-DT · v0.8.0 · HI-FI</span>
   <div class="shell-tabs" role="tablist">
     <button class="shell-tab" role="tab" aria-selected="true"  data-screen="s1">Home</button>
     <button class="shell-tab" role="tab" aria-selected="false" data-screen="s2">Case Studies</button>
@@ -365,10 +365,10 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
 
   <!-- partial: pillar-buttons (browse by pillar, with counts) -->
   <nav class="pillar-buttons" aria-label="Pillars">
-    <a class="pbtn var-org" href="#"><span class="label">.org</span><span class="name">Case studies &amp; recon</span><span class="ct">24 studies · 52 recon</span></a>
-    <a class="pbtn var-studio" href="#"><span class="label">.studio</span><span class="name">Demos &amp; POCs</span><span class="ct">11 live demos</span></a>
-    <a class="pbtn var-com" href="#"><span class="label">.com</span><span class="name">Products &amp; licensing</span><span class="ct">06 products</span></a>
-    <a class="pbtn var-net" href="#"><span class="label">.net</span><span class="name">Docs &amp; distribution</span><span class="ct">version history</span></a>
+    <a class="tk-pillar-button" data-pillar="org" href="#"><span data-tk-slot="label">.org</span><span data-tk-slot="name">Case studies &amp; recon</span><span data-tk-slot="count">24 studies · 52 recon</span></a>
+    <a class="tk-pillar-button" data-pillar="studio" href="#"><span data-tk-slot="label">.studio</span><span data-tk-slot="name">Demos &amp; POCs</span><span data-tk-slot="count">11 live demos</span></a>
+    <a class="tk-pillar-button" data-pillar="com" href="#"><span data-tk-slot="label">.com</span><span data-tk-slot="name">Products &amp; licensing</span><span data-tk-slot="count">06 products</span></a>
+    <a class="tk-pillar-button" data-pillar="net" href="#"><span data-tk-slot="label">.net</span><span data-tk-slot="name">Docs &amp; distribution</span><span data-tk-slot="count">version history</span></a>
   </nav>
 
   <section class="hero">
@@ -411,9 +411,9 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
   <section class="wrap" style="padding-top:0">
     <div class="tk-section-head"><div><p data-tk-slot="eyebrow">.org · use case studies</p><h2 data-tk-slot="title">Featured studies.</h2></div><a class="tk-button" data-style="cta" data-variant="secondary" href="#">All studies <span data-tk-slot="hint">↗</span></a></div>
     <div class="cards">
-      <article class="card var-org"><div class="row"><span class="tk-badge" data-pillar="org">.org</span><span class="meta">EBIA · finance</span></div><h3>Token-safe Plaid integration on a four-week budget.</h3><p class="desc">Why we kept access tokens server-side, what we gave up, and the revocation path that shipped.</p><div class="rel"><span class="tk-label" data-variant="chip" data-pillar="org">recon</span><span class="tk-label" data-variant="chip" data-pillar="studio">demo</span><span class="tk-label" data-variant="chip" data-pillar="com">product</span></div></article>
-      <article class="card var-org"><div class="row"><span class="tk-badge" data-pillar="org">.org</span><span class="meta">Logistics · SaaS</span></div><h3>Cutting dispatcher idle-time by 38% with route replay.</h3><p class="desc">A deliberate non-real-time architecture, the trade-offs, and what shipped.</p><div class="rel"><span class="tk-label" data-variant="chip" data-pillar="org">recon</span><span class="tk-label" data-variant="chip" data-pillar="studio">demo</span><span class="tk-label" data-variant="chip" data-pillar="com">product</span></div></article>
-      <article class="card var-org"><div class="row"><span class="tk-badge" data-pillar="org">.org</span><span class="meta">Education · K-12</span></div><h3>A teacher dashboard that ships in a single SQLite file.</h3><p class="desc">Local-first over a hosted backend — how state syncs and where it breaks.</p><div class="rel"><span class="tk-label" data-variant="chip" data-pillar="studio">demo</span><span class="tk-label" data-variant="chip" data-pillar="com">product</span></div></article>
+      <article class="tk-content-card" data-pillar="org"><div data-tk-slot="head"><span class="tk-badge" data-pillar="org">.org</span><span class="meta">EBIA · finance</span></div><h3>Token-safe Plaid integration on a four-week budget.</h3><p data-tk-slot="desc">Why we kept access tokens server-side, what we gave up, and the revocation path that shipped.</p><div data-tk-slot="rel"><span class="tk-label" data-variant="chip" data-pillar="org">recon</span><span class="tk-label" data-variant="chip" data-pillar="studio">demo</span><span class="tk-label" data-variant="chip" data-pillar="com">product</span></div></article>
+      <article class="tk-content-card" data-pillar="org"><div data-tk-slot="head"><span class="tk-badge" data-pillar="org">.org</span><span class="meta">Logistics · SaaS</span></div><h3>Cutting dispatcher idle-time by 38% with route replay.</h3><p data-tk-slot="desc">A deliberate non-real-time architecture, the trade-offs, and what shipped.</p><div data-tk-slot="rel"><span class="tk-label" data-variant="chip" data-pillar="org">recon</span><span class="tk-label" data-variant="chip" data-pillar="studio">demo</span><span class="tk-label" data-variant="chip" data-pillar="com">product</span></div></article>
+      <article class="tk-content-card" data-pillar="org"><div data-tk-slot="head"><span class="tk-badge" data-pillar="org">.org</span><span class="meta">Education · K-12</span></div><h3>A teacher dashboard that ships in a single SQLite file.</h3><p data-tk-slot="desc">Local-first over a hosted backend — how state syncs and where it breaks.</p><div data-tk-slot="rel"><span class="tk-label" data-variant="chip" data-pillar="studio">demo</span><span class="tk-label" data-variant="chip" data-pillar="com">product</span></div></article>
     </div>
   </section>
   <footer class="tk-footer" data-style="nav"><div data-tk-slot="top"><div data-tk-slot="brand"><img src="../../assets/tekrogen-mark.svg" alt="" width="40" height="40"/><div data-tk-slot="wordmark">TEKROGEN</div><p data-tk-slot="tagline">Documenting the build — research, decisions, and the templates that come out the other side.</p></div><div data-tk-slot="pillars">
@@ -430,10 +430,10 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
   <section class="wrap">
     <div class="tk-section-head"><div><p data-tk-slot="eyebrow">.org · use case studies</p><h2 data-tk-slot="title">Every build, documented honestly.</h2></div></div>
     <div class="listing">
-      <article class="lcard var-org"><span class="ind">EBIA · personal finance</span><h3>Token-safe Plaid integration on a four-week budget.</h3><p class="desc">The problem, the acceptance criteria, the stack decision, and what we'd do differently — written for the engineer who has to maintain it.</p><div class="rel"><div class="r"><b>Recon</b><a href="#">Token vaults vs. server-only</a></div><div class="r"><b>Demo</b><a href="#">Banking panel · live</a></div><div class="r"><b>Product</b><a href="#">Plaid Integration Template</a></div></div></article>
-      <article class="lcard var-org"><span class="ind">Logistics · SaaS</span><h3>Cutting dispatcher idle-time by 38% with route replay.</h3><p class="desc">Why a six-person team chose a deliberate non-real-time architecture, what they gave up, and what shipped.</p><div class="rel"><div class="r"><b>Recon</b><a href="#">MapLibre vs. Mapbox vs. Tangram</a></div><div class="r"><b>Demo</b><a href="#">Replay viewer · live</a></div><div class="r"><b>Product</b><a href="#">Spine — fleet replay</a></div></div></article>
-      <article class="lcard var-org"><span class="ind">Healthcare · compliance</span><h3>Audit-grade PDF capture without a headless browser.</h3><p class="desc">Replacing a Chromium pipeline with a deterministic renderer — and the trade-offs accepted for reproducible builds.</p><div class="rel"><div class="r"><b>Recon</b><a href="#">Six PDF backends, qualitatively</a></div><div class="r"><b>Demo</b><a href="#">Render-as-a-service · sandbox</a></div></div></article>
-      <article class="lcard var-org"><span class="ind">Education · K-12</span><h3>A teacher dashboard that ships in a single SQLite file.</h3><p class="desc">Local-first over a hosted backend, how grading state syncs, and where the approach starts to break.</p><div class="rel"><div class="r"><b>Demo</b><a href="#">Class roster · prototype</a></div><div class="r"><b>Product</b><a href="#">Facet — classroom kit</a></div></div></article>
+      <article class="tk-listing-card" data-pillar="org"><span data-tk-slot="ind">EBIA · personal finance</span><h3>Token-safe Plaid integration on a four-week budget.</h3><p data-tk-slot="desc">The problem, the acceptance criteria, the stack decision, and what we'd do differently — written for the engineer who has to maintain it.</p><div data-tk-slot="rel"><div class="r"><b>Recon</b><a href="#">Token vaults vs. server-only</a></div><div class="r"><b>Demo</b><a href="#">Banking panel · live</a></div><div class="r"><b>Product</b><a href="#">Plaid Integration Template</a></div></div></article>
+      <article class="tk-listing-card" data-pillar="org"><span data-tk-slot="ind">Logistics · SaaS</span><h3>Cutting dispatcher idle-time by 38% with route replay.</h3><p data-tk-slot="desc">Why a six-person team chose a deliberate non-real-time architecture, what they gave up, and what shipped.</p><div data-tk-slot="rel"><div class="r"><b>Recon</b><a href="#">MapLibre vs. Mapbox vs. Tangram</a></div><div class="r"><b>Demo</b><a href="#">Replay viewer · live</a></div><div class="r"><b>Product</b><a href="#">Spine — fleet replay</a></div></div></article>
+      <article class="tk-listing-card" data-pillar="org"><span data-tk-slot="ind">Healthcare · compliance</span><h3>Audit-grade PDF capture without a headless browser.</h3><p data-tk-slot="desc">Replacing a Chromium pipeline with a deterministic renderer — and the trade-offs accepted for reproducible builds.</p><div data-tk-slot="rel"><div class="r"><b>Recon</b><a href="#">Six PDF backends, qualitatively</a></div><div class="r"><b>Demo</b><a href="#">Render-as-a-service · sandbox</a></div></div></article>
+      <article class="tk-listing-card" data-pillar="org"><span data-tk-slot="ind">Education · K-12</span><h3>A teacher dashboard that ships in a single SQLite file.</h3><p data-tk-slot="desc">Local-first over a hosted backend, how grading state syncs, and where the approach starts to break.</p><div data-tk-slot="rel"><div class="r"><b>Demo</b><a href="#">Class roster · prototype</a></div><div class="r"><b>Product</b><a href="#">Facet — classroom kit</a></div></div></article>
     </div>
   </section>
   <footer class="tk-footer" data-style="nav"><div data-tk-slot="top"><div data-tk-slot="brand"><img src="../../assets/tekrogen-mark.svg" alt="" width="40" height="40"/><div data-tk-slot="wordmark">TEKROGEN</div><p data-tk-slot="tagline">Documenting the build — research, decisions, and the templates that come out the other side.</p></div><div data-tk-slot="pillars">
@@ -657,9 +657,9 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
   <section class="wrap" style="padding-top:0">
     <div class="tk-section-head"><div><p data-tk-slot="eyebrow" style="color:var(--tk-com)">Where this came from</p><h2 data-tk-slot="title">The full pillar trail.</h2></div></div>
     <div class="cards">
-      <article class="card var-org"><div class="row"><span class="tk-badge" data-pillar="org">.org</span><span class="meta">use case</span></div><h3>The four-week build behind it.</h3><p class="desc">Trade-offs, the build, what we'd do differently.</p></article>
-      <article class="card var-studio"><div class="row"><span class="tk-badge" data-pillar="studio">.studio</span><span class="meta">demo</span></div><h3>Try the engine in the browser.</h3><p class="desc">No account required to run it.</p></article>
-      <article class="card var-net"><div class="row"><span class="tk-badge" data-pillar="net">.net</span><span class="meta">docs</span></div><h3>Spine 0.4.2 documentation.</h3><p class="desc">Install, API reference, release notes, version history.</p></article>
+      <article class="tk-content-card" data-pillar="org"><div data-tk-slot="head"><span class="tk-badge" data-pillar="org">.org</span><span class="meta">use case</span></div><h3>The four-week build behind it.</h3><p data-tk-slot="desc">Trade-offs, the build, what we'd do differently.</p></article>
+      <article class="tk-content-card" data-pillar="studio"><div data-tk-slot="head"><span class="tk-badge" data-pillar="studio">.studio</span><span class="meta">demo</span></div><h3>Try the engine in the browser.</h3><p data-tk-slot="desc">No account required to run it.</p></article>
+      <article class="tk-content-card" data-pillar="net"><div data-tk-slot="head"><span class="tk-badge" data-pillar="net">.net</span><span class="meta">docs</span></div><h3>Spine 0.4.2 documentation.</h3><p data-tk-slot="desc">Install, API reference, release notes, version history.</p></article>
     </div>
   </section>
   <footer class="tk-footer" data-style="nav"><div data-tk-slot="top"><div data-tk-slot="brand"><img src="../../assets/tekrogen-mark.svg" alt="" width="40" height="40"/><div data-tk-slot="wordmark">TEKROGEN</div><p data-tk-slot="tagline">Documenting the build — research, decisions, and the templates that come out the other side.</p></div><div data-tk-slot="pillars">
@@ -708,12 +708,12 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
     </div>
   </section>
   <section class="cat-grid">
-    <article class="cat"><div class="ic">IN</div><h4>Installation guides.</h4><p>Get Spine running in a fresh Vite + React project, a Next.js app, or as a self-hosted Go service.</p><div class="links"><a href="#">install · npm package</a><a href="#">install · self-hosted api</a><a href="#">migrate from the demo</a></div></article>
-    <article class="cat"><div class="ic">AP</div><h4>API reference.</h4><p>Complete reference for the headless engine, the React component, and the Go ingest API.</p><div class="links"><a href="#">engine · createReplay()</a><a href="#">react · &lt;ReplayViewer/&gt;</a><a href="#">api · POST /v1/shifts</a></div></article>
-    <article class="cat"><div class="ic">TU</div><h4>Tutorials.</h4><p>End-to-end builds derived from the original case studies. Each ships with a downloadable repo.</p><div class="links"><a href="#">build a route-replay dashboard</a><a href="#">self-host the ingest api</a><a href="#">custom map overlays</a></div></article>
-    <article class="cat"><div class="ic">RN</div><h4>Release notes.</h4><p>Every change shipped in Spine, with licensing implications and breaking-change call-outs.</p><div class="links"><a href="#">spine · 0.4.x release notes</a><a href="#">spine · 0.3.x release notes</a><a href="#">migration · 0.3 → 0.4</a></div></article>
-    <article class="cat"><div class="ic">VS</div><h4>Versioning policy.</h4><p>How Tekrogen products version. What "breaking" means, and how long updates remain per tier.</p><div class="links"><a href="#">semver, with caveats</a><a href="#">update windows by tier</a><a href="#">LTS releases</a></div></article>
-    <article class="cat"><div class="ic">CP</div><h4>Customer portal.</h4><p>Paid members manage license keys, download history, and active update windows.</p><div class="links"><a href="#">order history</a><a href="#">download archive</a><a href="#">license inventory</a></div></article>
+    <article class="tk-category-card" data-pillar="net"><div data-tk-slot="icon">IN</div><h4>Installation guides.</h4><p>Get Spine running in a fresh Vite + React project, a Next.js app, or as a self-hosted Go service.</p><div data-tk-slot="links"><a href="#">install · npm package</a><a href="#">install · self-hosted api</a><a href="#">migrate from the demo</a></div></article>
+    <article class="tk-category-card" data-pillar="net"><div data-tk-slot="icon">AP</div><h4>API reference.</h4><p>Complete reference for the headless engine, the React component, and the Go ingest API.</p><div data-tk-slot="links"><a href="#">engine · createReplay()</a><a href="#">react · &lt;ReplayViewer/&gt;</a><a href="#">api · POST /v1/shifts</a></div></article>
+    <article class="tk-category-card" data-pillar="net"><div data-tk-slot="icon">TU</div><h4>Tutorials.</h4><p>End-to-end builds derived from the original case studies. Each ships with a downloadable repo.</p><div data-tk-slot="links"><a href="#">build a route-replay dashboard</a><a href="#">self-host the ingest api</a><a href="#">custom map overlays</a></div></article>
+    <article class="tk-category-card" data-pillar="net"><div data-tk-slot="icon">RN</div><h4>Release notes.</h4><p>Every change shipped in Spine, with licensing implications and breaking-change call-outs.</p><div data-tk-slot="links"><a href="#">spine · 0.4.x release notes</a><a href="#">spine · 0.3.x release notes</a><a href="#">migration · 0.3 → 0.4</a></div></article>
+    <article class="tk-category-card" data-pillar="net"><div data-tk-slot="icon">VS</div><h4>Versioning policy.</h4><p>How Tekrogen products version. What "breaking" means, and how long updates remain per tier.</p><div data-tk-slot="links"><a href="#">semver, with caveats</a><a href="#">update windows by tier</a><a href="#">LTS releases</a></div></article>
+    <article class="tk-category-card" data-pillar="net"><div data-tk-slot="icon">CP</div><h4>Customer portal.</h4><p>Paid members manage license keys, download history, and active update windows.</p><div data-tk-slot="links"><a href="#">order history</a><a href="#">download archive</a><a href="#">license inventory</a></div></article>
   </section>
   <div class="vtl">
     <h3>spine · version history</h3>
@@ -739,10 +739,10 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
 
     <div style="margin-top:var(--tk-space-16)"><p class="eyebrow">the system</p><h2>The four pillars</h2></div>
     <div class="manifesto" style="margin-top:var(--tk-space-6)">
-      <div class="mcard var-org"><span class="label">.org</span><h4>Knowledge</h4><p>Use case studies and Recon — the credibility layer.</p></div>
-      <div class="mcard var-studio"><span class="label">.studio</span><h4>Demonstration</h4><p>Working proof that the research is real.</p></div>
-      <div class="mcard var-com"><span class="label">.com</span><h4>Commerce</h4><p>Production templates, licensing, checkout.</p></div>
-      <div class="mcard var-net"><span class="label">.net</span><h4>Distribution</h4><p>Docs, versioning, and release delivery.</p></div>
+      <div class="tk-manifesto-card" data-pillar="org"><span data-tk-slot="label">.org</span><h4>Knowledge</h4><p>Use case studies and Recon — the credibility layer.</p></div>
+      <div class="tk-manifesto-card" data-pillar="studio"><span data-tk-slot="label">.studio</span><h4>Demonstration</h4><p>Working proof that the research is real.</p></div>
+      <div class="tk-manifesto-card" data-pillar="com"><span data-tk-slot="label">.com</span><h4>Commerce</h4><p>Production templates, licensing, checkout.</p></div>
+      <div class="tk-manifesto-card" data-pillar="net"><span data-tk-slot="label">.net</span><h4>Distribution</h4><p>Docs, versioning, and release delivery.</p></div>
     </div>
 
     <div style="margin-top:var(--tk-space-16)"><p class="eyebrow">how we work</p><h2>Principles</h2></div>
@@ -755,8 +755,8 @@ textarea.tk-input{resize:vertical;min-height:96px;width:100%}
 
     <div style="margin-top:var(--tk-space-16)"><p class="eyebrow">who's building</p><h2>The team</h2></div>
     <div class="team" style="margin-top:var(--tk-space-6)">
-      <div class="tcard"><div class="av">MD</div><div><h4 style="margin:0">M. Dolce</h4><p class="role">Founder</p><p style="margin:0;font-size:14px;color:var(--tk-fg-3)">Documenting the build — research, decisions, and the templates that come out the other side.</p></div></div>
-      <div class="tcard"><div class="av" style="background:linear-gradient(135deg,var(--tk-studio),var(--tk-net))">+</div><div><h4 style="margin:0">Joining soon</h4><p class="role">Contributor</p><p style="margin:0;font-size:14px;color:var(--tk-fg-3)">Author OG cards template ready — initials, name, role, tagline swap in.</p></div></div>
+      <article class="tk-team-card"><span class="tk-avatar" data-style="mono" style="width:44px;height:44px;font-size:13px">MD</span><div><h4 style="margin:0">M. Dolce</h4><p data-tk-slot="role">Founder</p><p style="margin:0;font-size:14px;color:var(--tk-fg-3)">Documenting the build — research, decisions, and the templates that come out the other side.</p></div></article>
+      <article class="tk-team-card"><span class="tk-avatar" data-style="mono" style="width:44px;height:44px;font-size:13px;background:linear-gradient(135deg,var(--tk-studio),var(--tk-net))">+</span><div><h4 style="margin:0">Joining soon</h4><p data-tk-slot="role">Contributor</p><p style="margin:0;font-size:14px;color:var(--tk-fg-3)">Author OG cards template ready — initials, name, role, tagline swap in.</p></div></article>
     </div>
   </section>
   <footer class="tk-footer" data-style="nav"><div data-tk-slot="top"><div data-tk-slot="brand"><img src="../../assets/tekrogen-mark.svg" alt="" width="40" height="40"/><div data-tk-slot="wordmark">TEKROGEN</div><p data-tk-slot="tagline">Documenting the build — research, decisions, and the templates that come out the other side.</p></div><div data-tk-slot="pillars">
