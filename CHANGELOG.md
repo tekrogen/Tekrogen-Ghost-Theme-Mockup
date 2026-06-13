@@ -20,6 +20,21 @@ mockup project, so versions track design milestones rather than shipped software
 
 ---
 
+## [0.10.0] — 2026-06-13
+
+C3 cards migration: the `Claude-DT` mockup's cards now consume the **C3 composites** (registry PR #36).
+
+### Changed
+- **Content cards → `tk-content-card`** (6; head/desc/rel slots, data-pillar). **Listing cards →
+  `tk-listing-card`** (4). **Pillar buttons → `tk-pillar-button`** (4). **Category cards →
+  `tk-category-card`** (6). **Team cards → `tk-team-card`** (2; avatar → `tk-avatar[data-style="mono"]`,
+  sized inline). **Manifesto cards → `tk-manifesto-card`** (4). Per-card scoped slot renames
+  (`.row`→head, `.desc`/`.rel`/`.ind`/`.label`/`.name`/`.ic`/`.links`/`.role` → slots). Verified on-brand
+  (s1 pillar buttons + content cards; s8 manifesto + team cards w/ mono 44px avatar).
+
+### Deferred
+- Now-inert bespoke C3 CSS left this pass → shared dead-CSS cleanup. Dashboard `.av` (s9) stays for C7.
+
 ## [0.9.0] — 2026-06-13
 
 C2 data & forms migration: the `Claude-DT` mockup consumes the **C2 composites** (registry PR #34).
