@@ -20,6 +20,23 @@ mockup project, so versions track design milestones rather than shipped software
 
 ---
 
+## [0.8.0] — 2026-06-13
+
+C1 structural migration: the `Claude-DT` mockup's header, footer, section heads, and mono labels
+now consume the design-system **C1 composites** (registry PRs #30/#32).
+
+### Changed
+- **Header → `tk-site-header[data-style="framed"]`** across all 9 screens (brand/nav/util slots;
+  mark sized inline 28px). **Footer → `tk-footer[data-style="nav"]`** (brand + four pillar link
+  columns; mark 40px). **Section heads → `tk-section-head`** (12 instances, incl. `data-size="sm"`).
+  **Mono labels → `tk-label`** (51: pill-mono→pill, `.chip`→`data-variant="chip"`+pillar,
+  `.tag`→`data-variant="tag"`). Header/footer adopt the canonical `tekrogen-org` design (the chosen
+  "canonical default") in their framed/nav variants — a deliberate brand-alignment, verified on-brand.
+
+### Deferred
+- The now-inert bespoke CSS (`.site-head`/`.site-foot`/`.sec-head*`/`.pill-mono`/`.chip`/`.tag`,
+  etc.) is left in place this pass (no matching elements; harmless) — a follow-up cleanup removes it.
+
 ## [0.7.0] — 2026-06-13
 
 Component migration: the `Claude-DT` mockup now **consumes the design-system component
