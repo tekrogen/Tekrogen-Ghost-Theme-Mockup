@@ -20,6 +20,35 @@ mockup project, so versions track design milestones rather than shipped software
 
 ---
 
+## [0.6.0] — 2026-06-13
+
+Foundation sync to **Tekrogen Brand Design System** parity, brand-integrity fixes, and the
+vendored component registry — the base for the upcoming component migration.
+
+### Added
+- **Self-hosted font set (ADR-0008).** Full brand weights — Poppins 400–800 + italic
+  400/500/600, Manrope 400–700, JetBrains Mono 400–700 — added to `fonts/` as latin-subset
+  woff2 (was Regular-only). No remote font dependency.
+- **Component registry vendored** from the design system into `components/` (button, card,
+  input, badge, avatar + the `tk-components.css` barrel); linked from
+  `mockups/Claude-DT/index.html`.
+
+### Changed
+- **`colors_and_type.css` brought to full design-system parity** (478 lines / 128 tokens):
+  adopts the ADR-0007 rem-fluid type scale (eyebrow/meta now hold the 12px floor; headings
+  fluid) and adds 20 previously-missing tokens (`--tk-focus`, `--tk-success-text`,
+  `--tk-mark-*`, `--tk-og-*`, `--tk-shell-max`, `--tk-fs-og-title`). This shifts type
+  rendering on both surfaces — intended parity, matching the real theme + WCAG 1.4.4.
+- **`mockups/README.md` build brief corrected**: Nunito → Manrope (sans-only, ADR-0001/0008);
+  "Research Hub" reframed as the Recon hub; "Ratings" removed (no scores — the v0.5.0 Recon
+  model).
+
+### Removed
+- **Google Fonts CDN** `<link>`/`@import` from `index.html` and `mockups/Claude-DT/index.html`
+  — zero remote font dependencies; all weights self-hosted (ADR-0008).
+
+---
+
 ## [0.5.0] — 2026-06-05
 
 Content-model overhaul: collapsed the seven content **types** into five top-level

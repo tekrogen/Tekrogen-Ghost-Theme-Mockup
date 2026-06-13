@@ -46,9 +46,11 @@ Brand Personality:
 - Developer-focused
 - Premium but approachable
 
-Typography:
-- Poppins for headings
-- Nunito for body text
+Typography (Tekrogen brand — sans-only, per ADR-0001 / ADR-0008):
+- Poppins for headings + body (primary)
+- Manrope as the sans fallback
+- JetBrains Mono for technical / mono labels
+(No Nunito — not a Tekrogen face. All weights self-hosted; no Google Fonts CDN.)
 
 Visual Language:
 - Clean whitespace
@@ -133,18 +135,19 @@ Visual relationships between content types must be obvious.
 
 ────────────────────────────────────────────
 
-3. Research Hub
+3. Recon Hub
 
-Display categories:
+Display recon topics — tags *under the single **Recon** category*, NOT separate content
+types. (The v0.5.0 model folded the former SaaS Evaluation + Tech Rating types into Recon;
+see recon-content-model.md.)
 
 AI
-SaaS Evaluations
 Framework Evaluations
 Architecture Reviews
-Technical Ratings
+Technical Researches
 Developer Tools
 
-Each category should use visual taxonomy patterns.
+Each topic should use visual taxonomy patterns. No scores or numeric ratings.
 
 ────────────────────────────────────────────
 
@@ -254,18 +257,18 @@ TECHNICAL RESEARCH TEMPLATE
 
 Create:
 
-custom-research.hbs
+custom-research.hbs   (the unified Recon reader — research + tool/framework comparison)
 
 Display:
 
 Framework comparisons
 Tool evaluations
 Architecture decisions
-Ratings
 Pros / Cons
-Recommendations
+Decision → the chosen stack
 
-Must visually connect to related Case Studies.
+No numeric ratings or scores (v0.5.0 Recon decision — see recon-content-model.md).
+Must visually connect to related Use Case Studies and the Demo it feeds.
 
 ────────────────────────────────────────────
 DEMO TEMPLATE
