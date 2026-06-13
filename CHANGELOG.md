@@ -20,6 +20,23 @@ mockup project, so versions track design milestones rather than shipped software
 
 ---
 
+## [0.14.0] — 2026-06-13
+
+C7 membership migration: the `Claude-DT` mockup's s9 account surface now consumes the **C7 composites** (registry PR #44). This completes the composites batch (C1–C7) — the mockup is fully on the registry.
+
+### Changed
+- **Access ladder → `tk-member-ladder`** (`.mstep var-X` → `[data-tk-slot="step"]` + `data-pillar`; `.st` →
+  state slot; `<ul>` → features slot; `.no` → `data-state="excluded"`). **Sign-in / register → `tk-auth-card`**
+  (`.sub-head` → head slot, scoped to the cards). **Member dashboard → `tk-dashboard`** (`.av` → `tk-avatar`;
+  `.tier` → `.role`; `.dash-head/body/side/main` → slots; orders `.orders` table → `tk-table`). **Purchase
+  confirmation → `tk-confirm`** (com-keyed).
+- Picks up **`--tk-fg-on-accent`** in `colors_and_type.css` (synced from the DS) — the dashboard avatar's
+  initials now resolve white from the token (closes the avatar `#fff` crack, DS #19).
+- Scoped renames preserved the 3 standalone sub-screen `.sub-head` labels and shared `.sub`/`.k`/`.v`/`.fineprint`.
+
+### Deferred
+- Now-inert bespoke membership CSS (`.member-ladder`/`.mstep`/`.auth-card`/`.dash*`/`.confirm`/…) → shared dead-CSS cleanup.
+
 ## [0.13.0] — 2026-06-13
 
 C6 distribution migration: the `Claude-DT` mockup's s7 documentation surface now consumes the **C6 composites** (registry PR #42).
