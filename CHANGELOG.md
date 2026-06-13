@@ -20,6 +20,21 @@ mockup project, so versions track design milestones rather than shipped software
 
 ---
 
+## [0.13.0] — 2026-06-13
+
+C6 distribution migration: the `Claude-DT` mockup's s7 documentation surface now consumes the **C6 composites** (registry PR #42).
+
+### Changed
+- **Docs hero (s7) → `tk-docs-hero`** (body + search slot + pipeline aside). **Distribution pipeline →
+  `tk-pipeline`** (`.dist`/`.dh`/`.nodes`/`.dnode`/`.darrow` → slots head/nodes/node/arrow; active stage →
+  `data-state="active"`; net-keyed). **Version history → `tk-version-timeline`** (`.vtl` → container with
+  `data-tk-slot="title"`; `.vrow` → `data-tk-slot="row"`; net-keyed).
+- Leaf classes (`.n`/`.nm`/`.sub`/`.vn`/`.date`/`.vbody`/`.vchips`/`.dl`) kept — the registry styles them as
+  slot descendants. Verified shared leaves unchanged (`.nm`/`.n`/`.sub`/`.dl`/`.date` counts held).
+
+### Deferred
+- Now-inert bespoke distribution CSS (`.docs-hero`/`.dist`/`.dnode`/`.vtl`/`.vrow`/…) → shared dead-CSS cleanup.
+
 ## [0.12.0] — 2026-06-13
 
 C5 commerce migration: the `Claude-DT` mockup's product + demo surfaces now consume the **C5 composites** (registry PR #40).
