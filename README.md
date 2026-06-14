@@ -1,4 +1,4 @@
-# Tekrogen — Ghost Theme Mockup (v0.14.0)
+# Tekrogen — Ghost Theme Mockup (v0.14.1)
 
 High-fidelity design mockups for a custom **Ghost** publishing theme for **Tekrogen**, a
 four-entity practice ("four wings, one pursuit") publishing under a single mark across
