@@ -20,6 +20,19 @@ mockup project, so versions track design milestones rather than shipped software
 
 ---
 
+## [0.14.1] — 2026-06-13
+
+Dead-CSS cleanup: removed the now-inert bespoke component CSS in `mockups/Claude-DT/index.html` left behind by the C1–C7 registry migration (issue #9).
+
+### Removed
+- **201 fully-dead CSS rules (~21 KB)** across the file's three `<style>` blocks — every rule whose selector roots in a class no longer present in the markup (migrated to `tk-*`): `.card`/`.lcard`/`.tcard`/`.mcard`/`.cat`, `.site-head`/`.site-nav`/`.site-foot`/`.wordmark`, `.sec-head(-sm)`, `.stat(s)`, `.callout`/`.cta-block`, `.flywheel`/`.fw-*`, `.prod-hero2`/`.price-block`/`.tier`/`.license-grid`/`.feat(-grid)`, `.demo-meta`/`.preview`/`.shots`/`.artifacts`/`.arow`, `.docs-hero`/`.dist`/`.dnode`/`.vtl`/`.vrow`, `.member-ladder`/`.mstep`/`.auth-card`/`.dash*`/`.orders`/`.confirm`, plus `.pill-mono`/`.chip`/`.tag`/`.pbtn`/`.field(-row)`/`.form`/`.var-com`/`.var-net`.
+
+### Kept (deliberately)
+- Live harness/layout/state CSS and 4 **mixed** responsive rules that still serve live classes (`.hero`/`.prod-features`/`.ucs`, `.cards`/`.manifesto`/`.cat-grid`, `.acct-grid`/`.conf-grid`, `.reqform .tk-input`) — a few inert comma-groups (`.prod-hero2`, `.docs-hero`, …) remain in those, harmless.
+
+### Verified
+- No behavior change: every screen renders identically (migrated `tk-*` elements style from the linked registry, not this inline CSS; removed rules had zero markup references). Computed-style + screenshot spot-checks across s1/s6/s9 on both migrated and live-bespoke elements. All three `<style>` blocks brace-balanced.
+
 ## [0.14.0] — 2026-06-13
 
 C7 membership migration: the `Claude-DT` mockup's s9 account surface now consumes the **C7 composites** (registry PR #44). This completes the composites batch (C1–C7) — the mockup is fully on the registry.
