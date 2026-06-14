@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="version" content="v0.5.0"/>
+<meta name="version" content="v0.6.0"/>
 <title>Tekrogen · Flywheel Theme — VD spec build (VD-00 · VD-01)</title>
 <link rel="icon" href="../../assets/favicon.svg"/>
 <link rel="stylesheet" href="../../colors_and_type.css"><!-- self-hosted fonts via @font-face (ADR-0008) -->
@@ -141,6 +141,14 @@ a{border-bottom:0}                                  /* foundation underlines eve
 .decision{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:var(--tk-space-12)}
 .feeds{display:inline-flex;align-items:center;gap:6px;font-family:var(--tk-font-mono);font-size:var(--tk-fs-meta);letter-spacing:.1em;text-transform:uppercase;color:var(--tk-accent);border:1px solid color-mix(in srgb,var(--tk-accent) 45%,transparent);border-radius:var(--tk-radius-pill);padding:5px 11px}
 
+/* ── VD-05 · Demo / Proof of Concept (s5) — the first membership gate. demo-meta/preview/shots
+   + artifact-list (gate/row) are registry components (they self-collapse ≤720px); only the hero
+   CTA + stack rows are layout here. ── */
+.demo-hero-row{display:flex;gap:var(--tk-space-3);align-items:center;flex-wrap:wrap}
+.demo-h1{margin-top:var(--tk-space-4)}
+.demo-cta{display:flex;gap:var(--tk-space-3);margin-top:var(--tk-space-5);flex-wrap:wrap}
+.stack{display:flex;gap:var(--tk-space-2);flex-wrap:wrap}
+
 /* placeholder screens — VD-02…VD-09 not yet built */
 .todo{max-width:680px;margin:var(--tk-space-20) auto;padding:0 var(--tk-gutter);text-align:center}
 .todo .badge-row{display:flex;gap:8px;justify-content:center;margin-bottom:var(--tk-space-6)}
@@ -201,7 +209,7 @@ a{border-bottom:0}                                  /* foundation underlines eve
 <!-- ===================================================================== -->
 <div class="shell-bar">
   <div class="brand"><img src="../../assets/tekrogen-mark.svg" alt=""/> Tekrogen</div>
-  <span class="ver">Flywheel · v0.5.0 · HI-FI</span>
+  <span class="ver">Flywheel · v0.6.0 · HI-FI</span>
   <div class="shell-tabs" role="tablist" aria-label="Screens">
     <button class="shell-tab" role="tab" aria-selected="true"  data-screen="s1">Home</button>
     <button class="shell-tab" role="tab" aria-selected="false" data-screen="s2">Case Studies</button>
@@ -528,7 +536,69 @@ a{border-bottom:0}                                  /* foundation underlines eve
     <div data-tk-slot="col" data-pillar="org"><h5>.org</h5><a href="#">Use Case Studies</a><a href="#">Recon</a></div><div data-tk-slot="col" data-pillar="studio"><h5>.studio</h5><a href="#">Demos</a></div><div data-tk-slot="col" data-pillar="com"><h5>.com</h5><a href="#">Products</a></div><div data-tk-slot="col" data-pillar="net"><h5>.net</h5><a href="#">Documentation</a></div></div></div></footer>
  </div>
 </section>
-<section class="screen" id="s5"><div class="todo"><div class="badge-row"><span class="tk-badge" data-pillar="studio">.studio</span></div><h2>Demo / Proof of Concept.</h2><p>Built from <code>FEAT-VD-05-demo-proof-of-concept.md</code> — the first membership gate.</p></div></section>
+<!-- ===== S5 — custom-proof-of-concept.hbs (FEAT-VD-05 · the first membership gate) ===== -->
+<section class="screen" id="s5">
+ <div class="frame">
+  <div class="frame-bar"><div class="frame-dots"><span></span><span></span><span></span></div><span class="frame-url">tekrogen.<b>studio</b> / poc / banking-panel /</span></div>
+
+  <!-- VD-00 F1 · masthead (aria-current on Demos) -->
+  <header class="tk-site-header" data-style="framed">
+    <div data-tk-slot="inner">
+      <div data-tk-slot="brand"><img src="../../assets/tekrogen-mark.svg" alt="" width="28" height="28"/><span data-tk-slot="wordmark">Tekrogen</span></div>
+      <nav data-tk-slot="nav">
+        <a href="#">Home</a><a href="#">Case Studies</a><a href="#">Recon</a><a href="#" aria-current="page">Demos</a><a href="#">Products</a><a href="#">Documentation</a><a href="#">About</a>
+      </nav>
+      <div data-tk-slot="util"><span class="tk-label">Search</span><a class="tk-button" data-style="cta" data-variant="secondary" href="#">Sign in</a></div>
+    </div>
+  </header>
+
+  <!-- VD-05 §1 · classbar -->
+  <div class="classbar var-studio"><span>Demo <b>№D04</b></span><span><b>.studio</b> · proof of concept</span><span>Live · MIT starter</span></div>
+
+  <!-- VD-05 §2 · hero row -->
+  <div class="wrap" style="padding-bottom:0">
+    <div class="demo-hero-row"><span class="tk-badge" data-pillar="studio">.studio · demo</span><span class="tk-label" style="border-color:var(--tk-success-text);color:var(--tk-success-text)">● Live</span><span class="tk-label">v0.3 · prototype</span></div>
+    <h1 class="demo-h1">Banking panel — proof of concept.</h1>
+    <p class="lead italic-dek">The token-safe Plaid flow from the case study, running. Read it freely; downloading the starter needs a free account.</p>
+    <div class="demo-cta"><a class="tk-button" data-style="cta" data-pillar="studio" href="#">Launch full demo <span data-tk-slot="hint">↗ studio.tekrogen / banking-panel</span></a><a class="tk-button" data-style="cta" data-variant="secondary" href="#">Read the Case Study</a></div>
+  </div>
+
+  <!-- VD-05 §3 · demo meta (registry component) -->
+  <div class="tk-demo-meta"><div><div data-tk-slot="key">Status</div><div data-tk-slot="val">● Live · stable</div></div><div><div data-tk-slot="key">Version</div><div data-tk-slot="val" data-mono>v0.3.1 · 2026-05-22</div></div><div><div data-tk-slot="key">Default license</div><div data-tk-slot="val">MIT (demo source)</div></div><div><div data-tk-slot="key">Time to try</div><div data-tk-slot="val">~3 minutes</div></div></div>
+
+  <!-- VD-05 §4 · live preview + §5 · screenshots (registry components) -->
+  <div class="tk-demo-preview"><span class="meta">live preview · &lt;iframe&gt; embed</span></div>
+  <div class="tk-demo-shots"><div class="tk-demo-shot">screenshot 01</div><div class="tk-demo-shot">screenshot 02</div><div class="tk-demo-shot">screenshot 03</div></div>
+
+  <!-- VD-05 §6 · stack -->
+  <section class="wrap" style="padding-bottom:0"><h2>Stack</h2><div class="stack"><span class="tk-label" data-variant="tag">next.js · 15</span><span class="tk-label" data-variant="tag">server actions</span><span class="tk-label" data-variant="tag">plaid</span><span class="tk-label" data-variant="tag">typescript</span><span class="tk-label" data-variant="tag">prisma</span><span class="tk-label" data-variant="tag">vitest</span></div></section>
+
+  <!-- VD-05 §7 · technical notes -->
+  <section class="wrap" style="padding-bottom:0"><h2>Technical notes</h2><p style="max-width:72ch">The exchange runs entirely in a Server Action; the browser only ever holds a public link token. Revocation arrives by webhook and invalidates the encrypted session handle. Everything here is the demo-grade path — the hardened build ships in the template.</p></section>
+
+  <!-- VD-05 §8 · gated artifact downloads — gate maps to {{#unless @member}} (AC-VD05-01/02) -->
+  <section class="wrap" style="padding-bottom:0"><h2>Artifact downloads</h2></section>
+  <div class="tk-artifact-list" data-pillar="studio">
+    <div data-tk-slot="gate">
+      <div class="al"><span class="lock">⊘ Registration required · free tier</span><h3>Download the free starter (MIT).</h3><p class="desc" style="margin:0;max-width:54ch">Anonymous visitors can read and run the demo. A free Tekrogen account unlocks the source bundle, the sample dataset, and the architecture diagram.</p></div>
+      <div class="actions"><a class="tk-button" data-style="cta" data-pillar="studio" href="#">Create free account</a><a class="tk-button" data-style="cta" data-variant="secondary" href="#">Sign in</a></div>
+    </div>
+    <div data-tk-slot="row"><span class="name">banking-panel-source.zip</span><span class="size">3.8 MB</span><a class="dl" href="#">Sign in to download</a></div>
+    <div data-tk-slot="row"><span class="name">sample-transactions.csv</span><span class="size">12 MB</span><a class="dl" href="#">Sign in to download</a></div>
+    <div data-tk-slot="row"><span class="name">architecture-diagram.pdf</span><span class="size">220 KB</span><a class="dl" href="#">Sign in to download</a></div>
+    <div data-tk-slot="row"><span class="name">walkthrough-recording.mp4</span><span class="size">68 MB</span><a class="dl" href="#">Sign in to download</a></div>
+  </div>
+
+  <!-- VD-05 §9 · paired CTA — back to study (.org) + forward to product (.com) -->
+  <section class="wrap"><div class="tk-cta-block" data-pillar="studio"><p class="eyebrow">next step</p><h3 style="margin:0">This demo came from a study — and becomes a product.</h3>
+    <p class="italic-dek">Read the reasoning, or get the production template.</p>
+    <div data-tk-slot="actions"><a class="tk-button" data-style="cta" data-variant="secondary" href="#">Read the Case Study <span data-tk-slot="hint">↗ org/articles</span></a><a class="tk-button" data-style="cta" data-pillar="com" href="#">View Product <span data-tk-slot="hint">↗ com/products</span></a></div></div></section>
+
+  <!-- VD-00 F2 · footer -->
+  <footer class="tk-footer" data-style="nav"><div data-tk-slot="top"><div data-tk-slot="brand"><img src="../../assets/tekrogen-mark.svg" alt="" width="40" height="40"/><div data-tk-slot="wordmark">TEKROGEN</div><p data-tk-slot="tagline">Documenting the build — research, decisions, and the templates that come out the other side.</p></div><div data-tk-slot="pillars">
+    <div data-tk-slot="col" data-pillar="org"><h5>.org</h5><a href="#">Use Case Studies</a><a href="#">Recon</a></div><div data-tk-slot="col" data-pillar="studio"><h5>.studio</h5><a href="#">Demos</a></div><div data-tk-slot="col" data-pillar="com"><h5>.com</h5><a href="#">Products</a></div><div data-tk-slot="col" data-pillar="net"><h5>.net</h5><a href="#">Documentation</a></div></div></div></footer>
+ </div>
+</section>
 <section class="screen" id="s6"><div class="todo"><div class="badge-row"><span class="tk-badge" data-pillar="com">.com</span></div><h2>Product &amp; licensing.</h2><p>Built from <code>FEAT-VD-06-product-licensing.md</code> — the license matrix centerpiece.</p></div></section>
 <section class="screen" id="s7"><div class="todo"><div class="badge-row"><span class="tk-badge" data-pillar="net">.net</span></div><h2>Documentation &amp; distribution.</h2><p>Built from <code>FEAT-VD-07-documentation-distribution.md</code> — docs hub + version timeline.</p></div></section>
 <!-- ===== S8 — page.hbs (FEAT-VD-08 · About / static page) ===== -->
