@@ -3,9 +3,31 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="version" content="v0.9.0"/>
-<title>Tekrogen · Flywheel Theme — VD spec build (VD-00 · VD-01)</title>
+<meta name="version" content="v0.10.0"/>
+<title>Tekrogen · Flywheel Theme — VD spec build (s1–s9)</title>
+<meta name="description" content="Tekrogen — research, demos, products and documentation across .org / .studio / .com / .net, published under one mark."/>
+<!-- ── DS asset-pack (Tekrogen-Brand-Design-System/ui_kits/asset-pack) ──────────────
+     Ghost Settings → Design slot map (these assets populate the publication, not the
+     theme markup; in the real theme {{ghost_head}} emits the social meta below):
+       Publication icon  → assets/favicon.svg · favicon.ico (32) · tekrogen-icon-256/512.svg
+       Publication logo  → assets/tekrogen-logo-light.svg (dark UI) / -dark.svg (light UI)
+       Inline mark       → assets/tekrogen-mark.svg (18° tilt baked in) · -inverse.svg
+     Per-template OG card → og-default (home/index) · og-article (post) ·
+                            og-author (author) · og-series (tag/series), all 1200×630. ── -->
 <link rel="icon" href="../../assets/favicon.svg"/>
+<link rel="mask-icon" href="../../assets/favicon.svg" color="#1fd5da"/>
+<link rel="apple-touch-icon" href="../../assets/tekrogen-icon-256.svg"/>
+<!-- Open Graph / Twitter — asset-pack social cards (baseline = home; per-template mapping above) -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Tekrogen"/>
+<meta property="og:title" content="Tekrogen — We build real solutions to real problems."/>
+<meta property="og:description" content="Research, demos, products and documentation across .org / .studio / .com / .net, published under one mark."/>
+<meta property="og:image" content="../../assets/og-default.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Tekrogen — We build real solutions to real problems."/>
+<meta name="twitter:image" content="../../assets/og-default.png"/>
 <link rel="stylesheet" href="../../colors_and_type.css"><!-- self-hosted fonts via @font-face (ADR-0008) -->
 <link rel="stylesheet" href="../../components/tk-components.css"><!-- vendored design-system registry -->
 <style>
@@ -245,7 +267,7 @@ a{border-bottom:0}                                  /* foundation underlines eve
 <!-- ===================================================================== -->
 <div class="shell-bar">
   <div class="brand"><img src="../../assets/tekrogen-mark.svg" alt=""/> Tekrogen</div>
-  <span class="ver">Flywheel · v0.9.0 · HI-FI</span>
+  <span class="ver">Flywheel · v0.10.0 · HI-FI</span>
   <div class="shell-tabs" role="tablist" aria-label="Screens">
     <button class="shell-tab" role="tab" aria-selected="true"  data-screen="s1">Home</button>
     <button class="shell-tab" role="tab" aria-selected="false" data-screen="s2">Case Studies</button>
