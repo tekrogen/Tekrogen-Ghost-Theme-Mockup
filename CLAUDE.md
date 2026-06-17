@@ -10,7 +10,7 @@ The deliverable is self-contained HTML used to **review and lock** information a
 visual design *before* the theme is implemented in Ghost. The mockups are not a runnable
 application and have no build/test/lint of their own (static HTML).
 
-There are now **two mockup surfaces** in this repo — know which one you're touching:
+There are now **three mockup surfaces** in this repo — know which one you're touching:
 
 1. **Root `index.html`** (~3038 lines, carries the **project version**, currently `v0.14.1`) —
    the original **locked publication mockup**: four reader directions — **Home / Topic /
@@ -23,6 +23,12 @@ There are now **two mockup surfaces** in this repo — know which one you're tou
    registry** (`tk-*`); it was built and migrated onto the registry across the C1–C7 batches,
    and its now-inert bespoke CSS was swept (v0.14.1). It is the **rehearsal for the real Ghost
    theme**. Build brief: `mockups/README.md`; validation/handoff: `admin/status/`.
+3. **`mockups/Tekrogen-Flywheel/index.html`** (own version, started `v0.1.0`) — the **VD-spec
+   build**: the same nine-screen Flywheel structure (`data-screen` s1–s9), but built one spec at
+   a time from `admin/features/proposed/tekrogen-mockup-revamp/visual-domains/` (FEAT-VD-00…09).
+   So far **VD-00 (chrome/foundations) + VD-01 (Home)** are built; the other screens are
+   placeholders that name their VD spec. See **`mockups/CLAUDE.md`** for surface + registry-
+   consumption notes.
 
 ## Relationship to the Design System (source of truth)
 
@@ -33,6 +39,8 @@ Upstream is **`Tekrogen-Brand-Design-System`** (DS) — the canonical token + co
   `<name>/<name>.{css,html,hbs}`) plus the barrel [`components/tk-components.css`](components/tk-components.css),
   via `cp -R components/. ../Tekrogen-Ghost-theme-mockup/components/`. `colors_and_type.css` is
   kept at **DS parity** (e.g. it carries the DS token `--tk-fg-on-accent`).
+  Note: the **dir/filenames are UNPREFIXED** (`components/site-header/site-header.css`) even
+  though the classes they define are `tk-*` (`.tk-site-header`) — don't grep for a `tk-` dir.
 - `mockups/Claude-DT/` links `colors_and_type.css` **and** `components/tk-components.css`, so its
   `tk-*` elements are styled by the registry — **not** by inline `<style>`. (Root `index.html`
   does not link the registry.)
@@ -178,3 +186,8 @@ These must be followed with no exceptions:
 1. Do not ever include a `Co-Authored-By: Claude …` trailer in commits in this code base.
 2. **Check files first, assume nothing.** When there is any confusion, contradiction, or ambiguity — especially about what this project *is*, what it references, or how it relates to other projects (the DS repo, the two surfaces, vendored vs authored code) — verify against the documents, the data, and the codebase (README, CLAUDE.md, `git remote -v`, `git log`, `grep`) *before* answering or acting. Treat the repository's own files as authoritative over anything stated in chat, including loosely-worded inputs and your own prior statements. Report what the files say, then reason. Never carry an unverified claim from conversation forward as fact.
 3. **Follow the branch-naming convention** (see Governance): `<type>/<issue#>-<slug>`, issue first, PR body `Closes #N`. Don't fix vendored `components/` here — fix upstream in the DS repo and re-vendor.
+4. **Review and validate every UI/UX artifact before declaring it done.** Any UI/UX you author or change here (a mockup surface, a screen, an `admin/review/` artifact, any HTML/CSS) must be (a) **designed to the 3-expert review method** and (b) **validated against the Tekrogen Brand Design System** — *before* hand-off, not after the user reports a defect. The two operating briefs live in **`/Volumes/SERV01-DTMAC-1/_Code_Library/AI prompts/`** — read them when doing this work:
+   - **`Design-System-UIUX-Review-Prompt.md`** — the **3-expert panel** (Senior Product Designer · Design Systems Architect · Front-End Engineering Lead): visual hierarchy/legibility, token/scale/spacing discipline, and rem/AA/focus/maintainability. Apply all three lenses; be evidence-based.
+   - **`GHOST-CRM-AND-THEME-EXPERT.md`** — the Ghost CMS architecture lens (native routing/memberships/templates, GScan, accessibility) for anything theme-shaped.
+
+   **Validation gate (run before saying "done"):** (1) **static token audit** — every `font-size` is a DS type-scale token (no hardcoded px); **nothing below the 12px legibility floor** (`--tk-fs-eyebrow`/`--tk-fs-meta` = `0.75rem`); lowest text colour is `--tk-fg-3` (AA) — never `fg-4`/`fg-5` for text. (2) **Render and check** at **1440px + 390px**: zero horizontal overflow (`documentElement.scrollWidth === clientWidth` at 390px); **serve, don't `file://`**. (3) **3-expert pass** with a short evidence-backed verdict. This is the same Phase-E acceptance bar used for the s2–s9 builds; record results in an `admin/review/VALIDATION.md`-style note for review artifacts.

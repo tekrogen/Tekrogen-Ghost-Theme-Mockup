@@ -63,13 +63,13 @@ Demo. Splitting them buried "where the stack research lives" across three menu e
 
 Seven content **types** → five top-level **categories / tags**:
 
-| # | Category | Absorbs | Pillar |
-|---|----------|---------|--------|
-| 01 | **Use Case Study** | — | `.studio` |
-| 02 | **Recon** | Research Article + SaaS Evaluation + (Tech Rating, removed) | `.org` (research, open work) |
-| 03 | **Product** | — | `.com` |
-| 04 | **Demo / POC** | — | `.studio` |
-| 05 | **Documentation** | — | `.net` |
+| #  | Category           | Absorbs                                                    | Pillar                       |
+|----|--------------------|------------------------------------------------------------|------------------------------|
+| 01 | **Use Case Study** | —                                                          | `.org`                       |
+| 02 | **Recon**          | Research Article  (Saas Evaluations, Tech Rating, removed) | `.org` (research, open work) |
+| 03 | **Product**        | —                                                          | `.com`                       |
+| 04 | **Demo / POC**     | —                                                          | `.studio`                    |
+| 05 | **Documentation**  | —                                                          | `.net`                       |
 
 > Note: "type" (a post's *layout*) and "category/tag" (how you *browse*) used to be the same
 > axis. They still collapse 1:1 here — five categories, five reader layouts.
