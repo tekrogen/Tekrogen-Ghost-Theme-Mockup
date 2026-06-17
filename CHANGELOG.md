@@ -20,6 +20,37 @@ mockup project, so versions track design milestones rather than shipped software
 
 ---
 
+## [0.15.0] — 2026-06-17
+
+Project milestone: the **VD-spec Flywheel surface** (`mockups/Tekrogen-Flywheel/index.html`) is
+complete and locked. All nine screens (s1–s9) are built one spec at a time from the
+`visual-domains/` FEAT-VD-00…09 briefs, consuming the vendored design-system registry, and the
+surface passes the Phase E acceptance gate (static token audit · responsive render @1440 + @390 ·
+brand audit · 3-expert pass). The Flywheel surface is bumped to its own **v1.0.0**.
+
+### Added
+- **Flywheel screens s2–s9** — Case Studies (VD-02), Use Case Study reader (VD-03), Recon (VD-04),
+  Demo/POC + first membership gate (VD-05), Product & licensing (VD-06), Documentation &
+  distribution (VD-07), About (VD-08), Membership & account (VD-09). Each landed via its own
+  issue→branch→PR clearing the Rule #4 gate, with an `admin/review/VALIDATION-s*-vd*.md` record.
+- **DS asset-pack wired into the Flywheel surface** (#32) — vendored the social/OG cards
+  (`og-default/article/author/series`), publication logos, `icon-512` and inverse mark; wired the
+  `<head>` with favicon + `mask-icon` + `apple-touch-icon`, Open Graph + Twitter Card meta, and a
+  documented Ghost Settings→Design slot map + per-template OG mapping for the theme handoff.
+
+### Fixed
+- **Double-tilted harness mark** — the shell-bar `.brand img` re-applied an 18° CSS rotate on top of
+  the already-18°-baked `tekrogen-mark.svg` (36° total); removed the redundant rotate.
+
+### Removed
+- **Dead `.todo` placeholder CSS** in the Flywheel surface — all nine screens are built, so the stub
+  styling is unused.
+
+### Docs
+- **CLAUDE.md** documents the Flywheel as the third mockup surface and adds **Rule #4** (the 3-expert
+  review + DS validation gate). **recon-content-model.md** corrects the Use Case Study pillar
+  (`.studio` → `.org`).
+
 ## [0.14.1] — 2026-06-13
 
 Dead-CSS cleanup: removed the now-inert bespoke component CSS in `mockups/Claude-DT/index.html` left behind by the C1–C7 registry migration (issue #9).
