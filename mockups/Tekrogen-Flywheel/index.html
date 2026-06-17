@@ -49,7 +49,7 @@ a{border-bottom:0}                                  /* foundation underlines eve
 /* ── APP CHROME — review harness (NOT theme code to port into Ghost) ── */
 .app{min-height:100vh}
 .shell-bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:var(--tk-space-5);padding:10px var(--tk-space-6);background:rgba(7,9,12,.86);backdrop-filter:blur(10px);border-bottom:var(--tk-border-1)}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700}.brand img{width:22px;height:22px;transform:rotate(var(--tk-tilt-mark))}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}.brand img{width:22px;height:22px}/* mark SVG bakes in the 18° tilt — no CSS rotate (avoid double-tilt) */
 .ver{font-family:var(--tk-font-mono);font-size:var(--tk-fs-meta);letter-spacing:.1em;text-transform:uppercase;color:var(--tk-fg-3);border:var(--tk-border-1);border-radius:var(--tk-radius-pill);padding:3px 9px;white-space:nowrap}
 .shell-tabs{display:flex;gap:4px;flex-wrap:wrap}
 .shell-tab{font-family:var(--tk-font-mono);font-size:var(--tk-fs-meta);letter-spacing:.06em;text-transform:uppercase;color:var(--tk-fg-3);background:none;border:1px solid transparent;border-radius:var(--tk-radius-sm);padding:6px 11px;cursor:pointer;transition:all var(--tk-dur-1) var(--tk-ease)}
@@ -200,13 +200,6 @@ a{border-bottom:0}                                  /* foundation underlines eve
 .sub-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:var(--tk-space-5)}
 .sub-head .lab{font-family:var(--tk-font-mono);font-size:var(--tk-fs-meta);letter-spacing:.14em;text-transform:uppercase;color:var(--tk-accent)}
 .reqform{border:var(--tk-border-1);border-radius:var(--tk-radius-2xl);padding:var(--tk-space-8);background:var(--tk-bg-2);max-width:720px;margin-top:var(--tk-space-5)}
-
-/* placeholder screens — VD-02…VD-09 not yet built */
-.todo{max-width:680px;margin:var(--tk-space-20) auto;padding:0 var(--tk-gutter);text-align:center}
-.todo .badge-row{display:flex;gap:8px;justify-content:center;margin-bottom:var(--tk-space-6)}
-.todo h2{font-size:24px;margin:0 0 var(--tk-space-4)}
-.todo p{color:var(--tk-fg-3);font-size:15px;line-height:1.6}
-.todo code{font-family:var(--tk-font-mono);font-size:13px;color:var(--wing-accent)}
 
 /* responsive (VD-00 / VD-01) */
 @media(max-width:1080px){
