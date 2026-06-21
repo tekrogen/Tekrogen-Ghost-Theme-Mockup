@@ -423,3 +423,7 @@ node_modules
 
 /uploads/
 /archive/
+
+# Scratch notes + html backups (2026-06-18 cleanup)
+.analysis/
+*-bak.html
