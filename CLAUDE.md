@@ -12,7 +12,7 @@ application and have no build/test/lint of their own (static HTML).
 
 There are now **three mockup surfaces** in this repo — know which one you're touching:
 
-1. **Root `index.html`** (~3038 lines, carries the **project version**, currently `v0.14.1`) —
+1. **Root `index.html`** (~3038 lines, carries the **project version**, currently `v0.15.0`) —
    the original **locked publication mockup**: four reader directions — **Home / Topic /
    Library / Post Details Page** (`data-dir` A–D) — plus the review harness. It predates the
    design-system registry and styles itself from `colors_and_type.css` directly (no `tk-*`).
@@ -68,7 +68,7 @@ Upstream is **`Tekrogen-Brand-Design-System`** (DS) — the canonical token + co
   5. New `CHANGELOG.md` entry (Keep a Changelog), then `git tag vX.Y.Z` + GitHub release.
   6. **The Claude-DT surface has its OWN version line** — `mockups/Claude-DT/index.html`
      `<meta name="version">` + its `.ver` badge (`Claude-DT · vX.Y.Z · HI-FI`); bump it when
-     that surface changes. (Project is currently v0.14.1; Claude-DT v0.12.1 — they diverge.)
+     that surface changes. (Project is currently v0.15.0; Claude-DT v0.12.1 — they diverge.)
   Don't touch fictional in-content product versions (e.g. "Spine v0.4") — deliberate mock data.
   Leave `archive/*` frozen. Versions track design milestones, not shipped software.
 
